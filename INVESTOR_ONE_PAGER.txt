@@ -1,0 +1,125 @@
+================================================================================
+                                   SAFEMED
+               Hyper-Personalized Medicine Safety at Your Fingertips
+================================================================================
+
+THE PROBLEM
+--------------------------------------------------------------------------------
+Every year, 1.3 million Americans are injured by medication errors. Adverse drug
+reactions cause 125,000+ deaths annually in the US alone—making it the 4th
+leading cause of death. Yet most patients have no way to know if a medication
+is safe for THEM specifically.
+
+Current solutions fail because:
+  - Drug labels show population-level risks, not personalized ones
+  - Pharmacists catch only 2% of dangerous drug interactions
+  - Patients self-medicate with OTC drugs unaware of their personal risk factors
+  - Existing apps provide generic information, not individualized assessments
+
+THE OPPORTUNITY
+--------------------------------------------------------------------------------
+$45B+    Global medication safety market (2024)
+1.5B+    OTC drug purchases annually in the US alone
+350M+    Chronic disease patients worldwide needing ongoing medication guidance
+82%      Of adults take at least one medication; 29% take 5+ medications
+
+THE SOLUTION
+--------------------------------------------------------------------------------
+SafeMed is an AI-powered platform that provides instant, personalized medication
+safety assessments. Users input their health profile once, then check any drug
+by name or photo to receive:
+
+  [1] Personal Safety Score (0-100) based on THEIR unique risk factors
+  [2] Hard-stop contraindications specific to their conditions
+  [3] Drug-drug interaction alerts with their current medications
+  [4] Personalized side effect risks (not population averages)
+  [5] Dosing recommendations adjusted to their health status
+  [6] Safer alternative suggestions when risks are elevated
+
+TECHNICAL EDGE / MOAT
+--------------------------------------------------------------------------------
+Unlike generic drug information apps, SafeMed's risk engine uses a proprietary
+5-phase assessment algorithm:
+
+  Phase 1: Absolute Contraindications
+           ICD-10 mapped conditions, allergy cross-reactivity, pregnancy rules
+
+  Phase 2: Drug-Drug Interactions
+           Major/moderate/minor severity with mechanism-based scoring
+
+  Phase 3: Demographic Risk Multipliers
+           Age-adjusted risks, renal function (eGFR), cardiovascular history
+
+  Phase 4: Personalized Side Effects
+           SIDER database (100+ effects per drug) filtered and ranked by
+           user-specific risk factors with adjusted probability multipliers
+
+  Phase 5: Dynamic Recommendations
+           Tier-based dosing, monitoring requirements, alternatives
+
+KEY DIFFERENTIATORS:
+  - Clinical-grade data: SIDER 4.1, MedDRA, ICD-10 taxonomies
+  - Hybrid AI architecture: Deterministic engine + LLM fallback for any drug
+  - Multi-modal input: Text, brand names, photo recognition (Gemini Vision)
+  - Cumulative risk scoring: Not binary yes/no, but nuanced 0-100 scale
+  - Real-time personalization: Side effect probabilities multiplied by
+    individual risk factors (e.g., 2.5x GI risk for elderly + history)
+
+PRODUCT HIGHLIGHTS
+--------------------------------------------------------------------------------
+  - Frictionless UX: Apple Health-inspired dark interface
+  - Zero account required: Privacy-first, no data persistence
+  - Sub-second analysis: Backend risk engine with pre-computed lookup tables
+  - Extensible architecture: Easy addition of new drugs to registry
+  - Cloud-native: Containerized FastAPI backend on Google Cloud Run
+
+BUSINESS MODEL POTENTIAL
+--------------------------------------------------------------------------------
+  B2C Freemium     Premium subscriptions for unlimited checks + family profiles
+  B2B Enterprise   API licensing to pharmacies, telehealth, insurers
+  B2B2C Partnerships   White-label for health systems and PBMs
+  Data Insights    Anonymized, aggregated medication safety trends
+
+GO-TO-MARKET
+--------------------------------------------------------------------------------
+  Phase 1: Consumer app targeting self-medicating adults (OTC focus)
+  Phase 2: Chronic disease communities (diabetes, cardiovascular, arthritis)
+  Phase 3: Healthcare provider integrations (EHR plugins, pharmacy POS)
+  Phase 4: International expansion (regulatory pathways in EU, UK, Canada)
+
+COMPETITIVE LANDSCAPE
+--------------------------------------------------------------------------------
+  Drugs.com/WebMD       Generic info, no personalization, ad-heavy
+  Epocrates             Clinician-focused, not consumer-friendly
+  Medisafe              Adherence-focused, limited safety analysis
+
+  SafeMed Advantage:    Only solution combining clinical-grade data with
+                        AI-powered personalization for consumers
+
+TRACTION / MILESTONES
+--------------------------------------------------------------------------------
+  [x] Core risk engine built with ibuprofen + salbutamol coverage
+  [x] Full-stack MVP deployed (React + FastAPI)
+  [x] Gemini Vision integration for medication photo recognition
+  [x] Hybrid fallback architecture operational
+  [ ] Expand drug database to top 100 medications
+  [ ] iOS/Android native apps
+  [ ] Clinical validation study partnership
+
+THE ASK
+--------------------------------------------------------------------------------
+Seeking seed funding to:
+  - Expand drug database from 2 to 100+ most-used medications
+  - Build native mobile applications (iOS/Android)
+  - Conduct clinical validation studies
+  - Scale cloud infrastructure for consumer launch
+  - Grow engineering and clinical advisory team
+
+================================================================================
+                    SafeMed: Because Your Safety is Personal
+================================================================================
+
+Contact: [founder@safemed.com]
+Website: [safemed.com]
+
+================================================================================
