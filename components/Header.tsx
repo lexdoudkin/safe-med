@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heartbeat, User, CaretLeft } from '@phosphor-icons/react';
+import { Heartbeat, User, CaretLeft, HandHeart } from '@phosphor-icons/react';
 import { AppState } from '../types';
 
 interface HeaderProps {
@@ -9,14 +9,14 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ onBack, appState }) => {
   return (
-    <header className="sticky top-0 z-50 w-full backdrop-blur-md bg-white/80 border-b border-slate-200">
+    <header className="sticky top-0 z-50 w-full bg-cream/80 backdrop-blur-lg border-b border-navy/5">
       <div className="max-w-3xl mx-auto px-4 h-20 flex items-center justify-between">
-        {/* Back Button or Spacer */}
-        <div className="w-12">
+        {/* Back Button */}
+        <div className="w-14">
           {appState !== AppState.ONBOARDING && onBack && (
             <button
               onClick={onBack}
-              className="p-3 text-slate-600 hover:bg-slate-100 rounded-xl transition-colors"
+              className="p-3 text-navy/60 hover:text-coral hover:bg-coral-light rounded-full transition-all"
               aria-label="Go back"
             >
               <CaretLeft size={28} weight="bold" />
@@ -25,22 +25,29 @@ const Header: React.FC<HeaderProps> = ({ onBack, appState }) => {
         </div>
 
         {/* Logo */}
-        <div className="flex items-center gap-3 cursor-pointer" onClick={onBack}>
-          <div className="bg-emerald-500 p-2.5 rounded-xl shadow-emerald-200 shadow-lg">
-            <Heartbeat size={28} weight="fill" className="text-white" />
+        <div
+          className="flex items-center gap-3 cursor-pointer group"
+          onClick={() => appState !== AppState.ONBOARDING && onBack?.()}
+        >
+          <div className="relative">
+            <div className="w-11 h-11 bg-gradient-to-br from-coral to-coral-dark rounded-2xl flex items-center justify-center shadow-warm group-hover:scale-105 transition-transform">
+              <HandHeart size={24} weight="fill" className="text-white" />
+            </div>
           </div>
-          <span className="font-extrabold text-2xl tracking-tight text-slate-800">SafeMed</span>
+          <span className="font-display font-bold text-2xl text-navy tracking-tight">
+            Safe<span className="text-coral">Med</span>
+          </span>
         </div>
 
-        {/* Profile Button or Spacer */}
-        <div className="w-12">
-          {appState !== AppState.ONBOARDING && (
+        {/* Profile */}
+        <div className="w-14 flex justify-end">
+          {appState !== AppState.ONBOARDING && appState !== AppState.PROFILE && (
             <button
               onClick={onBack}
-              className="p-3 text-slate-500 hover:bg-slate-100 rounded-xl transition-colors"
+              className="p-3 text-navy/40 hover:text-teal hover:bg-teal-light rounded-full transition-all"
               aria-label="View profile"
             >
-              <User size={28} weight="duotone" />
+              <User size={26} weight="duotone" />
             </button>
           )}
         </div>

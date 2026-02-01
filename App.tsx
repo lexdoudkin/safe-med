@@ -10,11 +10,12 @@ import {
   ShieldCheck,
   Sparkle,
   Lock,
-  CaretRight,
+  ArrowRight,
+  HandHeart,
+  Star,
+  Leaf,
 } from '@phosphor-icons/react';
-import { MedicalIllustrations } from './components/HealthIcons';
 
-// Default empty profile
 const DEFAULT_PROFILE: UserProfile = {
   age: 0,
   gender: 'Male',
@@ -30,10 +31,7 @@ const App: React.FC = () => {
   const [result, setResult] = useState<AnalysisResultType | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const startOnboarding = () => {
-    setAppState(AppState.PROFILE);
-  };
-
+  const startOnboarding = () => setAppState(AppState.PROFILE);
   const handleProfileSave = (data: UserProfile) => {
     setProfile(data);
     setAppState(AppState.INPUT);
@@ -64,101 +62,117 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 pb-10">
+    <div className="min-h-screen bg-cream text-navy pb-12">
       <Header onBack={appState !== AppState.ONBOARDING ? handleBack : undefined} appState={appState} />
 
-      <main className="max-w-3xl mx-auto px-4 pt-8">
-        {/* State: Onboarding Landing */}
+      <main className="max-w-3xl mx-auto px-4 pt-6">
+        {/* ONBOARDING - Warm, inviting landing */}
         {appState === AppState.ONBOARDING && (
-          <div className="flex flex-col items-center justify-center min-h-[75vh] text-center space-y-8 animate-fade-in px-2">
-            {/* Hero Illustration */}
-            <div className="relative">
-              <div className="bg-gradient-to-br from-emerald-100 to-emerald-50 p-8 rounded-full shadow-xl shadow-emerald-100">
-                <Heartbeat size={80} weight="duotone" className="text-emerald-600" />
-              </div>
-              <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-2 shadow-lg">
-                <ShieldCheck size={36} weight="fill" className="text-emerald-500" />
+          <div className="min-h-[80vh] flex flex-col items-center justify-center text-center px-2">
+            {/* Decorative blobs */}
+            <div className="absolute top-20 left-10 w-64 h-64 bg-coral-light blob opacity-50 blur-3xl -z-10" />
+            <div className="absolute bottom-20 right-10 w-80 h-80 bg-sage-light blob-2 opacity-50 blur-3xl -z-10" />
+
+            {/* Hero Icon */}
+            <div className="relative mb-8 animate-fade-in-up">
+              <div className="relative">
+                <div className="w-32 h-32 bg-gradient-to-br from-coral to-coral-dark rounded-full flex items-center justify-center shadow-warm animate-float">
+                  <HandHeart size={64} weight="fill" className="text-white" />
+                </div>
+                <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lifted">
+                  <ShieldCheck size={28} weight="fill" className="text-teal" />
+                </div>
               </div>
             </div>
 
             {/* Title */}
-            <div className="space-y-4">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
-                Personalized
-                <span className="text-emerald-600 block md:inline"> Medicine Safety</span>
+            <div className="space-y-4 mb-10 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight">
+                Your medicine,
+                <br />
+                <span className="text-coral underline-hand">your safety</span>
               </h1>
-              <p className="text-xl md:text-2xl text-slate-600 max-w-lg mx-auto leading-relaxed">
-                Check if your medications are safe for <span className="font-bold text-slate-800">your unique body</span> and health conditions.
+              <p className="text-xl md:text-2xl text-navy/70 max-w-md mx-auto leading-relaxed font-light">
+                We check if medications are safe for
+                <span className="font-semibold text-navy"> your unique body</span>.
               </p>
             </div>
 
-            {/* CTA Button - Extra large for seniors */}
+            {/* CTA Button */}
             <button
               onClick={startOnboarding}
-              className="px-10 py-5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xl font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-emerald-200 transition-all transform hover:-translate-y-1 flex items-center gap-3"
+              className="btn-primary px-10 py-5 text-white text-xl font-semibold flex items-center gap-3 mb-10 animate-fade-in-up shadow-warm"
+              style={{ animationDelay: '0.2s' }}
             >
-              <span>Get Started</span>
-              <CaretRight size={28} weight="bold" />
+              <span>Let's get started</span>
+              <ArrowRight size={24} weight="bold" />
             </button>
 
-            {/* Trust indicators */}
-            <div className="flex flex-wrap justify-center gap-6 pt-4">
-              <div className="flex items-center gap-2 text-slate-500">
-                <Lock size={24} weight="duotone" className="text-slate-400" />
-                <span className="text-base">Private & Secure</span>
+            {/* Trust badges */}
+            <div className="flex flex-wrap justify-center gap-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+              <div className="flex items-center gap-2 text-navy/50">
+                <Lock size={20} weight="duotone" />
+                <span className="text-sm font-medium">100% Private</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-500">
-                <Sparkle size={24} weight="duotone" className="text-slate-400" />
-                <span className="text-base">AI-Powered Analysis</span>
+              <div className="flex items-center gap-2 text-navy/50">
+                <Sparkle size={20} weight="duotone" />
+                <span className="text-sm font-medium">AI-Powered</span>
               </div>
-              <div className="flex items-center gap-2 text-slate-500">
-                <ShieldCheck size={24} weight="duotone" className="text-slate-400" />
-                <span className="text-base">Science-Based</span>
+              <div className="flex items-center gap-2 text-navy/50">
+                <Leaf size={20} weight="duotone" />
+                <span className="text-sm font-medium">Science-Based</span>
               </div>
             </div>
 
-            <p className="text-sm text-slate-400 mt-4 max-w-sm">
-              SafeMed provides general guidance only. Always consult your doctor or pharmacist before starting any medication.
+            {/* Disclaimer */}
+            <p className="text-sm text-navy/40 mt-12 max-w-sm">
+              SafeMed provides guidance only. Always consult your doctor before starting any medication.
             </p>
           </div>
         )}
 
-        {/* State: Profile */}
+        {/* PROFILE */}
         {appState === AppState.PROFILE && (
           <ProfileForm initialProfile={profile} onSave={handleProfileSave} />
         )}
 
-        {/* State: Input */}
+        {/* INPUT */}
         {appState === AppState.INPUT && (
           <>
             {error && (
-              <div className="mb-6 p-5 bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl text-center text-lg">
-                <strong>Error:</strong> {error}
+              <div className="mb-6 p-5 bg-coral-light border-2 border-coral/30 text-coral-dark rounded-2xl text-center text-lg">
+                <strong>Oops!</strong> {error}
               </div>
             )}
             <DrugInput onAnalyze={handleAnalyze} />
           </>
         )}
 
-        {/* State: Analyzing */}
+        {/* ANALYZING */}
         {appState === AppState.ANALYZING && (
-          <div className="flex flex-col items-center justify-center min-h-[65vh] text-center animate-pulse px-2">
-            <div className="relative w-32 h-32 mb-10">
-              <div className="absolute inset-0 border-4 border-emerald-100 rounded-full"></div>
-              <div className="absolute inset-0 border-4 border-emerald-500 rounded-full border-t-transparent animate-spin"></div>
-              <Heartbeat className="absolute inset-0 m-auto text-emerald-500 w-12 h-12" weight="duotone" />
+          <div className="min-h-[70vh] flex flex-col items-center justify-center text-center">
+            <div className="relative mb-10">
+              <div className="w-28 h-28 bg-coral-light rounded-full flex items-center justify-center animate-pulse-glow">
+                <Heartbeat size={56} weight="duotone" className="text-coral animate-pulse" />
+              </div>
+              <div className="absolute inset-0 w-28 h-28 border-4 border-coral/30 rounded-full animate-ping" />
             </div>
-            <h2 className="text-3xl font-bold text-slate-800 mb-3">Analyzing Your Medicine...</h2>
-            <p className="text-lg text-slate-500 max-w-md">
-              Checking safety based on your profile:
-              <span className="font-semibold text-slate-700 block mt-1">
-                {profile.conditions.length > 0 ? profile.conditions.join(', ') : 'General health'}
-              </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-navy mb-4">
+              Checking your medicine...
+            </h2>
+            <p className="text-lg text-navy/60 max-w-sm">
+              Analyzing safety based on your profile
+              {profile.conditions.length > 0 && (
+                <span className="block mt-2 text-teal font-medium">
+                  {profile.conditions.slice(0, 3).join(', ')}
+                  {profile.conditions.length > 3 && ` +${profile.conditions.length - 3} more`}
+                </span>
+              )}
             </p>
           </div>
         )}
 
-        {/* State: Results */}
+        {/* RESULTS */}
         {appState === AppState.RESULTS && result && (
           <AnalysisResult result={result} onReset={handleReset} />
         )}

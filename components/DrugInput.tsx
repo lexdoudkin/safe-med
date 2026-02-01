@@ -5,13 +5,11 @@ import {
   MagnifyingGlass,
   X,
   Pill,
-  ShieldCheck,
   Lock,
   Sparkle,
-  Upload,
   Scan,
+  ArrowRight,
 } from '@phosphor-icons/react';
-import { MedicalIllustrations } from './HealthIcons';
 
 interface DrugInputProps {
   onAnalyze: (text: string, image?: File) => void;
@@ -28,9 +26,7 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
       const file = e.target.files[0];
       setImage(file);
       const reader = new FileReader();
-      reader.onloadend = () => {
-        setPreview(reader.result as string);
-      };
+      reader.onloadend = () => setPreview(reader.result as string);
       reader.readAsDataURL(file);
     }
   };
@@ -49,37 +45,38 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
   };
 
   return (
-    <div className="max-w-2xl mx-auto space-y-8 px-2">
-      {/* Header with illustration */}
-      <div className="text-center space-y-4">
-        <div className="flex justify-center mb-4">
-          <MedicalIllustrations.Medicine />
+    <div className="max-w-2xl mx-auto space-y-8 animate-fade-in-up pb-8">
+      {/* Header */}
+      <div className="text-center space-y-3">
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-coral-light rounded-full mb-2">
+          <Pill size={32} weight="duotone" className="text-coral" />
         </div>
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Check Your Medicine</h2>
-        <p className="text-lg text-slate-600 max-w-md mx-auto">
-          Take a photo of your medicine or type its name. We'll check if it's safe <span className="font-semibold text-emerald-600">for you</span>.
+        <h2 className="font-display text-3xl md:text-4xl font-bold text-navy">
+          What medicine are you <span className="text-coral">checking?</span>
+        </h2>
+        <p className="text-navy/60 text-lg max-w-md mx-auto">
+          Snap a photo or type the name — we'll tell you if it's safe for you.
         </p>
       </div>
 
-      <div className="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-slate-200">
+      {/* Main Card */}
+      <div className="card-organic shadow-soft p-6 md:p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
-
-          {/* Image Upload Area */}
+          {/* Photo Upload */}
           {preview ? (
-            <div className="relative w-full h-56 md:h-64 bg-slate-100 rounded-2xl overflow-hidden group">
-              <img src={preview} alt="Drug Preview" className="w-full h-full object-cover" />
+            <div className="relative h-56 md:h-64 rounded-2xl overflow-hidden bg-navy/5">
+              <img src={preview} alt="Medicine" className="w-full h-full object-cover" />
               <button
                 type="button"
                 onClick={handleRemoveImage}
-                className="absolute top-3 right-3 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors backdrop-blur-sm"
-                aria-label="Remove image"
+                className="absolute top-4 right-4 p-2 bg-white/90 hover:bg-white text-navy rounded-full shadow-lg transition-all"
               >
                 <X size={24} weight="bold" />
               </button>
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-5">
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-navy/80 to-transparent p-5">
                 <p className="text-white text-lg font-medium flex items-center gap-2">
-                  <ImageIcon size={24} weight="fill" />
-                  Photo attached - ready to analyze
+                  <ImageIcon size={22} weight="fill" />
+                  Photo ready — tap check below
                 </p>
               </div>
             </div>
@@ -87,14 +84,18 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
             <button
               type="button"
               onClick={() => fileInputRef.current?.click()}
-              className="w-full h-48 md:h-56 border-3 border-dashed border-slate-300 rounded-2xl flex flex-col items-center justify-center gap-4 text-slate-500 hover:text-emerald-600 hover:border-emerald-400 hover:bg-emerald-50/30 transition-all cursor-pointer group"
+              className="w-full h-52 md:h-60 border-3 border-dashed border-cream-dark rounded-2xl flex flex-col items-center justify-center gap-4 text-navy/50 hover:text-coral hover:border-coral/50 hover:bg-coral-light/20 transition-all cursor-pointer group"
             >
-              <div className="p-4 bg-slate-100 group-hover:bg-emerald-100 rounded-2xl transition-colors">
-                <Camera size={48} weight="duotone" className="group-hover:text-emerald-600" />
+              <div className="w-20 h-20 bg-cream-dark group-hover:bg-coral-light rounded-full flex items-center justify-center transition-all">
+                <Camera size={40} weight="duotone" className="group-hover:text-coral" />
               </div>
               <div className="text-center">
-                <span className="text-xl font-semibold block">Tap to take a photo</span>
-                <span className="text-base text-slate-400 mt-1 block">or upload an image of your medicine</span>
+                <span className="text-xl font-semibold block text-navy/70 group-hover:text-coral">
+                  Tap to take a photo
+                </span>
+                <span className="text-base text-navy/40 mt-1 block">
+                  of your pill, box, or prescription
+                </span>
               </div>
             </button>
           )}
@@ -105,54 +106,51 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
             onChange={handleFileChange}
             accept="image/*"
             className="hidden"
-            aria-label="Upload medicine image"
           />
 
           {/* Divider */}
           <div className="flex items-center gap-4">
-            <div className="flex-1 h-px bg-slate-200"></div>
-            <span className="text-slate-400 font-medium">or type the name</span>
-            <div className="flex-1 h-px bg-slate-200"></div>
+            <div className="flex-1 h-px bg-cream-dark" />
+            <span className="text-navy/40 font-medium text-sm uppercase tracking-wide">or type it</span>
+            <div className="flex-1 h-px bg-cream-dark" />
           </div>
 
           {/* Text Input */}
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
-              <Pill size={28} weight="duotone" className="text-slate-400" />
+              <Pill size={26} weight="duotone" className="text-navy/30" />
             </div>
             <input
               type="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-              placeholder={preview ? "Add more details (optional)" : "Type medicine name here..."}
-              className="w-full pl-16 pr-5 py-5 text-xl bg-slate-50 border-2 border-slate-200 rounded-2xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 focus:outline-none transition-all placeholder:text-slate-400"
+              placeholder={preview ? "Add details (optional)" : "e.g. Ibuprofen, Metformin..."}
+              className="w-full pl-14 pr-5 py-5 text-xl bg-cream border-2 border-cream-dark rounded-2xl focus:border-teal focus:bg-white transition-all placeholder:text-navy/30"
             />
           </div>
 
-          {/* Submit Button */}
+          {/* Submit */}
           <button
             type="submit"
             disabled={!text.trim() && !image}
-            className="w-full bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 disabled:bg-slate-300 disabled:cursor-not-allowed text-white font-bold py-5 rounded-2xl shadow-lg hover:shadow-xl hover:shadow-emerald-200 transition-all flex items-center justify-center gap-3 text-xl"
+            className="btn-primary w-full py-5 text-white font-semibold text-xl flex items-center justify-center gap-3 disabled:opacity-40 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none"
           >
-            <MagnifyingGlass size={28} weight="bold" />
+            <MagnifyingGlass size={26} weight="bold" />
             <span>Check Safety</span>
-            <Sparkle size={24} weight="fill" className="text-emerald-200" />
+            <ArrowRight size={24} weight="bold" />
           </button>
         </form>
       </div>
 
-      {/* Trust Badges - Larger for seniors */}
-      <div className="grid grid-cols-2 gap-4">
-        <div className="bg-blue-50 p-5 rounded-2xl border border-blue-100 text-center">
-          <Lock size={32} weight="duotone" className="text-blue-600 mx-auto mb-2" />
-          <p className="text-blue-900 font-bold text-base">100% Private</p>
-          <p className="text-blue-700 text-sm mt-1">Your data stays on your device</p>
+      {/* Trust Badges */}
+      <div className="flex justify-center gap-8 text-navy/40">
+        <div className="flex items-center gap-2">
+          <Lock size={18} weight="duotone" />
+          <span className="text-sm font-medium">Private</span>
         </div>
-        <div className="bg-purple-50 p-5 rounded-2xl border border-purple-100 text-center">
-          <Sparkle size={32} weight="duotone" className="text-purple-600 mx-auto mb-2" />
-          <p className="text-purple-900 font-bold text-base">AI Powered</p>
-          <p className="text-purple-700 text-sm mt-1">Latest medical research</p>
+        <div className="flex items-center gap-2">
+          <Sparkle size={18} weight="duotone" />
+          <span className="text-sm font-medium">AI Analysis</span>
         </div>
       </div>
     </div>
