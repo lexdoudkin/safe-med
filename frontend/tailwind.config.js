@@ -10,60 +10,47 @@ export default {
   theme: {
     extend: {
       colors: {
-        coral: {
-          DEFAULT: '#FF6B5B',
-          light: '#FFE8E5',
-          dark: '#E84C3D',
+        // Apple Health palette
+        health: {
+          red: '#FF3B30',
+          orange: '#FF9500',
+          green: '#34C759',
+          blue: '#007AFF',
+          teal: '#5AC8FA',
+          pink: '#FF2D55',
         },
-        teal: {
-          DEFAULT: '#1A5F5A',
-          light: '#E8F4F3',
-          dark: '#0D3D3A',
+        // Neutrals
+        bg: {
+          primary: '#FFFFFF',
+          secondary: '#F2F2F7',
+          tertiary: '#E5E5EA',
         },
-        cream: {
-          DEFAULT: '#FFFBF7',
-          dark: '#F5EDE6',
+        text: {
+          primary: '#000000',
+          secondary: '#3C3C43',
+          tertiary: '#8E8E93',
         },
-        navy: '#1E2A3B',
-        sage: {
-          DEFAULT: '#7CB69D',
-          light: '#E8F5EE',
-        },
-        gold: {
-          DEFAULT: '#D4A853',
-          light: '#FDF6E7',
-        },
+        separator: 'rgba(60, 60, 67, 0.12)',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        display: ['Fraunces', 'Georgia', 'serif'],
+        sans: ['-apple-system', 'BlinkMacSystemFont', 'Inter', 'SF Pro Display', 'sans-serif'],
       },
       borderRadius: {
-        '4xl': '2rem',
-        '5xl': '2.5rem',
+        'apple': '12px',
+        'apple-lg': '16px',
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-out',
-        'fade-in-up': 'fadeInUp 0.6s ease-out forwards',
-        'float': 'float 4s ease-in-out infinite',
-        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+        'fade-in': 'fadeIn 0.3s ease-out forwards',
+        'scale-in': 'scaleIn 0.2s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
-        },
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-10px)' },
-        },
-        pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 0 0 rgba(255, 107, 91, 0.4)' },
-          '50%': { boxShadow: '0 0 0 20px rgba(255, 107, 91, 0)' },
+        scaleIn: {
+          '0%': { opacity: '0', transform: 'scale(0.95)' },
+          '100%': { opacity: '1', transform: 'scale(1)' },
         },
       },
     },
