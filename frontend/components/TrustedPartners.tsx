@@ -1,60 +1,83 @@
 import React from 'react';
 
-// Partner logos as SVG components (Apple Health style - white on dark)
+// Partner logos as SVG components
 const APHPLogo = () => (
-  <svg viewBox="0 0 80 32" style={{ height: '28px', width: 'auto' }}>
-    <rect x="0" y="4" width="24" height="24" rx="6" fill="#003366"/>
-    <text x="4" y="20" fill="white" fontSize="12" fontWeight="700" fontFamily="system-ui">AP</text>
-    <text x="28" y="20" fill="white" fontSize="14" fontWeight="700" fontFamily="system-ui">HP</text>
-  </svg>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#003366', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: 'white', fontSize: '10px', fontWeight: '700' }}>AP</span>
+    </div>
+    <span style={{ color: 'white', fontSize: '14px', fontWeight: '600' }}>AP-HP</span>
+  </div>
 );
 
 const HMPITLogo = () => (
-  <svg viewBox="0 0 75 32" style={{ height: '28px', width: 'auto' }}>
-    <circle cx="14" cy="16" r="12" fill="#8B0000"/>
-    <text x="8" y="20" fill="white" fontSize="10" fontWeight="700" fontFamily="system-ui">H</text>
-    <text x="30" y="19" fill="white" fontSize="11" fontWeight="600" fontFamily="system-ui">HMPIT</text>
-  </svg>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#8B0000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: 'white', fontSize: '12px', fontWeight: '700' }}>H</span>
+    </div>
+    <span style={{ color: 'white', fontSize: '14px', fontWeight: '600' }}>HMPIT Tunis</span>
+  </div>
 );
 
 const LeaderSanteLogo = () => (
-  <svg viewBox="0 0 85 32" style={{ height: '28px', width: 'auto' }}>
-    <rect x="0" y="6" width="20" height="20" rx="4" fill="#00A651"/>
-    <text x="5" y="20" fill="white" fontSize="12" fontWeight="700" fontFamily="system-ui">L</text>
-    <text x="24" y="15" fill="white" fontSize="9" fontWeight="600" fontFamily="system-ui">Leader</text>
-    <text x="24" y="24" fill="rgba(255,255,255,0.7)" fontSize="8" fontFamily="system-ui">Santé</text>
-  </svg>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#00A651', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: 'white', fontSize: '14px', fontWeight: '700' }}>L</span>
+    </div>
+    <span style={{ color: 'white', fontSize: '14px', fontWeight: '600' }}>Leader Santé</span>
+  </div>
 );
 
 const ApriumLogo = () => (
-  <svg viewBox="0 0 75 32" style={{ height: '28px', width: 'auto' }}>
-    <circle cx="12" cy="16" r="11" fill="#E31937"/>
-    <text x="6" y="20" fill="white" fontSize="11" fontWeight="700" fontFamily="system-ui">A</text>
-    <text x="26" y="19" fill="white" fontSize="11" fontWeight="600" fontFamily="system-ui">Aprium</text>
-  </svg>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#E31937', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: 'white', fontSize: '14px', fontWeight: '700' }}>A</span>
+    </div>
+    <span style={{ color: 'white', fontSize: '14px', fontWeight: '600' }}>Aprium</span>
+  </div>
 );
 
 const XFabLogo = () => (
-  <svg viewBox="0 0 60 32" style={{ height: '28px', width: 'auto' }}>
-    <rect x="0" y="6" width="20" height="20" rx="4" fill="#1a1a1a" stroke="rgba(255,255,255,0.2)" strokeWidth="1"/>
-    <text x="4" y="20" fill="#00B4D8" fontSize="12" fontWeight="700" fontFamily="system-ui">X</text>
-    <text x="24" y="20" fill="white" fontSize="13" fontWeight="700" fontFamily="system-ui">FAB</text>
-  </svg>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#1a1a1a', border: '1px solid rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: '#00B4D8', fontSize: '12px', fontWeight: '700' }}>X</span>
+    </div>
+    <span style={{ color: 'white', fontSize: '14px', fontWeight: '600' }}>X-FAB</span>
+  </div>
 );
 
 const MinistereLogo = () => (
-  <svg viewBox="0 0 90 32" style={{ height: '28px', width: 'auto' }}>
-    <rect x="0" y="4" width="24" height="24" rx="4" fill="#C8102E"/>
-    <text x="4" y="14" fill="white" fontSize="7" fontWeight="600" fontFamily="system-ui">REP</text>
-    <text x="4" y="22" fill="white" fontSize="7" fontWeight="600" fontFamily="system-ui">TUN</text>
-    <text x="28" y="18" fill="white" fontSize="9" fontWeight="600" fontFamily="system-ui">Min. Santé</text>
-  </svg>
+  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: '#C8102E', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }}>
+      <span style={{ color: 'white', fontSize: '6px', fontWeight: '600', lineHeight: 1 }}>MIN</span>
+      <span style={{ color: 'white', fontSize: '6px', fontWeight: '600', lineHeight: 1 }}>TUN</span>
+    </div>
+    <span style={{ color: 'white', fontSize: '14px', fontWeight: '600' }}>Min. Santé</span>
+  </div>
+);
+
+const PharmaciePorteItalie = () => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'linear-gradient(135deg, #2E7D32, #4CAF50)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: 'white', fontSize: '16px' }}>+</span>
+    </div>
+    <span style={{ color: 'white', fontSize: '13px', fontWeight: '600' }}>Porte d'Italie</span>
+  </div>
+);
+
+const PharmacieBenAyed = () => (
+  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 16px', background: 'rgba(255,255,255,0.1)', borderRadius: '12px', backdropFilter: 'blur(10px)' }}>
+    <div style={{ width: '32px', height: '32px', borderRadius: '8px', background: 'linear-gradient(135deg, #1565C0, #42A5F5)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ color: 'white', fontSize: '16px' }}>+</span>
+    </div>
+    <span style={{ color: 'white', fontSize: '13px', fontWeight: '600' }}>Ben Ayed</span>
+  </div>
 );
 
 const TrustedPartners: React.FC = () => {
   return (
-    <div className="animate-fade-up animate-delay-4" style={{ width: '100%', maxWidth: '400px' }}>
-      {/* Quote Card - Glass effect */}
+    <div className="animate-fade-up animate-delay-4" style={{ width: '100%', overflow: 'hidden' }}>
+      {/* Quote Card */}
       <div style={{
         background: 'rgba(255, 255, 255, 0.08)',
         backdropFilter: 'blur(20px)',
@@ -62,11 +85,13 @@ const TrustedPartners: React.FC = () => {
         borderRadius: '16px',
         padding: '16px 20px',
         marginBottom: '20px',
-        border: '1px solid rgba(255, 255, 255, 0.1)'
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+        maxWidth: '380px',
+        margin: '0 auto 20px'
       }}>
         <p style={{
-          fontSize: '14px',
-          color: 'rgba(255, 255, 255, 0.9)',
+          fontSize: '15px',
+          color: 'rgba(255, 255, 255, 0.95)',
           fontStyle: 'italic',
           margin: '0 0 8px 0',
           lineHeight: '1.5',
@@ -75,8 +100,8 @@ const TrustedPartners: React.FC = () => {
           "La digitalisation et la sécurité des patients sont des priorités stratégiques."
         </p>
         <p style={{
-          fontSize: '12px',
-          color: 'rgba(255, 255, 255, 0.5)',
+          fontSize: '13px',
+          color: 'rgba(255, 255, 255, 0.6)',
           margin: 0,
           textAlign: 'center'
         }}>
@@ -88,31 +113,91 @@ const TrustedPartners: React.FC = () => {
       <p style={{
         fontSize: '11px',
         textTransform: 'uppercase',
-        letterSpacing: '1px',
-        color: 'rgba(255, 255, 255, 0.4)',
-        margin: '0 0 12px 0',
+        letterSpacing: '1.5px',
+        color: 'rgba(255, 255, 255, 0.5)',
+        margin: '0 0 16px 0',
         textAlign: 'center',
-        fontWeight: '500'
+        fontWeight: '600'
       }}>
-        Trusted Partners
+        Trusted by healthcare leaders
       </p>
 
-      {/* Logos Grid */}
+      {/* Scrolling Banner - First Row */}
       <div style={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '16px',
-        opacity: 0.85
+        position: 'relative',
+        width: '100%',
+        overflow: 'hidden',
+        marginBottom: '12px'
       }}>
-        <APHPLogo />
-        <HMPITLogo />
-        <LeaderSanteLogo />
-        <ApriumLogo />
-        <XFabLogo />
-        <MinistereLogo />
+        <div style={{
+          display: 'flex',
+          gap: '12px',
+          animation: 'scroll-left 25s linear infinite',
+          width: 'max-content'
+        }}>
+          <APHPLogo />
+          <HMPITLogo />
+          <LeaderSanteLogo />
+          <ApriumLogo />
+          <XFabLogo />
+          <MinistereLogo />
+          <PharmaciePorteItalie />
+          <PharmacieBenAyed />
+          {/* Duplicate for seamless loop */}
+          <APHPLogo />
+          <HMPITLogo />
+          <LeaderSanteLogo />
+          <ApriumLogo />
+          <XFabLogo />
+          <MinistereLogo />
+          <PharmaciePorteItalie />
+          <PharmacieBenAyed />
+        </div>
       </div>
+
+      {/* Scrolling Banner - Second Row (reverse direction) */}
+      <div style={{
+        position: 'relative',
+        width: '100%',
+        overflow: 'hidden'
+      }}>
+        <div style={{
+          display: 'flex',
+          gap: '12px',
+          animation: 'scroll-right 30s linear infinite',
+          width: 'max-content'
+        }}>
+          <PharmacieBenAyed />
+          <MinistereLogo />
+          <XFabLogo />
+          <ApriumLogo />
+          <LeaderSanteLogo />
+          <HMPITLogo />
+          <APHPLogo />
+          <PharmaciePorteItalie />
+          {/* Duplicate for seamless loop */}
+          <PharmacieBenAyed />
+          <MinistereLogo />
+          <XFabLogo />
+          <ApriumLogo />
+          <LeaderSanteLogo />
+          <HMPITLogo />
+          <APHPLogo />
+          <PharmaciePorteItalie />
+        </div>
+      </div>
+
+      {/* CSS for animations */}
+      <style>{`
+        @keyframes scroll-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes scroll-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+      `}</style>
     </div>
   );
 };

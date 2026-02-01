@@ -613,150 +613,175 @@ const App: React.FC = () => {
     );
   }
 
-  // App Experience (after landing) - wrapped in phone emulator
+  // App Experience (after landing) - wrapped in iPhone emulator
   return (
     <div style={{
       minHeight: '100vh',
-      background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)',
+      background: '#000',
       display: 'flex',
-      flexDirection: 'column',
       alignItems: 'center',
       justifyContent: 'center',
       padding: '20px',
       position: 'relative',
       overflow: 'hidden'
     }}>
-      {/* Background glow effects */}
+      {/* Subtle background glow */}
       <div style={{
         position: 'absolute',
-        top: '20%',
-        left: '10%',
-        width: '400px',
-        height: '400px',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        width: '600px',
+        height: '600px',
         borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(0,122,255,0.15) 0%, transparent 70%)',
-        filter: 'blur(60px)',
-        pointerEvents: 'none'
-      }} />
-      <div style={{
-        position: 'absolute',
-        bottom: '10%',
-        right: '10%',
-        width: '350px',
-        height: '350px',
-        borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(255,59,48,0.12) 0%, transparent 70%)',
-        filter: 'blur(60px)',
+        background: 'radial-gradient(circle, rgba(50,50,60,0.5) 0%, transparent 70%)',
         pointerEvents: 'none'
       }} />
 
-      {/* Title above phone */}
-      <div style={{ marginBottom: '24px', textAlign: 'center', zIndex: 10 }}>
-        <h1 style={{
-          fontSize: '24px',
-          fontWeight: '600',
-          color: '#FFFFFF',
-          margin: '0 0 8px 0',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          gap: '10px'
-        }}>
-          <div style={{
-            width: '32px',
-            height: '32px',
-            background: 'linear-gradient(135deg, #FF3B30, #FF9500)',
-            borderRadius: '8px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
-            </svg>
-          </div>
-          SafeMed
-        </h1>
-        <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', margin: 0 }}>
-          Medication Safety Check
-        </p>
-      </div>
-
-      {/* Phone Frame */}
+      {/* iPhone 15 Pro Frame */}
       <div style={{
-        width: '375px',
-        maxWidth: '100%',
-        height: '750px',
-        maxHeight: 'calc(100vh - 140px)',
-        background: '#1C1C1E',
-        borderRadius: '50px',
-        padding: '12px',
-        boxShadow: '0 50px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1), inset 0 0 0 1px rgba(255,255,255,0.05)',
+        width: '393px',
+        height: '852px',
+        maxHeight: 'calc(100vh - 40px)',
+        maxWidth: 'calc(100vw - 40px)',
         position: 'relative',
         zIndex: 10
       }}>
-        {/* Dynamic Island / Notch */}
+        {/* Titanium Frame */}
         <div style={{
           position: 'absolute',
-          top: '20px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '120px',
-          height: '34px',
-          background: '#000',
-          borderRadius: '20px',
-          zIndex: 20
+          inset: 0,
+          background: 'linear-gradient(145deg, #3a3a3c 0%, #2c2c2e 50%, #1c1c1e 100%)',
+          borderRadius: '55px',
+          boxShadow: `
+            0 0 0 1px rgba(255,255,255,0.1),
+            0 25px 50px rgba(0,0,0,0.5),
+            0 50px 100px rgba(0,0,0,0.4),
+            inset 0 1px 0 rgba(255,255,255,0.1)
+          `
         }} />
 
-        {/* Phone Screen */}
+        {/* Side Buttons - Left (Silent/Action + Volume) */}
         <div style={{
-          width: '100%',
-          height: '100%',
+          position: 'absolute',
+          left: '-2px',
+          top: '180px',
+          width: '3px',
+          height: '30px',
+          background: 'linear-gradient(180deg, #4a4a4c, #2a2a2c)',
+          borderRadius: '2px 0 0 2px'
+        }} />
+        <div style={{
+          position: 'absolute',
+          left: '-2px',
+          top: '240px',
+          width: '3px',
+          height: '60px',
+          background: 'linear-gradient(180deg, #4a4a4c, #2a2a2c)',
+          borderRadius: '2px 0 0 2px'
+        }} />
+        <div style={{
+          position: 'absolute',
+          left: '-2px',
+          top: '320px',
+          width: '3px',
+          height: '60px',
+          background: 'linear-gradient(180deg, #4a4a4c, #2a2a2c)',
+          borderRadius: '2px 0 0 2px'
+        }} />
+
+        {/* Side Button - Right (Power) */}
+        <div style={{
+          position: 'absolute',
+          right: '-2px',
+          top: '260px',
+          width: '3px',
+          height: '80px',
+          background: 'linear-gradient(180deg, #4a4a4c, #2a2a2c)',
+          borderRadius: '0 2px 2px 0'
+        }} />
+
+        {/* Screen Container */}
+        <div style={{
+          position: 'absolute',
+          top: '10px',
+          left: '10px',
+          right: '10px',
+          bottom: '10px',
           background: '#F2F2F7',
-          borderRadius: '42px',
+          borderRadius: '47px',
           overflow: 'hidden',
           display: 'flex',
           flexDirection: 'column'
         }}>
+          {/* Dynamic Island */}
+          <div style={{
+            position: 'absolute',
+            top: '12px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: '126px',
+            height: '37px',
+            background: '#000',
+            borderRadius: '20px',
+            zIndex: 30,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'flex-end',
+            paddingRight: '14px'
+          }}>
+            {/* Camera dot */}
+            <div style={{
+              width: '12px',
+              height: '12px',
+              borderRadius: '50%',
+              background: 'radial-gradient(circle at 30% 30%, #2a3a50, #0a1520)',
+              boxShadow: 'inset 0 0 2px rgba(255,255,255,0.2)'
+            }} />
+          </div>
+
           {/* Status Bar */}
           <div style={{
-            height: '54px',
-            background: 'rgba(242,242,247,0.9)',
-            backdropFilter: 'blur(20px)',
+            height: '59px',
             display: 'flex',
             alignItems: 'flex-end',
             justifyContent: 'space-between',
-            padding: '0 28px 8px',
-            flexShrink: 0
+            padding: '0 32px 8px',
+            flexShrink: 0,
+            background: 'transparent'
           }}>
-            <span style={{ fontSize: '14px', fontWeight: '600', color: '#000' }}>9:41</span>
-            <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
-              <svg width="18" height="12" viewBox="0 0 18 12" fill="#000">
-                <path d="M1 4.5h2v6H1zM5 3h2v7.5H5zM9 1.5h2v9H9zM13 0h2v10.5h-2z" opacity="0.9"/>
+            <span style={{ fontSize: '15px', fontWeight: '600', color: '#000', letterSpacing: '-0.3px' }}>9:41</span>
+            <div style={{ display: 'flex', gap: '5px', alignItems: 'center' }}>
+              {/* Cellular */}
+              <svg width="17" height="12" viewBox="0 0 17 12" fill="#000">
+                <rect x="0" y="7" width="3" height="5" rx="0.5"/>
+                <rect x="4.5" y="5" width="3" height="7" rx="0.5"/>
+                <rect x="9" y="2.5" width="3" height="9.5" rx="0.5"/>
+                <rect x="13.5" y="0" width="3" height="12" rx="0.5"/>
               </svg>
+              {/* WiFi */}
               <svg width="16" height="12" viewBox="0 0 16 12" fill="#000">
-                <path d="M8 2C5.8 2 3.8 2.7 2.1 4l1.4 1.4C4.8 4.5 6.3 4 8 4s3.2.5 4.5 1.4L14 4c-1.8-1.3-3.9-2-6-2zm0 4c-1.4 0-2.6.5-3.5 1.3L6 8.8c.6-.5 1.3-.8 2-.8s1.4.3 2 .8l1.5-1.5C10.6 6.5 9.4 6 8 6zm0 4c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z"/>
+                <path d="M8 1C4.7 1 1.7 2.3 0 4.5l1.4 1.4C2.9 4.1 5.3 3 8 3s5.1 1.1 6.6 2.9L16 4.5C14.3 2.3 11.3 1 8 1zm0 4c-2 0-3.8.8-5.1 2.1l1.5 1.5C5.3 7.6 6.6 7 8 7s2.7.6 3.6 1.6l1.5-1.5C11.8 5.8 10 5 8 5zm0 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
               </svg>
-              <svg width="25" height="12" viewBox="0 0 25 12" fill="#000">
-                <rect x="0" y="1" width="22" height="10" rx="2" stroke="#000" strokeWidth="1" fill="none"/>
-                <rect x="2" y="3" width="17" height="6" rx="1" fill="#34C759"/>
-                <path d="M23 4v4a2 2 0 002-2 2 2 0 00-2-2z"/>
+              {/* Battery */}
+              <svg width="27" height="13" viewBox="0 0 27 13" fill="#000">
+                <rect x="0.5" y="0.5" width="23" height="12" rx="3" stroke="#000" strokeWidth="1" fill="none" opacity="0.35"/>
+                <rect x="2" y="2" width="19" height="9" rx="2" fill="#000"/>
+                <path d="M25 4.5v4c1 0 2-.9 2-2s-1-2-2-2z" opacity="0.4"/>
               </svg>
             </div>
           </div>
 
           {/* App Content */}
-          <div className="container-app" style={{ flex: 1, overflow: 'hidden' }}>
+          <div style={{ flex: 1, overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
             <Header onBack={handleBack} appState={appState} />
 
             <main className="scroll-container">
               <div className="content-padding" style={{ paddingTop: '16px', paddingBottom: '32px' }}>
-                {/* PROFILE */}
                 {appState === AppState.PROFILE && (
                   <ProfileForm initialProfile={profile} onSave={handleProfileSave} />
                 )}
 
-                {/* INPUT */}
                 {appState === AppState.INPUT && (
                   <>
                     {error && (
@@ -777,7 +802,6 @@ const App: React.FC = () => {
                   </>
                 )}
 
-                {/* ANALYZING */}
                 {appState === AppState.ANALYZING && (
                   <div className="animate-in" style={{
                     display: 'flex',
@@ -799,7 +823,6 @@ const App: React.FC = () => {
                   </div>
                 )}
 
-                {/* RESULTS */}
                 {appState === AppState.RESULTS && result && (
                   <AnalysisResult result={result} onReset={handleReset} />
                 )}
@@ -816,38 +839,41 @@ const App: React.FC = () => {
             flexShrink: 0
           }}>
             <div style={{
-              width: '134px',
+              width: '140px',
               height: '5px',
               background: '#000',
-              borderRadius: '3px',
-              opacity: 0.2
+              borderRadius: '100px',
+              opacity: 0.15
             }} />
           </div>
         </div>
       </div>
 
-      {/* Back to landing link */}
+      {/* Back button - bottom corner */}
       <button
         onClick={() => setAppState(AppState.ONBOARDING)}
         style={{
-          marginTop: '20px',
-          padding: '10px 20px',
-          background: 'rgba(255,255,255,0.1)',
-          border: '1px solid rgba(255,255,255,0.2)',
-          borderRadius: '20px',
-          color: 'rgba(255,255,255,0.7)',
-          fontSize: '14px',
+          position: 'fixed',
+          bottom: '20px',
+          left: '20px',
+          padding: '10px 16px',
+          background: 'rgba(255,255,255,0.08)',
+          border: '1px solid rgba(255,255,255,0.15)',
+          borderRadius: '10px',
+          color: 'rgba(255,255,255,0.6)',
+          fontSize: '13px',
           cursor: 'pointer',
-          zIndex: 10,
+          zIndex: 20,
           display: 'flex',
           alignItems: 'center',
-          gap: '6px'
+          gap: '6px',
+          backdropFilter: 'blur(10px)'
         }}
       >
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
           <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
         </svg>
-        Back to Landing Page
+        Back
       </button>
     </div>
   );
