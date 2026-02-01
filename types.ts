@@ -4,9 +4,22 @@ export interface UserProfile {
   weight: number; // kg
   height: number; // cm
   ethnicity: string;
-  bloodType?: string;
+  bloodType?: 'A+' | 'A-' | 'B+' | 'B-' | 'AB+' | 'AB-' | 'O+' | 'O-' | '';
   conditions: string[];
 }
+
+export const COMMON_CONDITIONS = [
+  'Hypertension',
+  'Pregnancy',
+  'Asthma',
+  'Diabetes',
+  'Heart Disease',
+  'Kidney Disease',
+  'Liver Disease',
+  'Allergies',
+  'High Cholesterol',
+  'Thyroid Disorder',
+] as const;
 
 export interface RiskFactor {
   condition: string;

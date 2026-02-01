@@ -1,7 +1,7 @@
-import { GoogleGenAI, Type } from "@google/genai";
+import { GoogleGenerativeAI, SchemaType } from "@google/generative-ai";
 import { UserProfile, AnalysisResult } from '../types';
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || '');
 
 // Helper to convert file to base64
 export const fileToGenerativePart = async (file: File): Promise<{ inlineData: { data: string; mimeType: string } }> => {
@@ -23,21 +23,21 @@ export const fileToGenerativePart = async (file: File): Promise<{ inlineData: { 
 };
 
 export const analyzeDrugSafety = async (
-  profile: UserProfile, 
-  drugText: string, 
+  profile: UserProfile,
+  drugText: string,
   drugImage?: File
 ): Promise<AnalysisResult> => {
-  
+
   const systemInstruction = `
-    You are SafeMed AI, a world-class clinical pharmacologist and personalized medicine expert. 
+    You are SafeMed AI, a world-class clinical pharmacologist and personalized medicine expert.
     Your goal is to analyze a specific drug (identified via text or image) against a patient's specific health profile.
-    
+
     PATIENT PROFILE:
     - Age: ${profile.age}
     - Gender: ${profile.gender}
     - Weight: ${profile.weight}kg
     - Height: ${profile.height}cm
-    - Ethnicity: ${profile.ethnicity}
+    - Ethnicity: ${profile.ethnicity || 'Not specified'}
     - Blood Type: ${profile.bloodType || 'Unknown'}
     - Existing Conditions: ${profile.conditions.join(', ') || 'None reported'}
 
@@ -47,61 +47,65 @@ export const analyzeDrugSafety = async (
     3. Calculate a personalized "Safety Score" (0-100, where 100 is completely safe/benign and 0 is deadly/severe contraindication).
     4. Provide clear, concise, consumer-friendly explanations with scientific validity.
     5. Cite general medical references or guidelines where applicable.
+
+    IMPORTANT: Be thorough but accessible. Patients need to understand their personal risks clearly.
   `;
 
-  const parts: any[] = [];
-  
-  if (drugImage) {
-    const imagePart = await fileToGenerativePart(drugImage);
-    parts.push(imagePart);
-    parts.push({ text: `Analyze the drug shown in this image. Additional context: ${drugText || "None"}` });
-  } else {
-    parts.push({ text: `Analyze the drug named: "${drugText}"` });
-  }
+  const model = genAI.getGenerativeModel({
+    model: 'gemini-2.0-flash',
+    systemInstruction: systemInstruction,
+    generationConfig: {
+      responseMimeType: "application/json",
+      responseSchema: {
+        type: SchemaType.OBJECT,
+        properties: {
+          drugName: { type: SchemaType.STRING },
+          safetyScore: { type: SchemaType.NUMBER, description: "0 to 100 integer score of safety for this user" },
+          summary: { type: SchemaType.STRING, description: "A short paragraph summary of the analysis" },
+          risks: {
+            type: SchemaType.ARRAY,
+            items: {
+              type: SchemaType.OBJECT,
+              properties: {
+                condition: { type: SchemaType.STRING, description: "The specific side effect or interaction" },
+                probability: { type: SchemaType.STRING, description: "e.g., 'High', '10%', 'Rare'" },
+                severity: { type: SchemaType.STRING, enum: ['Low', 'Medium', 'High', 'Critical'] },
+                explanation: { type: SchemaType.STRING, description: "Why this profile is at risk" }
+              },
+              required: ['condition', 'probability', 'severity', 'explanation']
+            }
+          },
+          contraindications: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
+          recommendation: { type: SchemaType.STRING, description: "Actionable advice (e.g., 'Consult doctor', 'Safe to take')" },
+          references: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } }
+        },
+        required: ['drugName', 'safetyScore', 'summary', 'risks', 'contraindications', 'recommendation', 'references']
+      }
+    }
+  });
 
   try {
-    const response = await ai.models.generateContent({
-      model: 'gemini-3-flash-preview', // Capable of multimodal inputs
-      contents: {
-        role: 'user',
-        parts: parts
-      },
-      config: {
-        systemInstruction: systemInstruction,
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            drugName: { type: Type.STRING },
-            safetyScore: { type: Type.NUMBER, description: "0 to 100 integer score of safety for this user" },
-            summary: { type: Type.STRING, description: "A short paragraph summary of the analysis" },
-            risks: {
-              type: Type.ARRAY,
-              items: {
-                type: Type.OBJECT,
-                properties: {
-                  condition: { type: Type.STRING, description: "The specific side effect or interaction" },
-                  probability: { type: Type.STRING, description: "e.g., 'High', '10%', 'Rare'" },
-                  severity: { type: Type.STRING, enum: ['Low', 'Medium', 'High', 'Critical'] },
-                  explanation: { type: Type.STRING, description: "Why this profile is at risk" }
-                }
-              }
-            },
-            contraindications: { type: Type.ARRAY, items: { type: Type.STRING } },
-            recommendation: { type: Type.STRING, description: "Actionable advice (e.g., 'Consult doctor', 'Safe to take')" },
-            references: { type: Type.ARRAY, items: { type: Type.STRING } }
-          }
-        }
-      }
-    });
+    let result;
 
-    const text = response.text;
+    if (drugImage) {
+      const imagePart = await fileToGenerativePart(drugImage);
+      result = await model.generateContent([
+        imagePart,
+        { text: `Analyze the drug shown in this image. Additional context: ${drugText || "None"}` }
+      ]);
+    } else {
+      result = await model.generateContent(`Analyze the drug named: "${drugText}"`);
+    }
+
+    const response = result.response;
+    const text = response.text();
+
     if (!text) throw new Error("No response from AI");
-    
+
     return JSON.parse(text) as AnalysisResult;
 
   } catch (error) {
     console.error("Gemini Analysis Error:", error);
-    throw new Error("Failed to analyze drug safety. Please try again.");
+    throw new Error("Failed to analyze drug safety. Please check your API key and try again.");
   }
 };
