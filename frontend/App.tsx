@@ -312,19 +312,23 @@ const App: React.FC = () => {
                     <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
                   </svg>
                 </button>
-                <a href="#" style={{ display: 'block', opacity: 0.8, transition: 'opacity 0.2s' }} onMouseEnter={e => e.currentTarget.style.opacity = '1'} onMouseLeave={e => e.currentTarget.style.opacity = '0.8'}>
-                  <img
-                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                    alt="Download on the App Store"
-                    style={{ height: '40px' }}
-                  />
+                <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 14px', border: '1.5px solid #999', borderRadius: '8px', textDecoration: 'none', opacity: 0.7, transition: 'opacity 0.2s' }} onMouseEnter={e => e.currentTarget.style.opacity = '1'} onMouseLeave={e => e.currentTarget.style.opacity = '0.7'}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#666">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                  <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+                    <span style={{ fontSize: '8px', color: '#666' }}>Download on the</span>
+                    <span style={{ fontSize: '14px', fontWeight: '600', color: '#333' }}>App Store</span>
+                  </div>
                 </a>
-                <a href="#" style={{ display: 'block', opacity: 0.8, transition: 'opacity 0.2s' }} onMouseEnter={e => e.currentTarget.style.opacity = '1'} onMouseLeave={e => e.currentTarget.style.opacity = '0.8'}>
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                    alt="Get it on Google Play"
-                    style={{ height: '40px' }}
-                  />
+                <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '6px', padding: '8px 14px', border: '1.5px solid #999', borderRadius: '8px', textDecoration: 'none', opacity: 0.7, transition: 'opacity 0.2s' }} onMouseEnter={e => e.currentTarget.style.opacity = '1'} onMouseLeave={e => e.currentTarget.style.opacity = '0.7'}>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="#666">
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
+                  </svg>
+                  <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+                    <span style={{ fontSize: '8px', color: '#666' }}>GET IT ON</span>
+                    <span style={{ fontSize: '14px', fontWeight: '600', color: '#333' }}>Google Play</span>
+                  </div>
                 </a>
               </div>
 
@@ -576,17 +580,40 @@ const App: React.FC = () => {
               {[...Array(2)].map((_, setIndex) => (
                 <React.Fragment key={setIndex}>
                   {/* Stanford */}
-                  <img src="https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/stanford-university-stacked.png" alt="Stanford" style={{ height: '40px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.7 }} />
+                  <img src="https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/stanford-university-stacked.png" alt="Stanford" style={{ height: '40px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.6 }} />
                   {/* Google DeepMind */}
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Google_DeepMind_logo.svg/512px-Google_DeepMind_logo.svg.png" alt="Google DeepMind" style={{ height: '28px', objectFit: 'contain' }} />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Google_DeepMind_logo.svg/512px-Google_DeepMind_logo.svg.png" alt="Google DeepMind" style={{ height: '28px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.6 }} />
                   {/* Gemini */}
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/512px-Google_Gemini_logo.svg.png" alt="Gemini" style={{ height: '32px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.7 }} />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/512px-Google_Gemini_logo.svg.png" alt="Gemini" style={{ height: '32px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.6 }} />
                   {/* Tunisia Ministry of Public Health */}
-                  <img src="/logos/Tunisia-Ministere-De-La-Sante-Publique.png" alt="Ministère de la Santé Publique - Tunisie" style={{ height: '44px', objectFit: 'contain' }} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', filter: 'grayscale(100%)', opacity: 0.6 }}>
+                    <svg width="38" height="38" viewBox="0 0 38 38">
+                      <circle cx="19" cy="19" r="18" fill="#E31937"/>
+                      <circle cx="19" cy="10" r="4" fill="white"/>
+                      <path d="M19 14v18M13 26c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="white" strokeWidth="3" fill="none" strokeLinecap="round"/>
+                      <path d="M15 18h8" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+                    </svg>
+                    <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+                      <span style={{ fontSize: '9px', color: '#666', textTransform: 'uppercase', letterSpacing: '0.5px' }}>République Tunisienne</span>
+                      <span style={{ fontSize: '11px', fontWeight: '600', color: '#333' }}>Min. Santé Publique</span>
+                    </div>
+                  </div>
                   {/* European Cancer Centers */}
-                  <img src="/logos/european-cancer-centers.png" alt="European Cancer Centers" style={{ height: '40px', objectFit: 'contain' }} />
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', filter: 'grayscale(100%)', opacity: 0.6 }}>
+                    <svg width="36" height="36" viewBox="0 0 36 36">
+                      <circle cx="18" cy="18" r="16" fill="#1565C0"/>
+                      <path d="M18 6v24M6 18h24M18 10v16M10 18h16" stroke="white" strokeWidth="4" strokeLinecap="round"/>
+                      {[0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].map((angle, i) => (
+                        <circle key={i} cx={18 + 13 * Math.cos(angle * Math.PI / 180)} cy={18 + 13 * Math.sin(angle * Math.PI / 180)} r="2" fill="#FFD700"/>
+                      ))}
+                    </svg>
+                    <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.1 }}>
+                      <span style={{ fontSize: '10px', fontWeight: '600', color: '#1565C0', letterSpacing: '1px' }}>EUROPEAN</span>
+                      <span style={{ fontSize: '12px', fontWeight: '400', color: '#333', fontStyle: 'italic' }}>Cancer Centers</span>
+                    </div>
+                  </div>
                   {/* AP-HP */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', filter: 'grayscale(100%)', opacity: 0.6 }}>
                     <svg width="36" height="36" viewBox="0 0 36 36">
                       <rect x="2" y="2" width="32" height="32" rx="4" fill="#003366"/>
                       <path d="M18 8v20M8 18h20" stroke="white" strokeWidth="4" strokeLinecap="round"/>
@@ -597,7 +624,7 @@ const App: React.FC = () => {
                     </div>
                   </div>
                   {/* HMPIT */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', filter: 'grayscale(100%)', opacity: 0.6 }}>
                     <svg width="36" height="36" viewBox="0 0 36 36">
                       <polygon points="18,2 22,14 34,14 24,22 28,34 18,26 8,34 12,22 2,14 14,14" fill="#8B0000"/>
                       <circle cx="18" cy="18" r="6" fill="white"/>
@@ -608,7 +635,7 @@ const App: React.FC = () => {
                     </div>
                   </div>
                   {/* Leader Santé */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', filter: 'grayscale(100%)', opacity: 0.6 }}>
                     <svg width="32" height="32" viewBox="0 0 32 32">
                       <circle cx="16" cy="16" r="14" fill="#00A651"/>
                       <path d="M16 6v20M10 12l6 6 6-6" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
@@ -616,7 +643,7 @@ const App: React.FC = () => {
                     <span style={{ fontSize: '15px', fontWeight: '600', color: '#00A651', fontFamily: 'Verdana, sans-serif', letterSpacing: '-0.5px' }}>Leader<span style={{ fontWeight: '400' }}>Santé</span></span>
                   </div>
                   {/* Aprium */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', filter: 'grayscale(100%)', opacity: 0.6 }}>
                     <svg width="32" height="32" viewBox="0 0 32 32">
                       <rect width="32" height="32" rx="8" fill="#E31937"/>
                       <ellipse cx="16" cy="14" rx="8" ry="6" fill="white"/>
@@ -625,7 +652,7 @@ const App: React.FC = () => {
                     <span style={{ fontSize: '17px', fontWeight: '300', color: '#E31937', fontFamily: 'Helvetica Neue, Arial, sans-serif', letterSpacing: '2px', textTransform: 'uppercase' }}>Aprium</span>
                   </div>
                   {/* X-FAB */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px', filter: 'grayscale(100%)', opacity: 0.6 }}>
                     <svg width="34" height="34" viewBox="0 0 34 34">
                       <rect x="1" y="1" width="32" height="32" rx="2" fill="#1a1a1a"/>
                       <path d="M8 8l18 18M26 8l-18 18" stroke="#00B4D8" strokeWidth="3" strokeLinecap="round"/>

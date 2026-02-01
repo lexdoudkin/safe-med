@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AnalysisResult as AnalysisResultType } from '../types';
 
 interface AnalysisResultProps {
@@ -7,6 +7,19 @@ interface AnalysisResultProps {
 }
 
 const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
+  const [expandedRisks, setExpandedRisks] = useState<Set<number>>(new Set());
+
+  const toggleRisk = (idx: number) => {
+    setExpandedRisks(prev => {
+      const next = new Set(prev);
+      if (next.has(idx)) {
+        next.delete(idx);
+      } else {
+        next.add(idx);
+      }
+      return next;
+    });
+  };
   const isDanger = result.safetyScore < 40;
   const isCaution = result.safetyScore >= 40 && result.safetyScore < 70;
   const isSafe = result.safetyScore >= 70;
@@ -30,16 +43,18 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '6px',
-    padding: '10px 16px',
+    gap: '4px',
+    padding: '10px 12px',
     background: '#F5F5F7',
     border: 'none',
     borderRadius: '10px',
-    fontSize: '14px',
+    fontSize: '13px',
     fontWeight: '600' as const,
     color: '#007AFF',
     cursor: 'pointer',
-    flex: 1
+    flex: '1 1 auto',
+    minWidth: '70px',
+    whiteSpace: 'nowrap' as const
   };
 
   return (
@@ -149,24 +164,24 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
           </div>
 
           {/* Quick Actions */}
-          <div style={{ display: 'flex', gap: '8px' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
             <button style={actionButtonStyle}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="#007AFF">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#007AFF">
                 <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
               </svg>
               Share
             </button>
             <button style={actionButtonStyle}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="#007AFF">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#007AFF">
                 <path d="M17 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
               </svg>
               Save
             </button>
             <button style={actionButtonStyle}>
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="#007AFF">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#007AFF">
                 <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
               </svg>
-              Ask Doctor
+              Ask Doc
             </button>
           </div>
         </div>
@@ -377,13 +392,19 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
             {result.risks.map((risk, idx) => {
               const probability = parseFloat(risk.probability) || 5;
               const color = getRiskColor(risk.probability);
+              const isExpanded = expandedRisks.has(idx);
               return (
-                <div key={idx} style={{
-                  padding: '12px',
-                  background: '#F8F8FA',
-                  borderRadius: '10px',
-                  cursor: 'pointer'
-                }}>
+                <div
+                  key={idx}
+                  onClick={() => toggleRisk(idx)}
+                  style={{
+                    padding: '12px',
+                    background: '#F8F8FA',
+                    borderRadius: '10px',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
                     <span style={{ fontSize: '14px', fontWeight: '600', color: '#000' }}>
                       {risk.condition}
@@ -399,7 +420,16 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
                       }}>
                         {risk.probability}
                       </span>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="#C7C7CC">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="#C7C7CC"
+                        style={{
+                          transform: isExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
+                          transition: 'transform 0.2s ease'
+                        }}
+                      >
                         <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
                       </svg>
                     </div>
@@ -418,6 +448,50 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
                       transition: 'width 0.5s ease-out'
                     }} />
                   </div>
+                  {/* Expanded Details */}
+                  {isExpanded && (
+                    <div style={{
+                      marginTop: '12px',
+                      paddingTop: '12px',
+                      borderTop: '1px solid #E5E5EA'
+                    }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <span style={{ fontSize: '13px', color: '#8E8E93' }}>Severity</span>
+                          <span style={{ fontSize: '13px', fontWeight: '600', color: '#000' }}>
+                            {risk.severity || 'Moderate'}
+                          </span>
+                        </div>
+                        {risk.explanation && (
+                          <div style={{ marginTop: '4px' }}>
+                            <span style={{ fontSize: '13px', color: '#8E8E93', display: 'block', marginBottom: '4px' }}>Details</span>
+                            <p style={{ fontSize: '13px', color: '#3C3C43', lineHeight: 1.4, margin: 0 }}>
+                              {risk.explanation}
+                            </p>
+                          </div>
+                        )}
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          marginTop: '4px',
+                          padding: '8px 10px',
+                          background: `${color}10`,
+                          borderRadius: '8px'
+                        }}>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill={color}>
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+                          </svg>
+                          <span style={{ fontSize: '12px', color: color, fontWeight: '500' }}>
+                            {probability >= 15 ? 'High risk - consult your doctor' :
+                             probability >= 8 ? 'Moderate risk - monitor closely' :
+                             probability >= 3 ? 'Low risk - be aware' :
+                             'Minimal risk'}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               );
             })}
