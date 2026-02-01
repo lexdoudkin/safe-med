@@ -4,9 +4,10 @@ import { UserProfile, COMMON_CONDITIONS } from '../types';
 interface ProfileFormProps {
   initialProfile: UserProfile;
   onSave: (profile: UserProfile) => void;
+  onHealthImport?: (source: 'apple' | 'android') => void;
 }
 
-const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave }) => {
+const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave, onHealthImport }) => {
   const [profile, setProfile] = useState<UserProfile>(initialProfile);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -122,6 +123,92 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave }) => 
           })}
         </div>
       </div>
+
+      {/* Health Integration - Two Columns */}
+      {onHealthImport && (
+        <div className="card">
+          <div className="section-header" style={{ marginBottom: '12px' }}>
+            <div className="section-icon" style={{ background: 'linear-gradient(135deg, #34C759, #30D158)' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </div>
+            <span className="section-title">Quick Import</span>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+            {/* Apple Health */}
+            <button
+              type="button"
+              onClick={() => onHealthImport('apple')}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '16px 12px',
+                background: '#F5F5F7',
+                borderRadius: '12px',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              <div style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #FF2D55, #FF375F)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                </svg>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '14px', fontWeight: '600', color: '#000000' }}>Apple Health</div>
+                <div style={{ fontSize: '11px', color: '#8E8E93' }}>iPhone</div>
+              </div>
+            </button>
+
+            {/* Health Connect */}
+            <button
+              type="button"
+              onClick={() => onHealthImport('android')}
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '16px 12px',
+                background: '#F5F5F7',
+                borderRadius: '12px',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              <div style={{
+                width: '44px',
+                height: '44px',
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #4285F4, #34A853)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '14px', fontWeight: '600', color: '#000000' }}>Health Connect</div>
+                <div style={{ fontSize: '11px', color: '#8E8E93' }}>Android</div>
+              </div>
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Continue Button */}
       <button

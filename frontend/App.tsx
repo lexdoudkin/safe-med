@@ -84,9 +84,10 @@ const App: React.FC = () => {
   if (appState === AppState.ONBOARDING) {
     return (
       <div style={{
-        minHeight: '100vh',
+        height: '100vh',
         background: '#FFFFFF',
         overflowX: 'hidden',
+        overflowY: 'auto',
         position: 'relative'
       }}>
         {/* Animated Background */}
@@ -334,78 +335,272 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            {/* Right: App Preview */}
+            {/* Right: App Preview - iPhone 15 Pro Frame */}
             <div style={{ flex: '1 1 400px', minWidth: '300px', display: 'flex', justifyContent: 'center' }}>
               <div style={{
-                width: '280px',
-                height: '560px',
-                background: '#1C1C1E',
-                borderRadius: '40px',
-                padding: '12px',
-                boxShadow: '0 50px 100px rgba(0, 0, 0, 0.25)'
+                width: '260px',
+                height: '540px',
+                position: 'relative'
               }}>
+                {/* Titanium Frame */}
                 <div style={{
-                  width: '100%',
-                  height: '100%',
-                  background: 'linear-gradient(180deg, #F2F2F7 0%, #FFFFFF 100%)',
-                  borderRadius: '32px',
-                  padding: '20px',
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(145deg, #3a3a3c 0%, #2c2c2e 50%, #1c1c1e 100%)',
+                  borderRadius: '40px',
+                  boxShadow: `
+                    0 0 0 1px rgba(255,255,255,0.1),
+                    0 25px 50px rgba(0,0,0,0.3),
+                    0 50px 100px rgba(0,0,0,0.2),
+                    inset 0 1px 0 rgba(255,255,255,0.1)
+                  `
+                }} />
+
+                {/* Side Buttons - Left */}
+                <div style={{
+                  position: 'absolute',
+                  left: '-2px',
+                  top: '128px',
+                  width: '3px',
+                  height: '22px',
+                  background: 'linear-gradient(180deg, #4a4a4c, #2a2a2c)',
+                  borderRadius: '2px 0 0 2px'
+                }} />
+                <div style={{
+                  position: 'absolute',
+                  left: '-2px',
+                  top: '170px',
+                  width: '3px',
+                  height: '44px',
+                  background: 'linear-gradient(180deg, #4a4a4c, #2a2a2c)',
+                  borderRadius: '2px 0 0 2px'
+                }} />
+                <div style={{
+                  position: 'absolute',
+                  left: '-2px',
+                  top: '228px',
+                  width: '3px',
+                  height: '44px',
+                  background: 'linear-gradient(180deg, #4a4a4c, #2a2a2c)',
+                  borderRadius: '2px 0 0 2px'
+                }} />
+
+                {/* Side Button - Right (Power) */}
+                <div style={{
+                  position: 'absolute',
+                  right: '-2px',
+                  top: '185px',
+                  width: '3px',
+                  height: '58px',
+                  background: 'linear-gradient(180deg, #4a4a4c, #2a2a2c)',
+                  borderRadius: '0 2px 2px 0'
+                }} />
+
+                {/* Screen Container */}
+                <div style={{
+                  position: 'absolute',
+                  top: '7px',
+                  left: '7px',
+                  right: '7px',
+                  bottom: '7px',
+                  background: '#F2F2F7',
+                  borderRadius: '34px',
+                  overflow: 'hidden',
                   display: 'flex',
-                  flexDirection: 'column',
-                  gap: '16px'
+                  flexDirection: 'column'
                 }}>
-                  {/* Mock Result Card */}
-                  <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px' }}>
-                      <div style={{ width: '48px', height: '48px', background: '#E8F5E9', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <span style={{ fontSize: '20px', fontWeight: '700', color: '#34C759' }}>85</span>
-                      </div>
-                      <div>
-                        <div style={{ fontSize: '16px', fontWeight: '600', color: '#000' }}>Ibuprofen</div>
-                        <div style={{ fontSize: '13px', color: '#34C759', fontWeight: '500' }}>Generally Safe</div>
-                      </div>
-                    </div>
-                    <div style={{ fontSize: '13px', color: '#6B7280', lineHeight: '1.4' }}>
-                      Safe for your profile with minor precautions.
+                  {/* Dynamic Island */}
+                  <div style={{
+                    position: 'absolute',
+                    top: '8px',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    width: '90px',
+                    height: '26px',
+                    background: '#000',
+                    borderRadius: '14px',
+                    zIndex: 30,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'flex-end',
+                    paddingRight: '10px'
+                  }}>
+                    <div style={{
+                      width: '8px',
+                      height: '8px',
+                      borderRadius: '50%',
+                      background: 'radial-gradient(circle at 30% 30%, #2a3a50, #0a1520)',
+                      boxShadow: 'inset 0 0 2px rgba(255,255,255,0.2)'
+                    }} />
+                  </div>
+
+                  {/* Status Bar */}
+                  <div style={{
+                    height: '42px',
+                    display: 'flex',
+                    alignItems: 'flex-end',
+                    justifyContent: 'space-between',
+                    padding: '0 22px 6px',
+                    flexShrink: 0
+                  }}>
+                    <span style={{ fontSize: '12px', fontWeight: '600', color: '#000', letterSpacing: '-0.3px' }}>9:41</span>
+                    <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+                      <svg width="14" height="10" viewBox="0 0 17 12" fill="#000">
+                        <rect x="0" y="7" width="3" height="5" rx="0.5"/>
+                        <rect x="4.5" y="5" width="3" height="7" rx="0.5"/>
+                        <rect x="9" y="2.5" width="3" height="9.5" rx="0.5"/>
+                        <rect x="13.5" y="0" width="3" height="12" rx="0.5"/>
+                      </svg>
+                      <svg width="13" height="10" viewBox="0 0 16 12" fill="#000">
+                        <path d="M8 1C4.7 1 1.7 2.3 0 4.5l1.4 1.4C2.9 4.1 5.3 3 8 3s5.1 1.1 6.6 2.9L16 4.5C14.3 2.3 11.3 1 8 1zm0 4c-2 0-3.8.8-5.1 2.1l1.5 1.5C5.3 7.6 6.6 7 8 7s2.7.6 3.6 1.6l1.5-1.5C11.8 5.8 10 5 8 5zm0 4c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+                      </svg>
+                      <svg width="20" height="10" viewBox="0 0 27 13" fill="#000">
+                        <rect x="0.5" y="0.5" width="23" height="12" rx="3" stroke="#000" strokeWidth="1" fill="none" opacity="0.35"/>
+                        <rect x="2" y="2" width="19" height="9" rx="2" fill="#000"/>
+                        <path d="M25 4.5v4c1 0 2-.9 2-2s-1-2-2-2z" opacity="0.4"/>
+                      </svg>
                     </div>
                   </div>
 
-                  {/* Mock Risk Bars */}
-                  <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-                    <div style={{ fontSize: '12px', fontWeight: '600', color: '#8E8E93', marginBottom: '12px' }}>SIDE EFFECT RISKS</div>
-                    {[
-                      { name: 'Stomach upset', pct: 15, color: '#FF9500' },
-                      { name: 'Heartburn', pct: 12, color: '#FF9500' },
-                      { name: 'Dizziness', pct: 5, color: '#FFCC00' },
-                    ].map((item, i) => (
-                      <div key={i} style={{ marginBottom: '10px' }}>
-                        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '13px', marginBottom: '4px' }}>
-                          <span style={{ color: '#000', fontWeight: '500' }}>{item.name}</span>
-                          <span style={{ color: item.color, fontWeight: '600' }}>{item.pct}%</span>
+                  {/* App Content */}
+                  <div style={{
+                    flex: 1,
+                    padding: '8px 14px 14px',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '10px',
+                    overflow: 'hidden'
+                  }}>
+                    {/* Mock Result Card */}
+                    <div style={{ background: '#FFFFFF', borderRadius: '14px', padding: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                        <div style={{ width: '40px', height: '40px', background: '#E8F5E9', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <span style={{ fontSize: '16px', fontWeight: '700', color: '#34C759' }}>85</span>
                         </div>
-                        <div style={{ height: '6px', background: '#E5E5EA', borderRadius: '3px' }}>
-                          <div style={{ width: `${item.pct * 2}%`, height: '100%', background: item.color, borderRadius: '3px' }} />
+                        <div>
+                          <div style={{ fontSize: '14px', fontWeight: '600', color: '#000' }}>Ibuprofen</div>
+                          <div style={{ fontSize: '11px', color: '#34C759', fontWeight: '500' }}>Generally Safe</div>
                         </div>
                       </div>
-                    ))}
+                      <div style={{ fontSize: '11px', color: '#6B7280', lineHeight: '1.4' }}>
+                        Safe for your profile with minor precautions.
+                      </div>
+                    </div>
+
+                    {/* Mock Risk Bars */}
+                    <div style={{ background: '#FFFFFF', borderRadius: '14px', padding: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                      <div style={{ fontSize: '10px', fontWeight: '600', color: '#8E8E93', marginBottom: '8px' }}>SIDE EFFECT RISKS</div>
+                      {[
+                        { name: 'Stomach upset', pct: 15, color: '#FF9500' },
+                        { name: 'Heartburn', pct: 12, color: '#FF9500' },
+                        { name: 'Dizziness', pct: 5, color: '#FFCC00' },
+                      ].map((item, i) => (
+                        <div key={i} style={{ marginBottom: '8px' }}>
+                          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', marginBottom: '3px' }}>
+                            <span style={{ color: '#000', fontWeight: '500' }}>{item.name}</span>
+                            <span style={{ color: item.color, fontWeight: '600' }}>{item.pct}%</span>
+                          </div>
+                          <div style={{ height: '5px', background: '#E5E5EA', borderRadius: '2.5px' }}>
+                            <div style={{ width: `${item.pct * 2}%`, height: '100%', background: item.color, borderRadius: '2.5px' }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Mock Alternative */}
+                    <div style={{ background: '#FFFFFF', borderRadius: '14px', padding: '12px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
+                      <div style={{ fontSize: '10px', fontWeight: '600', color: '#8E8E93', marginBottom: '6px' }}>RECOMMENDATION</div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                        <div style={{ width: '24px', height: '24px', background: '#34C759', borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                          </svg>
+                        </div>
+                        <span style={{ fontSize: '12px', color: '#000', fontWeight: '500' }}>Safe to take as directed</span>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Mock Alternative */}
-                  <div style={{ background: '#FFFFFF', borderRadius: '16px', padding: '16px', boxShadow: '0 2px 8px rgba(0,0,0,0.06)' }}>
-                    <div style={{ fontSize: '12px', fontWeight: '600', color: '#8E8E93', marginBottom: '8px' }}>RECOMMENDATION</div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ width: '28px', height: '28px', background: '#34C759', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
-                          <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-                        </svg>
-                      </div>
-                      <span style={{ fontSize: '14px', color: '#000', fontWeight: '500' }}>Safe to take as directed</span>
-                    </div>
+                  {/* Home Indicator */}
+                  <div style={{
+                    height: '24px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0
+                  }}>
+                    <div style={{
+                      width: '100px',
+                      height: '4px',
+                      background: '#000',
+                      borderRadius: '100px',
+                      opacity: 0.15
+                    }} />
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
+          {/* Partner Logos Scrolling Banner */}
+          <div style={{
+            marginTop: '40px',
+            width: '100%',
+            overflow: 'hidden',
+            maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)'
+          }}>
+            <div style={{
+              display: 'flex',
+              gap: '40px',
+              alignItems: 'center',
+              animation: 'scrollPartners 25s linear infinite',
+              width: 'max-content'
+            }}>
+              {[...Array(2)].map((_, setIndex) => (
+                <React.Fragment key={setIndex}>
+                  {/* Stanford */}
+                  <img src="https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/stanford-university-stacked.png" alt="Stanford" style={{ height: '40px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.7 }} />
+                  {/* Google DeepMind */}
+                  <img src="/logos/Google_DeepMind_logo.png" alt="Google DeepMind" style={{ height: '36px', objectFit: 'contain' }} />
+                  {/* Gemini */}
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/512px-Google_Gemini_logo.svg.png" alt="Gemini" style={{ height: '32px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.7 }} />
+                  {/* Tunisia Ministry of Public Health */}
+                  <img src="/logos/Tunisia-Ministere-De-La-Sante-Publique.png" alt="Ministère de la Santé Publique - Tunisie" style={{ height: '44px', objectFit: 'contain' }} />
+                  {/* European Cancer Centers */}
+                  <img src="/logos/european-cancer-centers.png" alt="European Cancer Centers" style={{ height: '40px', objectFit: 'contain' }} />
+                  {/* AP-HP */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', background: 'rgba(0,51,102,0.1)', borderRadius: '8px' }}>
+                    <span style={{ fontSize: '14px', fontWeight: '700', color: '#003366' }}>AP-HP</span>
+                    <span style={{ fontSize: '12px', color: '#666' }}>Paris</span>
+                  </div>
+                  {/* HMPIT */}
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', background: 'rgba(139,0,0,0.1)', borderRadius: '8px' }}>
+                    <span style={{ fontSize: '14px', fontWeight: '700', color: '#8B0000' }}>HMPIT</span>
+                    <span style={{ fontSize: '12px', color: '#666' }}>Tunis</span>
+                  </div>
+                  {/* Leader Santé */}
+                  <div style={{ padding: '8px 16px', background: 'rgba(0,166,81,0.1)', borderRadius: '8px' }}>
+                    <span style={{ fontSize: '14px', fontWeight: '600', color: '#00A651' }}>Leader Santé</span>
+                  </div>
+                  {/* Aprium */}
+                  <div style={{ padding: '8px 16px', background: 'rgba(227,25,55,0.1)', borderRadius: '8px' }}>
+                    <span style={{ fontSize: '14px', fontWeight: '600', color: '#E31937' }}>Aprium</span>
+                  </div>
+                  {/* X-FAB */}
+                  <div style={{ padding: '8px 16px', background: 'rgba(0,0,0,0.05)', borderRadius: '8px' }}>
+                    <span style={{ fontSize: '14px', fontWeight: '700', color: '#00B4D8' }}>X-FAB</span>
+                  </div>
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+          <style>{`
+            @keyframes scrollPartners {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+          `}</style>
         </section>
 
         {/* Features Section */}
@@ -779,7 +974,7 @@ const App: React.FC = () => {
             <main className="scroll-container">
               <div className="content-padding" style={{ paddingTop: '16px', paddingBottom: '32px' }}>
                 {appState === AppState.PROFILE && (
-                  <ProfileForm initialProfile={profile} onSave={handleProfileSave} />
+                  <ProfileForm initialProfile={profile} onSave={handleProfileSave} onHealthImport={handleHealthImport} />
                 )}
 
                 {appState === AppState.INPUT && (
