@@ -45,106 +45,130 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
   return (
     <div className="animate-in" style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
 
-      {/* MAIN VERDICT CARD */}
-      <div className="card" style={{ padding: '20px', textAlign: 'center' }}>
-        {/* Drug Name */}
-        <div style={{ marginBottom: '16px' }}>
-          <div style={{
-            fontSize: '12px',
-            fontWeight: '600',
-            color: '#8E8E93',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-            marginBottom: '4px'
-          }}>
-            {result.drugName || 'Medication'}
-          </div>
-        </div>
-
-        {/* Score Ring */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '16px' }}>
-          <div style={{ position: 'relative', width: '100px', height: '100px' }}>
-            <svg width="100" height="100" style={{ transform: 'rotate(-90deg)' }}>
-              <circle cx="50" cy="50" r="36" fill="none" stroke="#E5E5EA" strokeWidth="8" />
-              <circle
-                cx="50" cy="50" r="36"
-                fill="none"
-                stroke={verdictColor}
-                strokeWidth="8"
-                strokeLinecap="round"
-                strokeDasharray={circumference}
-                strokeDashoffset={strokeDashoffset}
-                style={{ transition: 'stroke-dashoffset 1s ease-out' }}
-              />
-            </svg>
+      {/* MAIN RESULT CARD */}
+      <div className="card" style={{ padding: '0', overflow: 'hidden' }}>
+        {/* Header with verdict color */}
+        <div style={{
+          background: verdictBg,
+          padding: '16px 20px',
+          borderBottom: `1px solid ${verdictColor}20`
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <div>
+              <div style={{ fontSize: '22px', fontWeight: '700', color: '#000', marginBottom: '2px' }}>
+                {result.drugName || 'Medication'}
+              </div>
+              <div style={{ fontSize: '13px', color: '#6B7280' }}>
+                Safety analysis for your profile
+              </div>
+            </div>
+            {/* Verdict Icon */}
             <div style={{
-              position: 'absolute',
-              inset: 0,
+              width: '48px',
+              height: '48px',
+              borderRadius: '14px',
+              background: verdictColor,
               display: 'flex',
-              flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center'
             }}>
-              <span style={{ fontSize: '32px', fontWeight: '700', color: '#000' }}>
-                {result.safetyScore}
-              </span>
+              {isDanger ? (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+                  <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                </svg>
+              ) : isCaution ? (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+                  <path d="M12 2L1 21h22L12 2zm0 4l7.53 13H4.47L12 6zm-1 5v4h2v-4h-2zm0 6v2h2v-2h-2z"/>
+                </svg>
+              ) : (
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+              )}
             </div>
           </div>
         </div>
 
-        {/* Verdict Badge */}
-        <div style={{
-          display: 'inline-flex',
-          alignItems: 'center',
-          gap: '8px',
-          padding: '10px 20px',
-          background: verdictBg,
-          borderRadius: '24px',
-          marginBottom: '12px'
-        }}>
-          {isDanger ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill={verdictColor}>
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"/>
-            </svg>
-          ) : isCaution ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill={verdictColor}>
-              <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
-            </svg>
-          ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill={verdictColor}>
-              <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
-            </svg>
-          )}
-          <span style={{ fontSize: '17px', fontWeight: '700', color: verdictColor }}>
-            {verdictText}
-          </span>
-        </div>
+        {/* Score Section */}
+        <div style={{ padding: '20px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '16px' }}>
+            {/* Score Ring */}
+            <div style={{ position: 'relative', width: '80px', height: '80px', flexShrink: 0 }}>
+              <svg width="80" height="80" style={{ transform: 'rotate(-90deg)' }}>
+                <circle cx="40" cy="40" r="32" fill="none" stroke="#E5E5EA" strokeWidth="6" />
+                <circle
+                  cx="40" cy="40" r="32"
+                  fill="none"
+                  stroke={verdictColor}
+                  strokeWidth="6"
+                  strokeLinecap="round"
+                  strokeDasharray={2 * Math.PI * 32}
+                  strokeDashoffset={2 * Math.PI * 32 - (result.safetyScore / 100) * 2 * Math.PI * 32}
+                  style={{ transition: 'stroke-dashoffset 1s ease-out' }}
+                />
+              </svg>
+              <div style={{
+                position: 'absolute',
+                inset: 0,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}>
+                <span style={{ fontSize: '24px', fontWeight: '700', color: verdictColor }}>
+                  {result.safetyScore}
+                </span>
+              </div>
+            </div>
 
-        {/* Summary */}
-        <p style={{ fontSize: '14px', color: '#6B7280', lineHeight: 1.5, margin: '0 0 16px 0' }}>
-          {result.summary}
-        </p>
+            {/* Verdict Text */}
+            <div style={{ flex: 1 }}>
+              <div style={{ fontSize: '20px', fontWeight: '700', color: verdictColor, marginBottom: '4px' }}>
+                {verdictText}
+              </div>
+              <div style={{ fontSize: '13px', color: '#6B7280', lineHeight: 1.4 }}>
+                {isDanger
+                  ? 'This medication has serious risks for your health profile'
+                  : isCaution
+                    ? 'Review the warnings below before taking'
+                    : 'Low risk based on your health profile'
+                }
+              </div>
+            </div>
+          </div>
 
-        {/* Quick Actions */}
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <button style={actionButtonStyle}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#007AFF">
-              <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
-            </svg>
-            Share
-          </button>
-          <button style={actionButtonStyle}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#007AFF">
-              <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/>
-            </svg>
-            Save
-          </button>
-          <button style={actionButtonStyle}>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="#007AFF">
-              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-            </svg>
-            Ask Doctor
-          </button>
+          {/* Summary */}
+          <div style={{
+            padding: '12px 14px',
+            background: '#F8F8FA',
+            borderRadius: '10px',
+            marginBottom: '16px'
+          }}>
+            <p style={{ fontSize: '14px', color: '#3C3C43', lineHeight: 1.5, margin: 0 }}>
+              {result.summary}
+            </p>
+          </div>
+
+          {/* Quick Actions */}
+          <div style={{ display: 'flex', gap: '8px' }}>
+            <button style={actionButtonStyle}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#007AFF">
+                <path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92-1.31-2.92-2.92-2.92z"/>
+              </svg>
+              Share
+            </button>
+            <button style={actionButtonStyle}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#007AFF">
+                <path d="M17 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+              </svg>
+              Save
+            </button>
+            <button style={actionButtonStyle}>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#007AFF">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+              </svg>
+              Ask Doctor
+            </button>
+          </div>
         </div>
       </div>
 

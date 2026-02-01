@@ -287,29 +287,45 @@ const App: React.FC = () => {
                 AI-powered medication safety checks personalized to your unique health profile. Get instant risk assessments based on your conditions, age, and medications.
               </p>
 
-              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginBottom: '32px' }}>
+              {/* CTA + App Store Badges */}
+              <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '32px' }}>
                 <button
                   onClick={startOnboarding}
                   style={{
-                    padding: '16px 32px',
+                    padding: '14px 28px',
                     background: '#007AFF',
                     color: 'white',
                     border: 'none',
                     borderRadius: '12px',
-                    fontSize: '17px',
+                    fontSize: '16px',
                     fontWeight: '600',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',
                     gap: '8px',
-                    boxShadow: '0 4px 14px rgba(0, 122, 255, 0.4)'
+                    boxShadow: '0 4px 14px rgba(0, 122, 255, 0.4)',
+                    flexShrink: 0
                   }}
                 >
                   Start Free Check
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
                     <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8-8-8z"/>
                   </svg>
                 </button>
+                <a href="#" style={{ display: 'block', opacity: 0.8, transition: 'opacity 0.2s' }} onMouseEnter={e => e.currentTarget.style.opacity = '1'} onMouseLeave={e => e.currentTarget.style.opacity = '0.8'}>
+                  <img
+                    src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                    alt="Download on the App Store"
+                    style={{ height: '40px' }}
+                  />
+                </a>
+                <a href="#" style={{ display: 'block', opacity: 0.8, transition: 'opacity 0.2s' }} onMouseEnter={e => e.currentTarget.style.opacity = '1'} onMouseLeave={e => e.currentTarget.style.opacity = '0.8'}>
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                    alt="Get it on Google Play"
+                    style={{ height: '40px' }}
+                  />
+                </a>
               </div>
 
               {/* Trust Indicators */}
@@ -338,8 +354,8 @@ const App: React.FC = () => {
             {/* Right: App Preview - iPhone 15 Pro Frame */}
             <div style={{ flex: '1 1 400px', minWidth: '300px', display: 'flex', justifyContent: 'center' }}>
               <div style={{
-                width: '260px',
-                height: '540px',
+                width: '250px',
+                height: '500px',
                 position: 'relative'
               }}>
                 {/* Titanium Frame */}
@@ -562,7 +578,7 @@ const App: React.FC = () => {
                   {/* Stanford */}
                   <img src="https://identity.stanford.edu/wp-content/uploads/sites/3/2020/07/stanford-university-stacked.png" alt="Stanford" style={{ height: '40px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.7 }} />
                   {/* Google DeepMind */}
-                  <img src="/logos/Google_DeepMind_logo.png" alt="Google DeepMind" style={{ height: '36px', objectFit: 'contain' }} />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Google_DeepMind_logo.svg/512px-Google_DeepMind_logo.svg.png" alt="Google DeepMind" style={{ height: '28px', objectFit: 'contain' }} />
                   {/* Gemini */}
                   <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/512px-Google_Gemini_logo.svg.png" alt="Gemini" style={{ height: '32px', objectFit: 'contain', filter: 'grayscale(100%)', opacity: 0.7 }} />
                   {/* Tunisia Ministry of Public Health */}
@@ -570,26 +586,51 @@ const App: React.FC = () => {
                   {/* European Cancer Centers */}
                   <img src="/logos/european-cancer-centers.png" alt="European Cancer Centers" style={{ height: '40px', objectFit: 'contain' }} />
                   {/* AP-HP */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', background: 'rgba(0,51,102,0.1)', borderRadius: '8px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: '700', color: '#003366' }}>AP-HP</span>
-                    <span style={{ fontSize: '12px', color: '#666' }}>Paris</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <svg width="36" height="36" viewBox="0 0 36 36">
+                      <rect x="2" y="2" width="32" height="32" rx="4" fill="#003366"/>
+                      <path d="M18 8v20M8 18h20" stroke="white" strokeWidth="4" strokeLinecap="round"/>
+                    </svg>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <span style={{ fontSize: '16px', fontWeight: '800', color: '#003366', letterSpacing: '1px', fontFamily: 'Georgia, serif' }}>AP-HP</span>
+                      <span style={{ fontSize: '10px', color: '#666', letterSpacing: '2px', textTransform: 'uppercase' }}>Paris</span>
+                    </div>
                   </div>
                   {/* HMPIT */}
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 16px', background: 'rgba(139,0,0,0.1)', borderRadius: '8px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: '700', color: '#8B0000' }}>HMPIT</span>
-                    <span style={{ fontSize: '12px', color: '#666' }}>Tunis</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                    <svg width="36" height="36" viewBox="0 0 36 36">
+                      <polygon points="18,2 22,14 34,14 24,22 28,34 18,26 8,34 12,22 2,14 14,14" fill="#8B0000"/>
+                      <circle cx="18" cy="18" r="6" fill="white"/>
+                    </svg>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                      <span style={{ fontSize: '15px', fontWeight: '700', color: '#8B0000', fontFamily: 'Trebuchet MS, sans-serif' }}>HMPIT</span>
+                      <span style={{ fontSize: '9px', color: '#666', letterSpacing: '1px' }}>Hôpital Militaire Tunis</span>
+                    </div>
                   </div>
                   {/* Leader Santé */}
-                  <div style={{ padding: '8px 16px', background: 'rgba(0,166,81,0.1)', borderRadius: '8px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: '600', color: '#00A651' }}>Leader Santé</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="32" height="32" viewBox="0 0 32 32">
+                      <circle cx="16" cy="16" r="14" fill="#00A651"/>
+                      <path d="M16 6v20M10 12l6 6 6-6" stroke="white" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    <span style={{ fontSize: '15px', fontWeight: '600', color: '#00A651', fontFamily: 'Verdana, sans-serif', letterSpacing: '-0.5px' }}>Leader<span style={{ fontWeight: '400' }}>Santé</span></span>
                   </div>
                   {/* Aprium */}
-                  <div style={{ padding: '8px 16px', background: 'rgba(227,25,55,0.1)', borderRadius: '8px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: '600', color: '#E31937' }}>Aprium</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <svg width="32" height="32" viewBox="0 0 32 32">
+                      <rect width="32" height="32" rx="8" fill="#E31937"/>
+                      <ellipse cx="16" cy="14" rx="8" ry="6" fill="white"/>
+                      <ellipse cx="16" cy="20" rx="6" ry="4" fill="white"/>
+                    </svg>
+                    <span style={{ fontSize: '17px', fontWeight: '300', color: '#E31937', fontFamily: 'Helvetica Neue, Arial, sans-serif', letterSpacing: '2px', textTransform: 'uppercase' }}>Aprium</span>
                   </div>
                   {/* X-FAB */}
-                  <div style={{ padding: '8px 16px', background: 'rgba(0,0,0,0.05)', borderRadius: '8px' }}>
-                    <span style={{ fontSize: '14px', fontWeight: '700', color: '#00B4D8' }}>X-FAB</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                    <svg width="34" height="34" viewBox="0 0 34 34">
+                      <rect x="1" y="1" width="32" height="32" rx="2" fill="#1a1a1a"/>
+                      <path d="M8 8l18 18M26 8l-18 18" stroke="#00B4D8" strokeWidth="3" strokeLinecap="round"/>
+                    </svg>
+                    <span style={{ fontSize: '18px', fontWeight: '900', color: '#1a1a1a', fontFamily: 'Courier New, monospace' }}>X<span style={{ color: '#00B4D8' }}>-FAB</span></span>
                   </div>
                 </React.Fragment>
               ))}

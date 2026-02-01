@@ -9,6 +9,7 @@ interface ProfileFormProps {
 
 const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave, onHealthImport }) => {
   const [profile, setProfile] = useState<UserProfile>(initialProfile);
+  const [customCondition, setCustomCondition] = useState('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -25,6 +26,31 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave, onHea
         ? prev.conditions.filter(c => c !== condition)
         : [...prev.conditions, condition]
     }));
+  };
+
+  const addCustomCondition = () => {
+    const trimmed = customCondition.trim();
+    if (trimmed && !profile.conditions.includes(trimmed)) {
+      setProfile(prev => ({
+        ...prev,
+        conditions: [...prev.conditions, trimmed]
+      }));
+      setCustomCondition('');
+    }
+  };
+
+  const removeCondition = (condition: string) => {
+    setProfile(prev => ({
+      ...prev,
+      conditions: prev.conditions.filter(c => c !== condition)
+    }));
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      addCustomCondition();
+    }
   };
 
   return (
@@ -98,7 +124,7 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave, onHea
 
       {/* Health Conditions Card */}
       <div className="card">
-        <div className="section-header" style={{ marginBottom: '16px' }}>
+        <div className="section-header" style={{ marginBottom: '12px' }}>
           <div className="section-icon" style={{ background: '#FF3B30' }}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
@@ -107,20 +133,105 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave, onHea
           <span className="section-title">Health Conditions</span>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-          {COMMON_CONDITIONS.map(condition => {
-            const selected = profile.conditions.includes(condition);
-            return (
-              <button
-                key={condition}
-                type="button"
-                onClick={() => toggleCondition(condition)}
-                className={`chip ${selected ? 'chip-selected' : ''}`}
-              >
-                {condition}
-              </button>
-            );
-          })}
+        {/* Selected Conditions */}
+        {profile.conditions.length > 0 && (
+          <div style={{ marginBottom: '12px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {profile.conditions.map(condition => (
+                <div
+                  key={condition}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '8px 12px',
+                    background: '#007AFF',
+                    borderRadius: '20px',
+                    fontSize: '14px',
+                    fontWeight: '500',
+                    color: 'white'
+                  }}
+                >
+                  {condition}
+                  <button
+                    type="button"
+                    onClick={() => removeCondition(condition)}
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '18px',
+                      height: '18px',
+                      background: 'rgba(255,255,255,0.3)',
+                      border: 'none',
+                      borderRadius: '50%',
+                      cursor: 'pointer',
+                      padding: 0
+                    }}
+                  >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="white">
+                      <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                    </svg>
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Add Custom Condition */}
+        <div style={{ display: 'flex', gap: '8px', marginBottom: '12px' }}>
+          <input
+            type="text"
+            value={customCondition}
+            onChange={(e) => setCustomCondition(e.target.value)}
+            onKeyDown={handleKeyDown}
+            placeholder="Add a condition..."
+            style={{ flex: 1 }}
+          />
+          <button
+            type="button"
+            onClick={addCustomCondition}
+            disabled={!customCondition.trim()}
+            style={{
+              padding: '0 16px',
+              background: customCondition.trim() ? '#007AFF' : '#E5E5EA',
+              color: customCondition.trim() ? 'white' : '#8E8E93',
+              border: 'none',
+              borderRadius: '12px',
+              fontSize: '15px',
+              fontWeight: '600',
+              cursor: customCondition.trim() ? 'pointer' : 'not-allowed'
+            }}
+          >
+            Add
+          </button>
+        </div>
+
+        {/* Quick Select Common Conditions */}
+        <div style={{ fontSize: '12px', color: '#8E8E93', marginBottom: '8px', fontWeight: '500' }}>
+          Quick select:
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+          {COMMON_CONDITIONS.filter(c => !profile.conditions.includes(c)).map(condition => (
+            <button
+              key={condition}
+              type="button"
+              onClick={() => toggleCondition(condition)}
+              style={{
+                padding: '6px 12px',
+                background: '#F5F5F7',
+                border: 'none',
+                borderRadius: '16px',
+                fontSize: '13px',
+                fontWeight: '500',
+                color: '#3C3C43',
+                cursor: 'pointer'
+              }}
+            >
+              + {condition}
+            </button>
+          ))}
         </div>
       </div>
 
