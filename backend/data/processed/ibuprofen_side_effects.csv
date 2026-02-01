@@ -1,0 +1,338 @@
+name,source,meddra_type,frequency,severity
+Abdominal cramps,SIDER,LLT,,mild
+Abdominal pain,SIDER,PT,,mild
+Abdominal distension,SIDER,LLT,,mild
+Gastrointestinal pain,SIDER,PT,,mild
+Acidosis,SIDER,LLT,,mild
+Pancreatitis acute,SIDER,LLT,,mild
+Adrenal insufficiency,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Agranulocytosis,SIDER,LLT,,mild
+Alopecia,SIDER,LLT,,mild
+Amblyopia,SIDER,LLT,,mild
+Anaphylactic shock,SIDER,LLT,,severe
+Anaemia,SIDER,LLT,"{'value': 0.0209, 'type': 'percentage', 'raw': '2.09%'}",mild
+Aplastic anaemia,SIDER,LLT,,mild
+Haemolytic anaemia,SIDER,LLT,,mild
+Angioedema,SIDER,LLT,,mild
+Anorexia,SIDER,LLT,,mild
+Decreased appetite,SIDER,PT,,mild
+Anxiety,SIDER,LLT,,moderate
+Apnoea,SIDER,LLT,"{'value': 0.26, 'type': 'percentage', 'raw': '26%'}",mild
+Arrhythmia,SIDER,LLT,,severe
+Arthralgia,SIDER,LLT,,mild
+Musculoskeletal discomfort,SIDER,PT,,mild
+Arthritis,SIDER,LLT,,mild
+Asthenia,SIDER,LLT,,mild
+Asthma,SIDER,LLT,,mild
+Atelectasis,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Pneumothorax,SIDER,PT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Bacteraemia,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Pneumonia bacterial,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Mental disorder,SIDER,LLT,,mild
+Bronchospasm,SIDER,LLT,,moderate
+Bronchitis,SIDER,LLT,,mild
+Bronchopulmonary dysplasia,SIDER,LLT,"{'value': 0.1, 'type': 'categorical', 'category': 'very common', 'range': '>=10%', 'raw': 'very common'}",mild
+Cholestasis,SIDER,LLT,,mild
+Colitis,SIDER,LLT,,mild
+Colitis ulcerative,SIDER,LLT,,mild
+Proctocolitis,SIDER,PT,,mild
+Coma,SIDER,LLT,,severe
+Infection,SIDER,LLT,,mild
+Confusional state,SIDER,LLT,,mild
+Feeling abnormal,SIDER,PT,,mild
+Conjunctivitis,SIDER,LLT,,mild
+Constipation,SIDER,LLT,"{'value': 0.22, 'type': 'percentage', 'raw': '22%'}",mild
+Contusion,SIDER,LLT,,mild
+Cough,SIDER,LLT,"{'value': 0.0034799999999999996, 'type': 'percentage', 'raw': '0.348%'}",mild
+Crohn's disease,SIDER,LLT,,mild
+Cystitis,SIDER,LLT,,mild
+Cystitis noninfective,SIDER,PT,,mild
+Bladder pain,SIDER,PT,,mild
+Libido decreased,SIDER,LLT,,mild
+Disturbance in sexual arousal,SIDER,PT,,mild
+Dysphagia,SIDER,LLT,,mild
+Depression,SIDER,LLT,,mild
+Dermatitis exfoliative,SIDER,LLT,,mild
+Diarrhoea,SIDER,LLT,"{'value': 0.07139999999999999, 'type': 'percentage', 'raw': '7.14%'}",mild
+Diplopia,SIDER,LLT,,mild
+Dizziness,SIDER,LLT,"{'value': 0.0174, 'type': 'percentage', 'raw': '1.74%'}",moderate
+Drowsiness,SIDER,LLT,,mild
+Somnolence,SIDER,PT,"{'value': 0.22, 'type': 'percentage', 'raw': '22%'}",mild
+Duodenal ulcer,SIDER,LLT,,mild
+Duodenitis,SIDER,LLT,,mild
+Dyspepsia,SIDER,LLT,"{'value': 0.00697, 'type': 'percentage', 'raw': '0.697%'}",mild
+Dyspnoea,SIDER,LLT,,mild
+Dysuria,SIDER,LLT,,mild
+Ecchymosis,SIDER,LLT,,mild
+Oedema,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Eosinophilia,SIDER,LLT,"{'value': 0.25, 'type': 'percentage', 'raw': '25%'}",mild
+Toxic epidermal necrolysis,SIDER,LLT,,severe
+Epistaxis,SIDER,LLT,,mild
+Eructation,SIDER,LLT,,mild
+Erythema multiforme,SIDER,LLT,,mild
+Oesophageal spasm,SIDER,LLT,,mild
+Oesophagitis,SIDER,LLT,,mild
+Rash,SIDER,LLT,,moderate
+Dermatitis,SIDER,PT,,mild
+Fatigue,SIDER,LLT,,mild
+Flatulence,SIDER,LLT,"{'value': 0.153, 'type': 'percentage', 'raw': '15.3%'}",mild
+Gastritis,SIDER,LLT,,mild
+Gastroenteritis,SIDER,LLT,,mild
+Gastrooesophageal reflux disease,SIDER,LLT,,mild
+Gastrointestinal disorder,SIDER,LLT,"{'value': 0.18, 'type': 'percentage', 'raw': '18%'}",mild
+Gastrointestinal haemorrhage,SIDER,LLT,,severe
+Glomerulitis,SIDER,LLT,,mild
+Glomerulonephritis,SIDER,PT,,mild
+Glossitis,SIDER,LLT,,mild
+Glycosuria,SIDER,LLT,,mild
+Gynaecomastia,SIDER,LLT,,severe
+Hallucination,SIDER,LLT,,mild
+Headache,SIDER,LLT,"{'value': 0.10800000000000001, 'type': 'percentage', 'raw': '10.8%'}",moderate
+Cardiac failure,SIDER,LLT,,mild
+Cardiac failure congestive,SIDER,LLT,,mild
+Heartburn,SIDER,LLT,,mild
+Haematemesis,SIDER,LLT,,mild
+Blood disorder,SIDER,LLT,,mild
+Haematuria,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Haemorrhage,SIDER,LLT,"{'value': 0.0557, 'type': 'percentage', 'raw': '5.57%'}",severe
+Haemoglobin,SIDER,PT,"{'value': 0.0557, 'type': 'percentage', 'raw': '5.57%'}",mild
+Hepatitis,SIDER,LLT,,mild
+Hepatitis toxic,SIDER,LLT,,mild
+Hepatorenal syndrome,SIDER,LLT,,mild
+Inguinal hernia,SIDER,LLT,,mild
+Hiccups,SIDER,LLT,,mild
+Hoarseness,SIDER,LLT,,mild
+Dysphonia,SIDER,PT,,mild
+Hyperglycaemia,SIDER,LLT,,mild
+Hypernatraemia,SIDER,LLT,"{'value': 0.04, 'type': 'percentage', 'raw': '4%'}",mild
+Hypersensitivity,SIDER,LLT,,mild
+Hypertension,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",moderate
+Pulmonary hypertension,SIDER,LLT,,moderate
+Hypocalcaemia,SIDER,LLT,"{'value': 0.09, 'type': 'percentage', 'raw': '9%'}",mild
+Hypoglycaemia,SIDER,LLT,"{'value': 0.06, 'type': 'percentage', 'raw': '6%'}",mild
+Hypokalaemia,SIDER,LLT,"{'value': 0.0279, 'type': 'percentage', 'raw': '2.79%'}",mild
+Hyponatraemia,SIDER,LLT,"{'value': 0.1, 'type': 'categorical', 'category': 'very common', 'range': '>=10%', 'raw': 'very common'}",mild
+Hypoproteinaemia,SIDER,LLT,"{'value': 0.07139999999999999, 'type': 'percentage', 'raw': '7.14%'}",mild
+Hypotension,SIDER,LLT,"{'value': 0.035699999999999996, 'type': 'percentage', 'raw': '3.57%'}",moderate
+Immune system disorder,SIDER,LLT,,mild
+Influenza,SIDER,LLT,,mild
+Intestinal perforation,SIDER,LLT,,mild
+Jaundice,SIDER,LLT,,mild
+Renal failure acute,SIDER,LLT,"{'value': 0.05, 'type': 'categorical', 'category': 'common', 'range': '1-10%', 'raw': 'uncommon'}",mild
+Renal papillary necrosis,SIDER,LLT,,mild
+Periventricular leukomalacia,SIDER,LLT,,severe
+Leukopenia,SIDER,LLT,,mild
+Liver disorder,SIDER,LLT,,mild
+Hepatocellular injury,SIDER,PT,,mild
+Foetor hepaticus,SIDER,PT,,mild
+Mediastinal disorder,SIDER,LLT,,mild
+Melaena,SIDER,LLT,,mild
+Meningitis aseptic,SIDER,LLT,,mild
+Meningoencephalitis,SIDER,LLT,,mild
+Encephalitis,SIDER,PT,,mild
+Menorrhagia,SIDER,LLT,,mild
+Metrorrhagia,SIDER,LLT,,mild
+Mixed connective tissue disease,SIDER,LLT,,mild
+Cramp muscle,SIDER,LLT,,mild
+Muscle spasms,SIDER,PT,,mild
+Hypertonia,SIDER,LLT,,mild
+Myocardial infarction,SIDER,LLT,,mild
+Acute coronary syndrome,SIDER,PT,,mild
+Nasal congestion,SIDER,LLT,,mild
+Nausea,SIDER,LLT,"{'value': 0.624, 'type': 'percentage', 'raw': '62.4%'}",moderate
+Neoplasm,SIDER,LLT,,mild
+Nephritis,SIDER,LLT,,mild
+Nephritis interstitial,SIDER,LLT,,mild
+Tubulointerstitial nephritis,SIDER,PT,,mild
+Nephrotic syndrome,SIDER,LLT,,mild
+Nervous system disorder,SIDER,LLT,,mild
+Nervousness,SIDER,LLT,,mild
+Tension,SIDER,PT,,mild
+Neuralgia,SIDER,LLT,,mild
+Neuritis,SIDER,LLT,,mild
+Neuropathy peripheral,SIDER,PT,,mild
+Neutropenia,SIDER,LLT,"{'value': 0.07139999999999999, 'type': 'percentage', 'raw': '7.14%'}",mild
+Oliguria,SIDER,LLT,,mild
+Optic neuritis,SIDER,LLT,,mild
+Palpitations,SIDER,LLT,,moderate
+Pancreatitis,SIDER,LLT,,mild
+Pancytopenia,SIDER,LLT,,mild
+Paraesthesia,SIDER,LLT,,mild
+Peptic ulcer,SIDER,LLT,,mild
+Pharyngitis,SIDER,LLT,,mild
+Pneumonia,SIDER,LLT,,mild
+Polyuria,SIDER,LLT,,mild
+Urine output increased,SIDER,PT,,mild
+Proteinuria,SIDER,LLT,,mild
+Protein urine present,SIDER,PT,,mild
+Pruritus,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Benign intracranial hypertension,SIDER,LLT,,moderate
+Purpura,SIDER,LLT,,mild
+Vascular purpura,SIDER,PT,,mild
+Henoch-Schonlein purpura,SIDER,LLT,,mild
+Renal failure,SIDER,LLT,"{'value': 0.04, 'type': 'percentage', 'raw': '4%'}",mild
+Respiratory tract infection,SIDER,LLT,"{'value': 0.13, 'type': 'percentage', 'raw': '13%'}",mild
+Reye's syndrome,SIDER,LLT,,mild
+Rhinitis,SIDER,LLT,,mild
+Scotoma,SIDER,LLT,,mild
+Convulsion,SIDER,LLT,,mild
+Serum sickness,SIDER,LLT,,mild
+Shock,SIDER,LLT,,mild
+Sinusitis,SIDER,LLT,,mild
+Skin disorder,SIDER,LLT,,mild
+Skin lesion,SIDER,LLT,"{'value': 0.06, 'type': 'percentage', 'raw': '6%'}",mild
+Stevens-Johnson syndrome,SIDER,LLT,,severe
+Gastric ulcer,SIDER,LLT,,mild
+Stomatitis,SIDER,LLT,,mild
+Ulcerative stomatitis,SIDER,LLT,,mild
+Mouth ulceration,SIDER,PT,,mild
+Cerebrovascular accident,SIDER,LLT,,mild
+Sweating,SIDER,LLT,,mild
+Hyperhidrosis,SIDER,PT,,mild
+Swelling,SIDER,LLT,,mild
+Syncope,SIDER,LLT,,mild
+Loss of consciousness,SIDER,PT,,mild
+Tachycardia,SIDER,LLT,,moderate
+Sinus tachycardia,SIDER,LLT,,moderate
+Thirst,SIDER,LLT,,mild
+Thrombocytopenia,SIDER,LLT,,mild
+Tinnitus,SIDER,LLT,,mild
+Tremor,SIDER,LLT,,moderate
+Ulcer,SIDER,LLT,,mild
+Erythema,SIDER,LLT,,mild
+Pollakiuria,SIDER,LLT,,mild
+Urinary incontinence,SIDER,LLT,,mild
+Urinary tract infection,SIDER,LLT,"{'value': 0.04, 'type': 'percentage', 'raw': '4%'}",mild
+Urinary tract disorder,SIDER,LLT,,mild
+Urethral disorder,SIDER,PT,,mild
+Urticaria,SIDER,LLT,,moderate
+Vasculitis,SIDER,LLT,,mild
+Vasodilation,SIDER,LLT,,mild
+Vasodilation procedure,SIDER,PT,,mild
+Vertigo,SIDER,LLT,,mild
+Vision decreased,SIDER,LLT,,mild
+Visual acuity reduced,SIDER,PT,,mild
+Visual impairment,SIDER,PT,,mild
+Vomiting,SIDER,LLT,"{'value': 0.174, 'type': 'percentage', 'raw': '17.4%'}",moderate
+Weight decreased,SIDER,LLT,,mild
+Wheezing,SIDER,LLT,,mild
+Dry mouth,SIDER,LLT,,mild
+Urinary retention,SIDER,LLT,"{'value': 0.0348, 'type': 'percentage', 'raw': '3.48%'}",mild
+Chills,SIDER,LLT,,mild
+Hepatic failure,SIDER,LLT,,mild
+Sinus bradycardia,SIDER,LLT,,mild
+Agitation,SIDER,LLT,,mild
+Mood swings,SIDER,LLT,,mild
+Affect lability,SIDER,PT,,mild
+Oedema peripheral,SIDER,LLT,"{'value': 0.0139, 'type': 'percentage', 'raw': '1.39%'}",mild
+Dermatitis bullous,SIDER,LLT,,mild
+Cataract,SIDER,LLT,,mild
+Hepatic function abnormal,SIDER,LLT,,mild
+Neck stiffness,SIDER,LLT,,mild
+Musculoskeletal stiffness,SIDER,PT,,mild
+Nuchal rigidity,SIDER,PT,,mild
+Bleeding time prolonged,SIDER,LLT,,mild
+Blood urea increased,SIDER,LLT,"{'value': 0.04, 'type': 'percentage', 'raw': '4%'}",mild
+Creatinine increased,SIDER,LLT,,mild
+Blood creatinine increased,SIDER,PT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Necrolysis epidermal,SIDER,LLT,,mild
+Gastrointestinal perforation,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Pulmonary haemorrhage,SIDER,LLT,"{'value': 0.1, 'type': 'categorical', 'category': 'very common', 'range': '>=10%', 'raw': 'very common'}",severe
+Injection site reaction,SIDER,LLT,,mild
+Kidney function abnormal,SIDER,LLT,,mild
+Renal impairment,SIDER,PT,"{'value': 0.04, 'type': 'percentage', 'raw': '4%'}",mild
+Lactic dehydrogenase activity increased,SIDER,LLT,"{'value': 0.035699999999999996, 'type': 'percentage', 'raw': '3.57%'}",mild
+Blood lactate dehydrogenase increased,SIDER,PT,"{'value': 0.035699999999999996, 'type': 'percentage', 'raw': '3.57%'}",mild
+Liver function test abnormal,SIDER,LLT,,mild
+Hepatic necrosis,SIDER,LLT,,mild
+Vesiculobullous rash,SIDER,LLT,,moderate
+Rash pustular,SIDER,PT,,moderate
+Haemoglobin decreased,SIDER,LLT,"{'value': 0.0105, 'type': 'percentage', 'raw': '1.05%'}",mild
+Malnutrition,SIDER,LLT,,mild
+Unspecified disorder of skin and subcutaneous tissue,SIDER,LLT,,mild
+Lightheadedness,SIDER,LLT,,mild
+Shallow breathing,SIDER,LLT,,mild
+Hypopnoea,SIDER,PT,,mild
+Stomach ache,SIDER,LLT,,mild
+Abdominal pain upper,SIDER,PT,,mild
+Malaise,SIDER,LLT,,mild
+Discomfort,SIDER,PT,,mild
+Ill-defined disorder,SIDER,PT,,mild
+Myalgia,SIDER,LLT,,mild
+Abdominal discomfort,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Epigastric pain,SIDER,LLT,,mild
+Disorientation,SIDER,LLT,,mild
+Abnormal dreams,SIDER,LLT,,mild
+Slurred speech,SIDER,LLT,,mild
+Dysarthria,SIDER,PT,,mild
+Respiratory depression,SIDER,LLT,,mild
+Pulmonary function test decreased,SIDER,PT,,mild
+Euphoric mood,SIDER,LLT,,mild
+Abdominal distress,SIDER,LLT,,mild
+Azotaemia of renal origin,SIDER,LLT,,mild
+Azotaemia,SIDER,PT,,mild
+Hepatic enzyme increased,SIDER,LLT,,mild
+Necrotising fasciitis,SIDER,LLT,,mild
+Cellulitis gangrenous,SIDER,PT,,mild
+Creatinine low,SIDER,LLT,,mild
+Blood creatinine decreased,SIDER,PT,,mild
+Hypoalbuminaemia,SIDER,LLT,"{'value': 0.035699999999999996, 'type': 'percentage', 'raw': '3.57%'}",mild
+Intraventricular haemorrhage,SIDER,LLT,"{'value': 0.24, 'type': 'percentage', 'raw': '24%'}",severe
+Wound haemorrhage,SIDER,LLT,"{'value': 0.0139, 'type': 'percentage', 'raw': '1.39%'}",severe
+Pulmonary congestion,SIDER,LLT,,mild
+Respiratory tract congestion,SIDER,PT,,mild
+Erectile dysfunction,SIDER,LLT,,mild
+Sepsis,SIDER,LLT,,mild
+Rectal haemorrhage,SIDER,LLT,,severe
+Hepatobiliary disease,SIDER,LLT,,mild
+Fluid retention,SIDER,LLT,,mild
+Toxic neuropathy,SIDER,LLT,,mild
+Hypoglycemic reaction,SIDER,LLT,,mild
+Eruption,SIDER,LLT,,mild
+Dry eye,SIDER,LLT,,mild
+Cognitive impairment,SIDER,LLT,,mild
+Cognitive disorder,SIDER,PT,,mild
+Anaphylactoid reaction,SIDER,LLT,,severe
+Vision blurred,SIDER,LLT,,mild
+Photosensitivity,SIDER,LLT,,mild
+Photosensitivity reaction,SIDER,PT,,mild
+Exacerbation of asthma,SIDER,LLT,,mild
+Influenza-like symptoms,SIDER,LLT,,mild
+Influenza like illness,SIDER,PT,,mild
+Exhaustion,SIDER,LLT,,mild
+Lupus erythematosus,SIDER,LLT,,mild
+Systemic lupus erythematosus,SIDER,PT,,mild
+Hyperkinesia,SIDER,LLT,,mild
+Teeth clenching,SIDER,LLT,,mild
+Bruxism,SIDER,PT,,mild
+Lymphadenopathy,SIDER,LLT,,mild
+Necrotizing enterocolitis,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Necrotising colitis,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Necrotising enterocolitis neonatal,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Bad taste,SIDER,LLT,,mild
+Dysgeusia,SIDER,PT,,mild
+Visual disturbance,SIDER,LLT,,mild
+Asthma aggravated,SIDER,LLT,,mild
+Foot edema,SIDER,LLT,,mild
+Local swelling,SIDER,PT,,mild
+Cough increased,SIDER,LLT,,mild
+Nephrotoxicity,SIDER,LLT,,mild
+Nephropathy toxic,SIDER,PT,,mild
+Hypoxemia,SIDER,LLT,"{'value': 0.05, 'type': 'categorical', 'category': 'common', 'range': '1-10%', 'raw': 'uncommon'}",mild
+Hypoxia,SIDER,PT,"{'value': 0.05, 'type': 'categorical', 'category': 'common', 'range': '1-10%', 'raw': 'uncommon'}",mild
+Thrombocytosis,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Blood and lymphatic system disorders,SIDER,nan,,mild
+Glomerular filtration rate decreased,SIDER,LLT,,mild
+Serum urea increased,SIDER,LLT,,mild
+Insomnia,SIDER,LLT,,moderate
+Respiratory failure,SIDER,LLT,"{'value': 0.04, 'type': 'percentage', 'raw': '4%'}",severe
+Epidermal necrosis,SIDER,LLT,,mild
+Ileus,SIDER,LLT,,mild
+Urine output,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Abdominal bloating,SIDER,LLT,,mild
+Hearing impaired,SIDER,LLT,,mild
+Deafness,SIDER,PT,,mild
+Renal tubular necrosis,SIDER,LLT,,mild
+Appetite absent,SIDER,LLT,,mild
+Color vision change,SIDER,LLT,,mild
+Colour blindness acquired,SIDER,PT,,mild

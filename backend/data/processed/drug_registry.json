@@ -1,0 +1,34 @@
+{
+  "drugs": [
+    "ibuprofen",
+    "salbutamol"
+  ],
+  "drug_info": {
+    "ibuprofen": {
+      "cid": "3672",
+      "sider_id": "CID100003672",
+      "name": "Ibuprofen",
+      "drug_class": "NSAID",
+      "names": [
+        "ibuprofen",
+        "advil",
+        "motrin",
+        "nurofen",
+        "brufen"
+      ]
+    },
+    "salbutamol": {
+      "cid": "2083",
+      "sider_id": "CID100002083",
+      "name": "Salbutamol",
+      "drug_class": "Beta-2 Agonist (Bronchodilator)",
+      "names": [
+        "salbutamol",
+        "albuterol",
+        "ventolin",
+        "proventil",
+        "proair"
+      ]
+    }
+  }
+}

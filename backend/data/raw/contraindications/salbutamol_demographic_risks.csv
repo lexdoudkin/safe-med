@@ -1,0 +1,13 @@
+drug_id,drug_name,demographic_factor,category,risk_multiplier,specific_side_effects,recommendations
+CID2083,Salbutamol,age>=65,geriatric,1.8,"Tachycardia,Tremor,Hypokalemia",Start with lower doses. Monitor heart rate and potassium.
+CID2083,Salbutamol,age>=75,very_elderly,2.2,"Tachycardia,Arrhythmia,Falls",Use with caution. Monitor cardiovascular status closely.
+CID2083,Salbutamol,age<6,pediatric,1.3,"Paradoxical bronchospasm,Hyperactivity",Weight-based dosing. Watch for paradoxical reactions.
+CID2083,Salbutamol,pregnant=true,pregnancy,1.2,"Tachycardia,Hyperglycemia",Use if clearly needed for asthma control.
+CID2083,Salbutamol,breastfeeding=true,lactation,1.0,"Minimal risk",Compatible with breastfeeding.
+CID2083,Salbutamol,cardiovascular_disease=true,cvd,2.0,"Tachycardia,Angina,Arrhythmia",Use lowest effective dose. Monitor heart rate.
+CID2083,Salbutamol,diabetes=true,diabetes,1.5,"Hyperglycemia,Hypokalemia",Monitor blood glucose and potassium.
+CID2083,Salbutamol,hypertension=true,htn,1.4,"BP elevation,Tachycardia",Monitor blood pressure.
+CID2083,Salbutamol,hyperthyroid=true,thyroid,1.8,"Tachycardia,Tremor,Anxiety",Avoid if possible or use with extreme caution.
+CID2083,Salbutamol,on_beta_blocker=true,beta_blocker,1.6,"Reduced efficacy",May need higher doses. Cardioselective beta-blockers preferred.
+CID2083,Salbutamol,on_diuretic=true,diuretic,1.7,"Hypokalemia",Monitor potassium closely.
+CID2083,Salbutamol,on_maoi=true,maoi,2.5,"Severe hypertension,Tachycardia",Avoid combination if possible.

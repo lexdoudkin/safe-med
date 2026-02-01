@@ -1,0 +1,23 @@
+condition,icd10_code,severity,reason
+Peptic Ulcer Disease,K27,absolute,Risk of GI bleeding and perforation
+Active GI Bleeding,K92.2,absolute,Will worsen bleeding
+Chronic Kidney Disease Stage 4-5,N18.4,absolute,Risk of acute kidney injury
+Chronic Kidney Disease Stage 4-5,N18.5,absolute,Risk of acute kidney injury
+Severe Heart Failure,I50.9,absolute,Fluid retention and worsening HF
+CABG Surgery (perioperative),Z95.1,absolute,FDA black box warning
+Third Trimester Pregnancy,O09.93,absolute,Risk of premature ductus closure
+Aspirin-Sensitive Asthma,J45.20,absolute,Risk of bronchospasm
+NSAID Allergy,T88.6,absolute,Anaphylaxis risk
+History of GI Bleeding,K92.2,relative,Increased recurrence risk
+Hypertension (uncontrolled),I10,relative,May increase blood pressure
+Mild-Moderate CKD,N18.3,relative,Monitor renal function
+Liver Cirrhosis,K74.60,relative,Reduced metabolism and bleeding risk
+Elderly (>65 years),Z68.43,relative,Higher GI and renal risk
+Inflammatory Bowel Disease,K50,relative,May trigger flares
+Inflammatory Bowel Disease,K51,relative,May trigger flares
+Coagulation Disorders,D68.9,relative,Bleeding risk
+Systemic Lupus Erythematosus,M32.9,relative,Risk of aseptic meningitis
+Dehydration,E86.0,relative,Increased nephrotoxicity risk
+Alcohol Use Disorder,F10.20,relative,Increased GI bleeding risk
+First/Second Trimester Pregnancy,O09.91,caution,Use only if clearly needed
+Breastfeeding,Z39.1,caution,Small amounts in breast milk

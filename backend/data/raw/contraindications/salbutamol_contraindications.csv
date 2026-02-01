@@ -1,0 +1,15 @@
+drug_id,drug_name,condition,icd10_code,severity,reason
+CID2083,Salbutamol,Hypertrophic Obstructive Cardiomyopathy,I42.1,absolute,Can worsen outflow obstruction
+CID2083,Salbutamol,Tachyarrhythmia,I49.0,absolute,Beta-agonist increases heart rate and arrhythmia risk
+CID2083,Salbutamol,Severe Hyperthyroidism,E05.90,absolute,Additive cardiovascular stimulation
+CID2083,Salbutamol,Salbutamol/Beta-agonist Allergy,T88.6,absolute,Anaphylaxis risk
+CID2083,Salbutamol,Uncontrolled Hypertension,I10,relative,May increase blood pressure
+CID2083,Salbutamol,Coronary Artery Disease,I25.10,relative,Risk of myocardial ischemia with high doses
+CID2083,Salbutamol,Diabetes Mellitus,E11.9,relative,Can cause hyperglycemia and hypokalemia
+CID2083,Salbutamol,Hyperthyroidism,E05.90,relative,Additive sympathomimetic effects
+CID2083,Salbutamol,Seizure Disorder,G40.909,relative,High doses may lower seizure threshold
+CID2083,Salbutamol,Hypokalemia,E87.6,relative,Salbutamol can worsen hypokalemia
+CID2083,Salbutamol,QT Prolongation,I45.81,relative,Risk of torsades with hypokalemia
+CID2083,Salbutamol,Pregnancy,O09.90,caution,Use only if benefits outweigh risks
+CID2083,Salbutamol,Breastfeeding,Z39.1,caution,Likely safe but limited data
+CID2083,Salbutamol,Elderly (>65 years),Z68.43,caution,More sensitive to cardiovascular effects

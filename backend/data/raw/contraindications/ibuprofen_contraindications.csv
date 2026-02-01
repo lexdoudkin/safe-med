@@ -1,0 +1,23 @@
+drug_id,drug_name,condition,icd10_code,severity,reason
+CID3672,Ibuprofen,Peptic Ulcer Disease,K27,absolute,Risk of GI bleeding and perforation
+CID3672,Ibuprofen,Active GI Bleeding,K92.2,absolute,Will worsen bleeding
+CID3672,Ibuprofen,Chronic Kidney Disease Stage 4-5,N18.4,absolute,Risk of acute kidney injury
+CID3672,Ibuprofen,Chronic Kidney Disease Stage 4-5,N18.5,absolute,Risk of acute kidney injury
+CID3672,Ibuprofen,Severe Heart Failure,I50.9,absolute,Fluid retention and worsening HF
+CID3672,Ibuprofen,CABG Surgery (perioperative),Z95.1,absolute,FDA black box warning
+CID3672,Ibuprofen,Third Trimester Pregnancy,O09.93,absolute,Risk of premature ductus closure
+CID3672,Ibuprofen,Aspirin-Sensitive Asthma,J45.20,absolute,Risk of bronchospasm
+CID3672,Ibuprofen,NSAID Allergy,T88.6,absolute,Anaphylaxis risk
+CID3672,Ibuprofen,History of GI Bleeding,K92.2,relative,Increased recurrence risk
+CID3672,Ibuprofen,Hypertension (uncontrolled),I10,relative,May increase blood pressure
+CID3672,Ibuprofen,Mild-Moderate CKD,N18.3,relative,Monitor renal function
+CID3672,Ibuprofen,Liver Cirrhosis,K74.60,relative,Reduced metabolism and bleeding risk
+CID3672,Ibuprofen,Elderly (>65 years),Z68.43,relative,Higher GI and renal risk
+CID3672,Ibuprofen,Inflammatory Bowel Disease,K50,relative,May trigger flares
+CID3672,Ibuprofen,Inflammatory Bowel Disease,K51,relative,May trigger flares
+CID3672,Ibuprofen,Coagulation Disorders,D68.9,relative,Bleeding risk
+CID3672,Ibuprofen,Systemic Lupus Erythematosus,M32.9,relative,Risk of aseptic meningitis
+CID3672,Ibuprofen,Dehydration,E86.0,relative,Increased nephrotoxicity risk
+CID3672,Ibuprofen,Alcohol Use Disorder,F10.20,relative,Increased GI bleeding risk
+CID3672,Ibuprofen,First/Second Trimester Pregnancy,O09.91,caution,Use only if clearly needed
+CID3672,Ibuprofen,Breastfeeding,Z39.1,caution,Small amounts in breast milk

@@ -1,0 +1,18 @@
+
+DDInter Dataset - Manual Download Required
+==========================================
+
+DDInter requires manual download from their website.
+
+Steps:
+1. Go to: http://ddinter.scbdd.com/download/
+2. Download the "All Interactions" file (DDInter_downloads_all.csv)
+3. Save it to: data/raw/ddinter/DDInter_downloads_all.csv
+
+Alternative - DrugBank (Academic License):
+1. Go to: https://go.drugbank.com/releases/latest
+2. Register for academic access
+3. Download drug interactions data
+
+Once downloaded, run the processing script:
+    python scripts/process_ibuprofen.py

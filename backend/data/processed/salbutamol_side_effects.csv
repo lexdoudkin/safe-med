@@ -1,0 +1,218 @@
+name,source,meddra_type,frequency,severity
+Abdominal pain,SIDER,LLT,"{'value': 0.034, 'type': 'percentage', 'raw': '3.4%'}",mild
+Gastrointestinal pain,SIDER,PT,"{'value': 0.034, 'type': 'percentage', 'raw': '3.4%'}",mild
+Lactic acidosis,SIDER,LLT,"{'value': 0.0005, 'type': 'categorical', 'category': 'rare', 'range': '0.01-0.1%', 'raw': 'very rare'}",mild
+Aggression,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Anaphylactic shock,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",severe
+Angina pectoris,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Angioedema,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Anorexia,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Decreased appetite,SIDER,PT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Anxiety,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",moderate
+Arrhythmia,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",severe
+Arthralgia,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Musculoskeletal discomfort,SIDER,PT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Asthenia,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Asthma,SIDER,LLT,"{'value': 0.06, 'type': 'percentage', 'raw': '6%'}",mild
+Ataxia,SIDER,LLT,,mild
+Atrial fibrillation,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Back pain,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Mental disorder,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Coagulopathy,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Bronchospasm,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",moderate
+Bronchitis,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Chest pain,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Infection,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Conjunctivitis,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Connective tissue disorder,SIDER,LLT,,mild
+Constipation,SIDER,LLT,,mild
+Cough,SIDER,LLT,"{'value': 0.027000000000000003, 'type': 'percentage', 'raw': '2.7%'}",mild
+Diabetes mellitus,SIDER,LLT,,mild
+Diarrhoea,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Dizziness,SIDER,LLT,"{'value': 0.018000000000000002, 'type': 'percentage', 'raw': '1.8%'}",moderate
+Drowsiness,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Somnolence,SIDER,PT,"{'value': 0.006, 'type': 'percentage', 'raw': '0.6%'}",mild
+Dysgeusia,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Dyspepsia,SIDER,LLT,"{'value': 0.013000000000000001, 'type': 'percentage', 'raw': '1.3%'}",mild
+Dyspnoea,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Ear disorder,SIDER,LLT,,mild
+Ear pain,SIDER,LLT,,mild
+Oedema,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Epistaxis,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Eructation,SIDER,LLT,,mild
+Rash,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",moderate
+Dermatitis,SIDER,PT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Fatigue,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Body temperature increased,SIDER,LLT,"{'value': 0.051, 'type': 'percentage', 'raw': '5.1%'}",mild
+Flatulence,SIDER,LLT,"{'value': 0.02, 'type': 'percentage', 'raw': '2%'}",mild
+Flushing,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Gagging,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Retching,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Gastroenteritis,SIDER,LLT,"{'value': 0.009000000000000001, 'type': 'percentage', 'raw': '0.9%'}",mild
+Gastrointestinal disorder,SIDER,LLT,"{'value': 0.02, 'type': 'percentage', 'raw': '2%'}",mild
+Glossitis,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Glycosuria,SIDER,LLT,,mild
+Headache,SIDER,LLT,"{'value': 0.085, 'type': 'percentage', 'raw': '8.5%'}",moderate
+Cardiac disorder,SIDER,LLT,,mild
+Cardiac murmur,SIDER,LLT,,mild
+Heartburn,SIDER,LLT,"{'value': 0.05, 'type': 'percentage', 'raw': '5%'}",mild
+Haemorrhage,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",severe
+Haemoglobin,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Hoarseness,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Dysphonia,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Hyperglycaemia,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Hypersensitivity,SIDER,LLT,"{'value': 0.013000000000000001, 'type': 'percentage', 'raw': '1.3%'}",mild
+Type I hypersensitivity,SIDER,LLT,,mild
+Hypertension,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",moderate
+Hyperventilation,SIDER,LLT,,mild
+Hypoglycaemia,SIDER,LLT,,mild
+Hypokalaemia,SIDER,LLT,"{'value': 0.0005, 'type': 'categorical', 'category': 'rare', 'range': '0.01-0.1%', 'raw': 'rare'}",mild
+Hypotension,SIDER,LLT,"{'value': 0.0005, 'type': 'categorical', 'category': 'rare', 'range': '0.01-0.1%', 'raw': 'very rare'}",moderate
+Immune system disorder,SIDER,LLT,,mild
+Inflammation,SIDER,LLT,"{'value': 0.05, 'type': 'percentage', 'raw': '5%'}",mild
+Influenza,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Irritability,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Jaundice,SIDER,LLT,,mild
+Ketosis,SIDER,LLT,,mild
+Laryngitis,SIDER,LLT,,mild
+Cramps of lower extremities,SIDER,LLT,"{'value': 0.013000000000000001, 'type': 'percentage', 'raw': '1.3%'}",mild
+Muscle spasms,SIDER,PT,"{'value': 0.013000000000000001, 'type': 'percentage', 'raw': '1.3%'}",mild
+Lung disorder,SIDER,LLT,,mild
+Breast pain,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Mediastinal disorder,SIDER,LLT,,mild
+Cramp muscle,SIDER,LLT,"{'value': 0.006, 'type': 'percentage', 'raw': '0.6%'}",mild
+Musculoskeletal disorder,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Musculoskeletal pain,SIDER,LLT,"{'value': 0.05, 'type': 'percentage', 'raw': '5%'}",mild
+Mydriasis,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Nasal congestion,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Nasopharyngitis,SIDER,LLT,"{'value': 0.017, 'type': 'percentage', 'raw': '1.7%'}",mild
+Nausea,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",moderate
+Nervous system disorder,SIDER,LLT,,mild
+Nervousness,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Tension,SIDER,PT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Nightmare,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Otitis media,SIDER,LLT,"{'value': 0.017, 'type': 'percentage', 'raw': '1.7%'}",mild
+Pain,SIDER,LLT,"{'value': 0.036000000000000004, 'type': 'percentage', 'raw': '3.6%'}",mild
+Pallor,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Palpitations,SIDER,LLT,"{'value': 0.011000000000000001, 'type': 'percentage', 'raw': '1.1%'}",moderate
+Paraesthesia,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Neuropathy peripheral,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Pharyngitis,SIDER,LLT,"{'value': 0.068, 'type': 'percentage', 'raw': '6.8%'}",mild
+Pre-eclampsia,SIDER,LLT,,mild
+Multiple pregnancy,SIDER,LLT,,mild
+Pruritus,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Pulmonary oedema,SIDER,LLT,,mild
+Respiratory tract infection,SIDER,LLT,"{'value': 0.07, 'type': 'percentage', 'raw': '7%'}",mild
+Rhinitis,SIDER,LLT,"{'value': 0.03, 'type': 'percentage', 'raw': '3%'}",mild
+Skin disorder,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Stomatitis,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Sweating,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Hyperhidrosis,SIDER,PT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Tachycardia,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",moderate
+Supraventricular tachycardia,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",severe
+Tinnitus,SIDER,LLT,,mild
+Tracheitis,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Tremor,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",moderate
+Upper respiratory tract infection,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Urinary tract infection,SIDER,LLT,,mild
+Urinary tract disorder,SIDER,LLT,,mild
+Urethral disorder,SIDER,PT,,mild
+Urticaria,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",moderate
+Angiopathy,SIDER,LLT,,mild
+Vasodilation,SIDER,LLT,,mild
+Vasodilation procedure,SIDER,PT,,mild
+Vertigo,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Vomiting,SIDER,LLT,"{'value': 0.057, 'type': 'percentage', 'raw': '5.7%'}",moderate
+Wheezing,SIDER,LLT,"{'value': 0.015, 'type': 'percentage', 'raw': '1.5%'}",mild
+Dry mouth,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Cardiac output increased,SIDER,LLT,,mild
+Cardiac failure high output,SIDER,PT,,mild
+Chills,SIDER,LLT,,mild
+Agitation,SIDER,LLT,"{'value': 0.0005, 'type': 'categorical', 'category': 'rare', 'range': '0.01-0.1%', 'raw': 'very rare'}",mild
+Mood swings,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Affect lability,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Migraine,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Application site reaction,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Tongue discolouration,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Accidental injury,SIDER,LLT,"{'value': 0.057, 'type': 'percentage', 'raw': '5.7%'}",mild
+Injury,SIDER,PT,"{'value': 0.057, 'type': 'percentage', 'raw': '5.7%'}",mild
+Myocardial ischaemia,SIDER,LLT,,mild
+Malnutrition,SIDER,LLT,,mild
+Lightheadedness,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Metabolic acidosis,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Epigastric distress,SIDER,LLT,,mild
+Stomach ache,SIDER,LLT,"{'value': 0.03, 'type': 'percentage', 'raw': '3%'}",mild
+Abdominal pain upper,SIDER,PT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Malaise,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Discomfort,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Feeling abnormal,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Ill-defined disorder,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Myalgia,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Cardiac fibrillation,SIDER,LLT,,mild
+Increased appetite,SIDER,LLT,"{'value': 0.03, 'type': 'percentage', 'raw': '3%'}",mild
+Epigastric pain,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Excitement,SIDER,LLT,"{'value': 0.2, 'type': 'percentage', 'raw': '20%'}",mild
+Thinking abnormal,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Mental disability,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Tremor fine,SIDER,LLT,"{'value': 0.1, 'type': 'categorical', 'category': 'very common', 'range': '>=10%', 'raw': 'very common'}",moderate
+Tremor muscle,SIDER,LLT,,moderate
+Feeling tense,SIDER,LLT,,mild
+Euphoric mood,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Tongue ulceration,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Chest discomfort,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Saliva altered,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Bronchospasm aggravated,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",moderate
+Bronchospasm paradoxical,SIDER,LLT,"{'value': 0.0005, 'type': 'categorical', 'category': 'rare', 'range': '0.01-0.1%', 'raw': 'very rare'}",moderate
+Tremor of hands,SIDER,LLT,,moderate
+Strangury,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Dysuria,SIDER,PT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Extrasystoles,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Exacerbation of asthma,SIDER,LLT,"{'value': 0.085, 'type': 'percentage', 'raw': '8.5%'}",mild
+Shakiness,SIDER,LLT,"{'value': 0.09, 'type': 'percentage', 'raw': '9%'}",mild
+Tachycardia foetal,SIDER,LLT,,moderate
+Hyperkinesia,SIDER,LLT,"{'value': 0.0005, 'type': 'categorical', 'category': 'rare', 'range': '0.01-0.1%', 'raw': 'very rare'}",mild
+Rigors,SIDER,LLT,,mild
+Gastrointestinal symptom NOS,SIDER,LLT,"{'value': 0.02, 'type': 'percentage', 'raw': '2%'}",mild
+Lymphadenopathy,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Blood pressure increased,SIDER,LLT,"{'value': 0.05, 'type': 'percentage', 'raw': '5%'}",mild
+Electrocardiogram ST segment depression,SIDER,LLT,,mild
+Fluid overload,SIDER,LLT,,mild
+Sensation of warmth,SIDER,LLT,,mild
+Feeling hot,SIDER,PT,,mild
+Cough increased,SIDER,LLT,"{'value': 0.027000000000000003, 'type': 'percentage', 'raw': '2.7%'}",mild
+Throat irritation,SIDER,LLT,"{'value': 0.05, 'type': 'categorical', 'category': 'common', 'range': '1-10%', 'raw': 'uncommon'}",mild
+Emotional distress,SIDER,LLT,,mild
+Sweating increased,SIDER,LLT,,mild
+Taste altered,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Oropharyngeal swelling,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Cold symptoms,SIDER,LLT,"{'value': 0.017, 'type': 'percentage', 'raw': '1.7%'}",mild
+Insomnia,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",moderate
+Unspecified disorder of autonomic nervous system,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Autonomic neuropathy,SIDER,PT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Vascular resistance systemic,SIDER,LLT,,mild
+Ileus,SIDER,LLT,,mild
+Abdominal bloating,SIDER,LLT,,mild
+Abdominal distension,SIDER,PT,,mild
+Peripheral vasodilatation,SIDER,LLT,"{'value': 0.0005, 'type': 'categorical', 'category': 'rare', 'range': '0.01-0.1%', 'raw': 'rare'}",mild
+Vasodilatation,SIDER,PT,"{'value': 0.0005, 'type': 'categorical', 'category': 'rare', 'range': '0.01-0.1%', 'raw': 'rare'}",mild
+Appetite absent,SIDER,LLT,"{'value': 0.01, 'type': 'percentage', 'raw': '1%'}",mild
+Vaginal moniliasis,SIDER,LLT,,mild
+Vulvovaginal candidiasis,SIDER,PT,,mild
+Vulvovaginal mycotic infection,SIDER,PT,,mild
+Dysmenorrhoea,SIDER,LLT,,mild
+Eczema,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Gastrooesophageal reflux disease,SIDER,LLT,"{'raw': 'postmarketing', 'type': 'unknown'}",mild
+Haematuria,SIDER,LLT,,mild
+Herpes simplex,SIDER,LLT,,mild
+Hyperaesthesia,SIDER,LLT,,mild
+Hypoaesthesia,SIDER,LLT,,mild
+Eye pruritus,SIDER,LLT,,mild
+Hypertonia,SIDER,LLT,"{'value': 0.0, 'type': 'percentage', 'raw': '0%'}",mild
+Sinusitis,SIDER,LLT,"{'value': 0.027000000000000003, 'type': 'percentage', 'raw': '2.7%'}",mild
+Syncope,SIDER,LLT,,mild
+Loss of consciousness,SIDER,PT,,mild
+Shock,SIDER,PT,,mild
+Viral infection,SIDER,LLT,"{'value': 0.09300000000000001, 'type': 'percentage', 'raw': '9.3%'}",mild
+Dry throat,SIDER,LLT,,mild
+Electrocardiogram abnormal,SIDER,LLT,,mild
+Electrocardiogram change,SIDER,LLT,,mild

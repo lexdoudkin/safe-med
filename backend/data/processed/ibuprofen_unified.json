@@ -1,0 +1,3246 @@
+{
+  "drug_id": "CID3672",
+  "drug_name": "Ibuprofen",
+  "drug_class": "NSAID",
+  "alternate_names": [
+    "ibuprofen",
+    "advil",
+    "motrin",
+    "nurofen",
+    "brufen"
+  ],
+  "data_sources": [
+    "SIDER 4.1",
+    "Curated Contraindications",
+    "Demographic Risk Factors",
+    "Drug Interactions"
+  ],
+  "side_effects": [
+    {
+      "name": "Abdominal cramps",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Abdominal pain",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Abdominal distension",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Gastrointestinal pain",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Acidosis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Pancreatitis acute",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Adrenal insufficiency",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.01,
+        "type": "percentage",
+        "raw": "1%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Agranulocytosis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Alopecia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Amblyopia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Anaphylactic shock",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Anaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0209,
+        "type": "percentage",
+        "raw": "2.09%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Aplastic anaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Haemolytic anaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Angioedema",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Anorexia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Decreased appetite",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Anxiety",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Apnoea",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.26,
+        "type": "percentage",
+        "raw": "26%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Arrhythmia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Arthralgia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Musculoskeletal discomfort",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Arthritis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Asthenia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Asthma",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Atelectasis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.01,
+        "type": "percentage",
+        "raw": "1%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Pneumothorax",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "value": 0.01,
+        "type": "percentage",
+        "raw": "1%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Bacteraemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0,
+        "type": "percentage",
+        "raw": "0%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Pneumonia bacterial",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0,
+        "type": "percentage",
+        "raw": "0%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Mental disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Bronchospasm",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Bronchitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Bronchopulmonary dysplasia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.1,
+        "type": "categorical",
+        "category": "very common",
+        "range": ">=10%",
+        "raw": "very common"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Cholestasis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Colitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Colitis ulcerative",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Proctocolitis",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Coma",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Infection",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Confusional state",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Feeling abnormal",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Conjunctivitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Constipation",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.22,
+        "type": "percentage",
+        "raw": "22%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Contusion",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cough",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0034799999999999996,
+        "type": "percentage",
+        "raw": "0.348%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Crohn's disease",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cystitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cystitis noninfective",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Bladder pain",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Libido decreased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Disturbance in sexual arousal",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dysphagia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Depression",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dermatitis exfoliative",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Diarrhoea",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.07139999999999999,
+        "type": "percentage",
+        "raw": "7.14%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Diplopia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dizziness",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0174,
+        "type": "percentage",
+        "raw": "1.74%"
+      },
+      "severity": "moderate"
+    },
+    {
+      "name": "Drowsiness",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Somnolence",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "value": 0.22,
+        "type": "percentage",
+        "raw": "22%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Duodenal ulcer",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Duodenitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dyspepsia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.00697,
+        "type": "percentage",
+        "raw": "0.697%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Dyspnoea",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dysuria",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Ecchymosis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Oedema",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0,
+        "type": "percentage",
+        "raw": "0%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Eosinophilia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.25,
+        "type": "percentage",
+        "raw": "25%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Toxic epidermal necrolysis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Epistaxis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Eructation",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Erythema multiforme",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Oesophageal spasm",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Oesophagitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Rash",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Dermatitis",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Fatigue",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Flatulence",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.153,
+        "type": "percentage",
+        "raw": "15.3%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Gastritis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Gastroenteritis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Gastrooesophageal reflux disease",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Gastrointestinal disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.18,
+        "type": "percentage",
+        "raw": "18%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Gastrointestinal haemorrhage",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Glomerulitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Glomerulonephritis",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Glossitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Glycosuria",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Gynaecomastia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Hallucination",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Headache",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.10800000000000001,
+        "type": "percentage",
+        "raw": "10.8%"
+      },
+      "severity": "moderate"
+    },
+    {
+      "name": "Cardiac failure",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cardiac failure congestive",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Heartburn",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Haematemesis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Blood disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Haematuria",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.01,
+        "type": "percentage",
+        "raw": "1%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Haemorrhage",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0557,
+        "type": "percentage",
+        "raw": "5.57%"
+      },
+      "severity": "severe"
+    },
+    {
+      "name": "Haemoglobin",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "value": 0.0557,
+        "type": "percentage",
+        "raw": "5.57%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Hepatitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hepatitis toxic",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hepatorenal syndrome",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Inguinal hernia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hiccups",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hoarseness",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dysphonia",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hyperglycaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hypernatraemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.04,
+        "type": "percentage",
+        "raw": "4%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Hypersensitivity",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hypertension",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0,
+        "type": "percentage",
+        "raw": "0%"
+      },
+      "severity": "moderate"
+    },
+    {
+      "name": "Pulmonary hypertension",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Hypocalcaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.09,
+        "type": "percentage",
+        "raw": "9%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Hypoglycaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.06,
+        "type": "percentage",
+        "raw": "6%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Hypokalaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0279,
+        "type": "percentage",
+        "raw": "2.79%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Hyponatraemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.1,
+        "type": "categorical",
+        "category": "very common",
+        "range": ">=10%",
+        "raw": "very common"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Hypoproteinaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.07139999999999999,
+        "type": "percentage",
+        "raw": "7.14%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Hypotension",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.035699999999999996,
+        "type": "percentage",
+        "raw": "3.57%"
+      },
+      "severity": "moderate"
+    },
+    {
+      "name": "Immune system disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Influenza",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Intestinal perforation",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Jaundice",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Renal failure acute",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.05,
+        "type": "categorical",
+        "category": "common",
+        "range": "1-10%",
+        "raw": "uncommon"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Renal papillary necrosis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Periventricular leukomalacia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Leukopenia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Liver disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hepatocellular injury",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Foetor hepaticus",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Mediastinal disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Melaena",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Meningitis aseptic",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Meningoencephalitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Encephalitis",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Menorrhagia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Metrorrhagia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Mixed connective tissue disease",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cramp muscle",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Muscle spasms",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hypertonia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Myocardial infarction",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Acute coronary syndrome",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nasal congestion",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nausea",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.624,
+        "type": "percentage",
+        "raw": "62.4%"
+      },
+      "severity": "moderate"
+    },
+    {
+      "name": "Neoplasm",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nephritis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nephritis interstitial",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Tubulointerstitial nephritis",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nephrotic syndrome",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nervous system disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nervousness",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Tension",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Neuralgia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Neuritis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Neuropathy peripheral",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Neutropenia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.07139999999999999,
+        "type": "percentage",
+        "raw": "7.14%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Oliguria",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Optic neuritis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Palpitations",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Pancreatitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Pancytopenia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Paraesthesia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Peptic ulcer",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Pharyngitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Pneumonia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Polyuria",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Urine output increased",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Proteinuria",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Protein urine present",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Pruritus",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.01,
+        "type": "percentage",
+        "raw": "1%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Benign intracranial hypertension",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Purpura",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Vascular purpura",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Henoch-Schonlein purpura",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Renal failure",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.04,
+        "type": "percentage",
+        "raw": "4%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Respiratory tract infection",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.13,
+        "type": "percentage",
+        "raw": "13%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Reye's syndrome",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Rhinitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Scotoma",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Convulsion",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Serum sickness",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Shock",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Sinusitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Skin disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Skin lesion",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.06,
+        "type": "percentage",
+        "raw": "6%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Stevens-Johnson syndrome",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Gastric ulcer",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Stomatitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Ulcerative stomatitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Mouth ulceration",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cerebrovascular accident",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Sweating",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hyperhidrosis",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Swelling",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Syncope",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Loss of consciousness",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Tachycardia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Sinus tachycardia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Thirst",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Thrombocytopenia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Tinnitus",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Tremor",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Ulcer",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Erythema",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Pollakiuria",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Urinary incontinence",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Urinary tract infection",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.04,
+        "type": "percentage",
+        "raw": "4%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Urinary tract disorder",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Urethral disorder",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Urticaria",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Vasculitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Vasodilation",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Vasodilation procedure",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Vertigo",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Vision decreased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Visual acuity reduced",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Visual impairment",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Vomiting",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.174,
+        "type": "percentage",
+        "raw": "17.4%"
+      },
+      "severity": "moderate"
+    },
+    {
+      "name": "Weight decreased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Wheezing",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dry mouth",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Urinary retention",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0348,
+        "type": "percentage",
+        "raw": "3.48%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Chills",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hepatic failure",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Sinus bradycardia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Agitation",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Mood swings",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Affect lability",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Oedema peripheral",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0139,
+        "type": "percentage",
+        "raw": "1.39%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Dermatitis bullous",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cataract",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hepatic function abnormal",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Neck stiffness",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Musculoskeletal stiffness",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nuchal rigidity",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Bleeding time prolonged",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Blood urea increased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.04,
+        "type": "percentage",
+        "raw": "4%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Creatinine increased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Blood creatinine increased",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "value": 0.01,
+        "type": "percentage",
+        "raw": "1%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Necrolysis epidermal",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Gastrointestinal perforation",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "raw": "postmarketing",
+        "type": "unknown"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Pulmonary haemorrhage",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.1,
+        "type": "categorical",
+        "category": "very common",
+        "range": ">=10%",
+        "raw": "very common"
+      },
+      "severity": "severe"
+    },
+    {
+      "name": "Injection site reaction",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Kidney function abnormal",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Renal impairment",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "value": 0.04,
+        "type": "percentage",
+        "raw": "4%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Lactic dehydrogenase activity increased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.035699999999999996,
+        "type": "percentage",
+        "raw": "3.57%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Blood lactate dehydrogenase increased",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "value": 0.035699999999999996,
+        "type": "percentage",
+        "raw": "3.57%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Liver function test abnormal",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hepatic necrosis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Vesiculobullous rash",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Rash pustular",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Haemoglobin decreased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0105,
+        "type": "percentage",
+        "raw": "1.05%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Malnutrition",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Unspecified disorder of skin and subcutaneous tissue",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Lightheadedness",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Shallow breathing",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hypopnoea",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Stomach ache",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Abdominal pain upper",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Malaise",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Discomfort",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Ill-defined disorder",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Myalgia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Abdominal discomfort",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0,
+        "type": "percentage",
+        "raw": "0%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Epigastric pain",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Disorientation",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Abnormal dreams",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Slurred speech",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dysarthria",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Respiratory depression",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Pulmonary function test decreased",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Euphoric mood",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Abdominal distress",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Azotaemia of renal origin",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Azotaemia",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hepatic enzyme increased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Necrotising fasciitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cellulitis gangrenous",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Creatinine low",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Blood creatinine decreased",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hypoalbuminaemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.035699999999999996,
+        "type": "percentage",
+        "raw": "3.57%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Intraventricular haemorrhage",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.24,
+        "type": "percentage",
+        "raw": "24%"
+      },
+      "severity": "severe"
+    },
+    {
+      "name": "Wound haemorrhage",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0139,
+        "type": "percentage",
+        "raw": "1.39%"
+      },
+      "severity": "severe"
+    },
+    {
+      "name": "Pulmonary congestion",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Respiratory tract congestion",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Erectile dysfunction",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Sepsis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Rectal haemorrhage",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Hepatobiliary disease",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Fluid retention",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Toxic neuropathy",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hypoglycemic reaction",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Eruption",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dry eye",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cognitive impairment",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cognitive disorder",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Anaphylactoid reaction",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "severe"
+    },
+    {
+      "name": "Vision blurred",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Photosensitivity",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Photosensitivity reaction",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Exacerbation of asthma",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Influenza-like symptoms",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Influenza like illness",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Exhaustion",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Lupus erythematosus",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Systemic lupus erythematosus",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hyperkinesia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Teeth clenching",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Bruxism",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Lymphadenopathy",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Necrotizing enterocolitis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "raw": "postmarketing",
+        "type": "unknown"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Necrotising colitis",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "raw": "postmarketing",
+        "type": "unknown"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Necrotising enterocolitis neonatal",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "raw": "postmarketing",
+        "type": "unknown"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Bad taste",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Dysgeusia",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Visual disturbance",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Asthma aggravated",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Foot edema",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Local swelling",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Cough increased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nephrotoxicity",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Nephropathy toxic",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hypoxemia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.05,
+        "type": "categorical",
+        "category": "common",
+        "range": "1-10%",
+        "raw": "uncommon"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Hypoxia",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": {
+        "value": 0.05,
+        "type": "categorical",
+        "category": "common",
+        "range": "1-10%",
+        "raw": "uncommon"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Thrombocytosis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.0,
+        "type": "percentage",
+        "raw": "0%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Blood and lymphatic system disorders",
+      "source": "SIDER",
+      "meddra_type": "nan",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Glomerular filtration rate decreased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Serum urea increased",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Insomnia",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "moderate"
+    },
+    {
+      "name": "Respiratory failure",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.04,
+        "type": "percentage",
+        "raw": "4%"
+      },
+      "severity": "severe"
+    },
+    {
+      "name": "Epidermal necrosis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Ileus",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Urine output",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": {
+        "value": 0.01,
+        "type": "percentage",
+        "raw": "1%"
+      },
+      "severity": "mild"
+    },
+    {
+      "name": "Abdominal bloating",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Hearing impaired",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Deafness",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Renal tubular necrosis",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Appetite absent",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Color vision change",
+      "source": "SIDER",
+      "meddra_type": "LLT",
+      "frequency": null,
+      "severity": "mild"
+    },
+    {
+      "name": "Colour blindness acquired",
+      "source": "SIDER",
+      "meddra_type": "PT",
+      "frequency": null,
+      "severity": "mild"
+    }
+  ],
+  "boxed_warnings": [],
+  "contraindications": [
+    {
+      "condition": "Peptic Ulcer Disease",
+      "icd10_code": "K27",
+      "severity": "absolute",
+      "reason": "Risk of GI bleeding and perforation"
+    },
+    {
+      "condition": "Active GI Bleeding",
+      "icd10_code": "K92.2",
+      "severity": "absolute",
+      "reason": "Will worsen bleeding"
+    },
+    {
+      "condition": "Chronic Kidney Disease Stage 4-5",
+      "icd10_code": "N18.4",
+      "severity": "absolute",
+      "reason": "Risk of acute kidney injury"
+    },
+    {
+      "condition": "Chronic Kidney Disease Stage 4-5",
+      "icd10_code": "N18.5",
+      "severity": "absolute",
+      "reason": "Risk of acute kidney injury"
+    },
+    {
+      "condition": "Severe Heart Failure",
+      "icd10_code": "I50.9",
+      "severity": "absolute",
+      "reason": "Fluid retention and worsening HF"
+    },
+    {
+      "condition": "CABG Surgery (perioperative)",
+      "icd10_code": "Z95.1",
+      "severity": "absolute",
+      "reason": "FDA black box warning"
+    },
+    {
+      "condition": "Third Trimester Pregnancy",
+      "icd10_code": "O09.93",
+      "severity": "absolute",
+      "reason": "Risk of premature ductus closure"
+    },
+    {
+      "condition": "Aspirin-Sensitive Asthma",
+      "icd10_code": "J45.20",
+      "severity": "absolute",
+      "reason": "Risk of bronchospasm"
+    },
+    {
+      "condition": "NSAID Allergy",
+      "icd10_code": "T88.6",
+      "severity": "absolute",
+      "reason": "Anaphylaxis risk"
+    },
+    {
+      "condition": "History of GI Bleeding",
+      "icd10_code": "K92.2",
+      "severity": "relative",
+      "reason": "Increased recurrence risk"
+    },
+    {
+      "condition": "Hypertension (uncontrolled)",
+      "icd10_code": "I10",
+      "severity": "relative",
+      "reason": "May increase blood pressure"
+    },
+    {
+      "condition": "Mild-Moderate CKD",
+      "icd10_code": "N18.3",
+      "severity": "relative",
+      "reason": "Monitor renal function"
+    },
+    {
+      "condition": "Liver Cirrhosis",
+      "icd10_code": "K74.60",
+      "severity": "relative",
+      "reason": "Reduced metabolism and bleeding risk"
+    },
+    {
+      "condition": "Elderly (>65 years)",
+      "icd10_code": "Z68.43",
+      "severity": "relative",
+      "reason": "Higher GI and renal risk"
+    },
+    {
+      "condition": "Inflammatory Bowel Disease",
+      "icd10_code": "K50",
+      "severity": "relative",
+      "reason": "May trigger flares"
+    },
+    {
+      "condition": "Inflammatory Bowel Disease",
+      "icd10_code": "K51",
+      "severity": "relative",
+      "reason": "May trigger flares"
+    },
+    {
+      "condition": "Coagulation Disorders",
+      "icd10_code": "D68.9",
+      "severity": "relative",
+      "reason": "Bleeding risk"
+    },
+    {
+      "condition": "Systemic Lupus Erythematosus",
+      "icd10_code": "M32.9",
+      "severity": "relative",
+      "reason": "Risk of aseptic meningitis"
+    },
+    {
+      "condition": "Dehydration",
+      "icd10_code": "E86.0",
+      "severity": "relative",
+      "reason": "Increased nephrotoxicity risk"
+    },
+    {
+      "condition": "Alcohol Use Disorder",
+      "icd10_code": "F10.20",
+      "severity": "relative",
+      "reason": "Increased GI bleeding risk"
+    },
+    {
+      "condition": "First/Second Trimester Pregnancy",
+      "icd10_code": "O09.91",
+      "severity": "caution",
+      "reason": "Use only if clearly needed"
+    },
+    {
+      "condition": "Breastfeeding",
+      "icd10_code": "Z39.1",
+      "severity": "caution",
+      "reason": "Small amounts in breast milk"
+    }
+  ],
+  "demographic_risks": [
+    {
+      "factor": "age>=65",
+      "category": "geriatric",
+      "risk_multiplier": 2.5,
+      "specific_side_effects": [
+        "GI bleeding",
+        "Acute kidney injury",
+        "Cardiovascular events"
+      ],
+      "recommendations": "Use lowest effective dose for shortest duration. Consider PPI co-therapy."
+    },
+    {
+      "factor": "age>=75",
+      "category": "very_elderly",
+      "risk_multiplier": 3.5,
+      "specific_side_effects": [
+        "GI bleeding",
+        "Acute kidney injury",
+        "Falls",
+        "Cognitive effects"
+      ],
+      "recommendations": "Avoid if possible. If necessary use lowest dose with PPI."
+    },
+    {
+      "factor": "age<12",
+      "category": "pediatric",
+      "risk_multiplier": 1.2,
+      "specific_side_effects": [
+        "Reye syndrome (with viral illness)"
+      ],
+      "recommendations": "Do not use with chickenpox or flu. Weight-based dosing required."
+    },
+    {
+      "factor": "sex=female",
+      "category": "female",
+      "risk_multiplier": 1.1,
+      "specific_side_effects": [
+        "Fluid retention"
+      ],
+      "recommendations": "Monitor for edema"
+    },
+    {
+      "factor": "pregnant_trimester=3",
+      "category": "pregnancy_t3",
+      "risk_multiplier": 999.0,
+      "specific_side_effects": [
+        "Premature ductus closure",
+        "Oligohydramnios"
+      ],
+      "recommendations": "CONTRAINDICATED after 30 weeks gestation"
+    },
+    {
+      "factor": "pregnant_trimester=1",
+      "category": "pregnancy_t1",
+      "risk_multiplier": 1.5,
+      "specific_side_effects": [
+        "Miscarriage risk (controversial)"
+      ],
+      "recommendations": "Use only if clearly needed"
+    },
+    {
+      "factor": "pregnant_trimester=2",
+      "category": "pregnancy_t2",
+      "risk_multiplier": 1.3,
+      "specific_side_effects": [
+        "Fetal kidney effects"
+      ],
+      "recommendations": "Use only if clearly needed"
+    },
+    {
+      "factor": "breastfeeding=true",
+      "category": "lactation",
+      "risk_multiplier": 1.1,
+      "specific_side_effects": [
+        "Minimal infant exposure"
+      ],
+      "recommendations": "Generally considered compatible"
+    },
+    {
+      "factor": "smoker=true",
+      "category": "smoker",
+      "risk_multiplier": 1.4,
+      "specific_side_effects": [
+        "GI bleeding"
+      ],
+      "recommendations": "Increased mucosal damage risk"
+    },
+    {
+      "factor": "alcohol_use=heavy",
+      "category": "alcohol",
+      "risk_multiplier": 2.0,
+      "specific_side_effects": [
+        "GI bleeding",
+        "Liver toxicity"
+      ],
+      "recommendations": "Avoid concurrent use"
+    },
+    {
+      "factor": "renal_function=mild_impairment",
+      "category": "ckd_mild",
+      "risk_multiplier": 1.5,
+      "specific_side_effects": [
+        "Acute kidney injury"
+      ],
+      "recommendations": "Monitor creatinine. Avoid dehydration."
+    },
+    {
+      "factor": "renal_function=moderate_impairment",
+      "category": "ckd_moderate",
+      "risk_multiplier": 2.5,
+      "specific_side_effects": [
+        "Acute kidney injury"
+      ],
+      "recommendations": "Use with extreme caution. Consider alternatives."
+    },
+    {
+      "factor": "history_gi_bleed=true",
+      "category": "gi_history",
+      "risk_multiplier": 3.0,
+      "specific_side_effects": [
+        "GI bleeding"
+      ],
+      "recommendations": "Co-prescribe PPI. Consider alternative analgesic."
+    },
+    {
+      "factor": "on_anticoagulant=true",
+      "category": "anticoag",
+      "risk_multiplier": 3.5,
+      "specific_side_effects": [
+        "Bleeding"
+      ],
+      "recommendations": "Avoid if possible. If necessary monitor closely."
+    },
+    {
+      "factor": "on_aspirin=true",
+      "category": "aspirin_user",
+      "risk_multiplier": 2.0,
+      "specific_side_effects": [
+        "GI bleeding",
+        "Reduced cardioprotection"
+      ],
+      "recommendations": "Take ibuprofen 30min after or 8hr before aspirin."
+    },
+    {
+      "factor": "cardiovascular_disease=true",
+      "category": "cvd",
+      "risk_multiplier": 1.8,
+      "specific_side_effects": [
+        "MI",
+        "Stroke",
+        "Heart failure"
+      ],
+      "recommendations": "Use lowest dose for shortest time. Consider alternatives."
+    },
+    {
+      "factor": "hypertension=true",
+      "category": "htn",
+      "risk_multiplier": 1.4,
+      "specific_side_effects": [
+        "BP elevation",
+        "Reduced antihypertensive effect"
+      ],
+      "recommendations": "Monitor BP. May need antihypertensive adjustment."
+    }
+  ],
+  "drug_interactions": [
+    {
+      "interacting_drug": "Warfarin",
+      "drug_class": "Anticoagulant",
+      "severity": "major",
+      "mechanism": "Platelet inhibition + anticoagulation",
+      "clinical_effect": "Increased bleeding risk (GI and other)",
+      "recommendation": "Avoid combination. If necessary monitor INR closely and watch for bleeding."
+    },
+    {
+      "interacting_drug": "Rivaroxaban",
+      "drug_class": "Anticoagulant (DOAC)",
+      "severity": "major",
+      "mechanism": "Additive bleeding risk",
+      "clinical_effect": "Increased bleeding risk",
+      "recommendation": "Avoid combination if possible."
+    },
+    {
+      "interacting_drug": "Apixaban",
+      "drug_class": "Anticoagulant (DOAC)",
+      "severity": "major",
+      "mechanism": "Additive bleeding risk",
+      "clinical_effect": "Increased bleeding risk",
+      "recommendation": "Avoid combination if possible."
+    },
+    {
+      "interacting_drug": "Dabigatran",
+      "drug_class": "Anticoagulant (DOAC)",
+      "severity": "major",
+      "mechanism": "Additive bleeding risk",
+      "clinical_effect": "Increased bleeding risk",
+      "recommendation": "Avoid combination if possible."
+    },
+    {
+      "interacting_drug": "Heparin",
+      "drug_class": "Anticoagulant",
+      "severity": "major",
+      "mechanism": "Additive bleeding risk",
+      "clinical_effect": "Increased bleeding risk",
+      "recommendation": "Avoid combination."
+    },
+    {
+      "interacting_drug": "Aspirin (>325mg)",
+      "drug_class": "NSAID/Antiplatelet",
+      "severity": "major",
+      "mechanism": "Additive GI toxicity + reduced aspirin cardioprotection",
+      "clinical_effect": "GI bleeding and reduced MI protection",
+      "recommendation": "Avoid combination. If needed take aspirin first."
+    },
+    {
+      "interacting_drug": "Aspirin (low-dose)",
+      "drug_class": "Antiplatelet",
+      "severity": "moderate",
+      "mechanism": "Competitive COX-1 binding",
+      "clinical_effect": "Reduced cardioprotective effect of aspirin",
+      "recommendation": "Take aspirin 30min before or 8hr after ibuprofen."
+    },
+    {
+      "interacting_drug": "Clopidogrel",
+      "drug_class": "Antiplatelet",
+      "severity": "major",
+      "mechanism": "Additive bleeding risk",
+      "clinical_effect": "Increased GI bleeding",
+      "recommendation": "Avoid if possible. Consider PPI if necessary."
+    },
+    {
+      "interacting_drug": "Prasugrel",
+      "drug_class": "Antiplatelet",
+      "severity": "major",
+      "mechanism": "Additive bleeding risk",
+      "clinical_effect": "Increased bleeding",
+      "recommendation": "Avoid combination."
+    },
+    {
+      "interacting_drug": "Ticagrelor",
+      "drug_class": "Antiplatelet",
+      "severity": "major",
+      "mechanism": "Additive bleeding risk",
+      "clinical_effect": "Increased bleeding",
+      "recommendation": "Avoid combination."
+    },
+    {
+      "interacting_drug": "Lithium",
+      "drug_class": "Mood Stabilizer",
+      "severity": "major",
+      "mechanism": "Reduced renal lithium clearance",
+      "clinical_effect": "Lithium toxicity",
+      "recommendation": "Monitor lithium levels. May need 25-50% dose reduction."
+    },
+    {
+      "interacting_drug": "Methotrexate",
+      "drug_class": "Immunosuppressant",
+      "severity": "major",
+      "mechanism": "Reduced MTX clearance",
+      "clinical_effect": "Methotrexate toxicity (bone marrow suppression)",
+      "recommendation": "Avoid with high-dose MTX. Monitor closely with low-dose."
+    },
+    {
+      "interacting_drug": "Lisinopril",
+      "drug_class": "ACE Inhibitor",
+      "severity": "moderate",
+      "mechanism": "Reduced prostaglandin-mediated vasodilation",
+      "clinical_effect": "Reduced antihypertensive effect + increased nephrotoxicity",
+      "recommendation": "Monitor BP and renal function."
+    },
+    {
+      "interacting_drug": "Enalapril",
+      "drug_class": "ACE Inhibitor",
+      "severity": "moderate",
+      "mechanism": "Reduced prostaglandin-mediated vasodilation",
+      "clinical_effect": "Reduced antihypertensive effect + increased nephrotoxicity",
+      "recommendation": "Monitor BP and renal function."
+    },
+    {
+      "interacting_drug": "Ramipril",
+      "drug_class": "ACE Inhibitor",
+      "severity": "moderate",
+      "mechanism": "Reduced prostaglandin-mediated vasodilation",
+      "clinical_effect": "Reduced antihypertensive effect + increased nephrotoxicity",
+      "recommendation": "Monitor BP and renal function."
+    },
+    {
+      "interacting_drug": "Losartan",
+      "drug_class": "ARB",
+      "severity": "moderate",
+      "mechanism": "Reduced prostaglandin-mediated vasodilation",
+      "clinical_effect": "Reduced antihypertensive effect + increased nephrotoxicity",
+      "recommendation": "Monitor BP and renal function."
+    },
+    {
+      "interacting_drug": "Valsartan",
+      "drug_class": "ARB",
+      "severity": "moderate",
+      "mechanism": "Reduced prostaglandin-mediated vasodilation",
+      "clinical_effect": "Reduced antihypertensive effect + increased nephrotoxicity",
+      "recommendation": "Monitor BP and renal function."
+    },
+    {
+      "interacting_drug": "Furosemide",
+      "drug_class": "Loop Diuretic",
+      "severity": "moderate",
+      "mechanism": "Reduced prostaglandin-mediated renal blood flow",
+      "clinical_effect": "Reduced diuretic effect + increased nephrotoxicity",
+      "recommendation": "Monitor fluid status and renal function."
+    },
+    {
+      "interacting_drug": "Hydrochlorothiazide",
+      "drug_class": "Thiazide Diuretic",
+      "severity": "moderate",
+      "mechanism": "Reduced prostaglandin-mediated effects",
+      "clinical_effect": "Reduced diuretic and antihypertensive effect",
+      "recommendation": "Monitor BP and electrolytes."
+    },
+    {
+      "interacting_drug": "Spironolactone",
+      "drug_class": "K-sparing Diuretic",
+      "severity": "moderate",
+      "mechanism": "Reduced renal function + K retention",
+      "clinical_effect": "Hyperkalemia and reduced diuretic effect",
+      "recommendation": "Monitor potassium."
+    },
+    {
+      "interacting_drug": "Digoxin",
+      "drug_class": "Cardiac Glycoside",
+      "severity": "moderate",
+      "mechanism": "Reduced renal digoxin clearance",
+      "clinical_effect": "Digoxin toxicity",
+      "recommendation": "Monitor digoxin levels."
+    },
+    {
+      "interacting_drug": "Cyclosporine",
+      "drug_class": "Immunosuppressant",
+      "severity": "major",
+      "mechanism": "Additive nephrotoxicity",
+      "clinical_effect": "Acute kidney injury",
+      "recommendation": "Avoid if possible. Monitor renal function closely."
+    },
+    {
+      "interacting_drug": "Tacrolimus",
+      "drug_class": "Immunosuppressant",
+      "severity": "major",
+      "mechanism": "Additive nephrotoxicity",
+      "clinical_effect": "Acute kidney injury",
+      "recommendation": "Avoid if possible. Monitor renal function closely."
+    },
+    {
+      "interacting_drug": "SSRIs (Fluoxetine)",
+      "drug_class": "Antidepressant",
+      "severity": "moderate",
+      "mechanism": "Additive effect on platelet function",
+      "clinical_effect": "Increased GI bleeding risk",
+      "recommendation": "Consider PPI co-therapy."
+    },
+    {
+      "interacting_drug": "SSRIs (Sertraline)",
+      "drug_class": "Antidepressant",
+      "severity": "moderate",
+      "mechanism": "Additive effect on platelet function",
+      "clinical_effect": "Increased GI bleeding risk",
+      "recommendation": "Consider PPI co-therapy."
+    },
+    {
+      "interacting_drug": "SNRIs (Venlafaxine)",
+      "drug_class": "Antidepressant",
+      "severity": "moderate",
+      "mechanism": "Additive effect on platelet function",
+      "clinical_effect": "Increased GI bleeding risk",
+      "recommendation": "Consider PPI co-therapy."
+    },
+    {
+      "interacting_drug": "Corticosteroids",
+      "drug_class": "Anti-inflammatory",
+      "severity": "moderate",
+      "mechanism": "Additive GI toxicity",
+      "clinical_effect": "Increased GI ulceration and bleeding",
+      "recommendation": "Use PPI prophylaxis."
+    },
+    {
+      "interacting_drug": "Quinolones (Ciprofloxacin)",
+      "drug_class": "Antibiotic",
+      "severity": "moderate",
+      "mechanism": "CNS effects",
+      "clinical_effect": "Increased seizure risk",
+      "recommendation": "Caution in patients with seizure history."
+    },
+    {
+      "interacting_drug": "Aminoglycosides",
+      "drug_class": "Antibiotic",
+      "severity": "moderate",
+      "mechanism": "Additive nephrotoxicity",
+      "clinical_effect": "Acute kidney injury",
+      "recommendation": "Monitor renal function."
+    },
+    {
+      "interacting_drug": "Bisphosphonates",
+      "drug_class": "Osteoporosis",
+      "severity": "moderate",
+      "mechanism": "Additive GI irritation",
+      "clinical_effect": "Increased GI ulceration",
+      "recommendation": "Take bisphosphonate first. Consider alternative analgesic."
+    },
+    {
+      "interacting_drug": "Phenytoin",
+      "drug_class": "Anticonvulsant",
+      "severity": "minor",
+      "mechanism": "Protein binding displacement",
+      "clinical_effect": "Transient increase in free phenytoin",
+      "recommendation": "Usually not clinically significant."
+    },
+    {
+      "interacting_drug": "Sulfonylureas",
+      "drug_class": "Antidiabetic",
+      "severity": "minor",
+      "mechanism": "Protein binding displacement",
+      "clinical_effect": "Hypoglycemia risk",
+      "recommendation": "Monitor blood glucose."
+    },
+    {
+      "interacting_drug": "Alcohol",
+      "drug_class": "CNS Depressant",
+      "severity": "moderate",
+      "mechanism": "Additive GI toxicity",
+      "clinical_effect": "Increased GI bleeding risk",
+      "recommendation": "Avoid concurrent use especially chronic alcohol use."
+    },
+    {
+      "interacting_drug": "Other NSAIDs (Naproxen)",
+      "drug_class": "NSAID",
+      "severity": "major",
+      "mechanism": "Additive toxicity without added benefit",
+      "clinical_effect": "Increased GI/renal/CV toxicity",
+      "recommendation": "Never combine NSAIDs."
+    },
+    {
+      "interacting_drug": "Other NSAIDs (Diclofenac)",
+      "drug_class": "NSAID",
+      "severity": "major",
+      "mechanism": "Additive toxicity without added benefit",
+      "clinical_effect": "Increased GI/renal/CV toxicity",
+      "recommendation": "Never combine NSAIDs."
+    },
+    {
+      "interacting_drug": "Pemetrexed",
+      "drug_class": "Chemotherapy",
+      "severity": "major",
+      "mechanism": "Reduced pemetrexed clearance",
+      "clinical_effect": "Pemetrexed toxicity",
+      "recommendation": "Stop ibuprofen 2-5 days before pemetrexed."
+    },
+    {
+      "interacting_drug": "Tenofovir",
+      "drug_class": "Antiviral",
+      "severity": "moderate",
+      "mechanism": "Additive nephrotoxicity",
+      "clinical_effect": "Acute kidney injury",
+      "recommendation": "Monitor renal function."
+    },
+    {
+      "interacting_drug": "Vancomycin",
+      "drug_class": "Antibiotic",
+      "severity": "moderate",
+      "mechanism": "Additive nephrotoxicity",
+      "clinical_effect": "Acute kidney injury",
+      "recommendation": "Monitor renal function."
+    }
+  ],
+  "risk_summary": {
+    "total_side_effects": 337,
+    "severe_side_effects": 15,
+    "total_contraindications": 22,
+    "absolute_contraindications": 9,
+    "total_interactions": 38,
+    "major_interactions": 16
+  }
+}

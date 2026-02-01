@@ -1,0 +1,19 @@
+drug_a_id,drug_a_name,drug_b_name,drug_b_class,severity,mechanism,clinical_effect,recommendation
+CID2083,Salbutamol,Propranolol,Non-selective Beta-blocker,major,Competitive antagonism at beta-2 receptors,Reduced bronchodilation and potential bronchospasm,Avoid non-selective beta-blockers in asthma. Use cardioselective if needed.
+CID2083,Salbutamol,Nadolol,Non-selective Beta-blocker,major,Competitive antagonism at beta-2 receptors,Reduced bronchodilation and potential bronchospasm,Avoid non-selective beta-blockers in asthma.
+CID2083,Salbutamol,Timolol,Non-selective Beta-blocker,major,Competitive antagonism (including ophthalmic),Bronchospasm even with eye drops,Avoid timolol eye drops in asthma patients.
+CID2083,Salbutamol,Sotalol,Non-selective Beta-blocker,major,Competitive antagonism + QT effects,Bronchospasm and arrhythmia risk,Contraindicated in asthma.
+CID2083,Salbutamol,MAOIs (Phenelzine),MAOI,major,Inhibited catecholamine metabolism,Severe hypertension and tachycardia,Avoid combination. Allow 14-day washout.
+CID2083,Salbutamol,MAOIs (Tranylcypromine),MAOI,major,Inhibited catecholamine metabolism,Severe hypertension and tachycardia,Avoid combination. Allow 14-day washout.
+CID2083,Salbutamol,Tricyclic Antidepressants,TCA,moderate,Additive cardiovascular effects,Increased risk of arrhythmias,Monitor ECG and heart rate.
+CID2083,Salbutamol,Furosemide,Loop Diuretic,moderate,Additive hypokalemia,Severe hypokalemia and arrhythmia risk,Monitor potassium. Consider supplementation.
+CID2083,Salbutamol,Hydrochlorothiazide,Thiazide Diuretic,moderate,Additive hypokalemia,Hypokalemia and arrhythmia risk,Monitor potassium.
+CID2083,Salbutamol,Digoxin,Cardiac Glycoside,moderate,Hypokalemia increases digoxin toxicity,Digoxin toxicity with arrhythmias,Monitor potassium and digoxin levels.
+CID2083,Salbutamol,Theophylline,Methylxanthine,moderate,Additive beta-agonist effects,Increased tachycardia and hypokalemia,Monitor heart rate and potassium. Effective combination for severe asthma.
+CID2083,Salbutamol,Corticosteroids,Anti-inflammatory,moderate,Additive hypokalemia,Hypokalemia especially with high doses,Monitor potassium with high-dose steroids.
+CID2083,Salbutamol,QT-prolonging drugs,Antiarrhythmic,moderate,Hypokalemia + QT effects,Increased risk of torsades de pointes,Monitor ECG and potassium.
+CID2083,Salbutamol,Atomoxetine,SNRI (ADHD),moderate,Additive cardiovascular effects,Tachycardia and hypertension,Monitor heart rate and blood pressure.
+CID2083,Salbutamol,Metoprolol,Cardioselective Beta-blocker,minor,Partial antagonism at beta-2,Slightly reduced bronchodilation at high doses,Cardioselective beta-blockers generally safe. Monitor.
+CID2083,Salbutamol,Bisoprolol,Cardioselective Beta-blocker,minor,Partial antagonism at beta-2,Slightly reduced bronchodilation at high doses,Cardioselective preferred over non-selective.
+CID2083,Salbutamol,Caffeine,Stimulant,minor,Additive stimulant effects,Increased tremor and tachycardia,Reduce caffeine intake if side effects occur.
+CID2083,Salbutamol,Insulin,Antidiabetic,minor,Beta-agonist hyperglycemic effect,May increase blood glucose transiently,Monitor glucose. Usually not clinically significant.

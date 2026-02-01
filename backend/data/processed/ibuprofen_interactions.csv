@@ -1,0 +1,39 @@
+interacting_drug,drug_class,severity,mechanism,clinical_effect,recommendation
+Warfarin,Anticoagulant,major,Platelet inhibition + anticoagulation,Increased bleeding risk (GI and other),Avoid combination. If necessary monitor INR closely and watch for bleeding.
+Rivaroxaban,Anticoagulant (DOAC),major,Additive bleeding risk,Increased bleeding risk,Avoid combination if possible.
+Apixaban,Anticoagulant (DOAC),major,Additive bleeding risk,Increased bleeding risk,Avoid combination if possible.
+Dabigatran,Anticoagulant (DOAC),major,Additive bleeding risk,Increased bleeding risk,Avoid combination if possible.
+Heparin,Anticoagulant,major,Additive bleeding risk,Increased bleeding risk,Avoid combination.
+Aspirin (>325mg),NSAID/Antiplatelet,major,Additive GI toxicity + reduced aspirin cardioprotection,GI bleeding and reduced MI protection,Avoid combination. If needed take aspirin first.
+Aspirin (low-dose),Antiplatelet,moderate,Competitive COX-1 binding,Reduced cardioprotective effect of aspirin,Take aspirin 30min before or 8hr after ibuprofen.
+Clopidogrel,Antiplatelet,major,Additive bleeding risk,Increased GI bleeding,Avoid if possible. Consider PPI if necessary.
+Prasugrel,Antiplatelet,major,Additive bleeding risk,Increased bleeding,Avoid combination.
+Ticagrelor,Antiplatelet,major,Additive bleeding risk,Increased bleeding,Avoid combination.
+Lithium,Mood Stabilizer,major,Reduced renal lithium clearance,Lithium toxicity,Monitor lithium levels. May need 25-50% dose reduction.
+Methotrexate,Immunosuppressant,major,Reduced MTX clearance,Methotrexate toxicity (bone marrow suppression),Avoid with high-dose MTX. Monitor closely with low-dose.
+Lisinopril,ACE Inhibitor,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+Enalapril,ACE Inhibitor,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+Ramipril,ACE Inhibitor,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+Losartan,ARB,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+Valsartan,ARB,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+Furosemide,Loop Diuretic,moderate,Reduced prostaglandin-mediated renal blood flow,Reduced diuretic effect + increased nephrotoxicity,Monitor fluid status and renal function.
+Hydrochlorothiazide,Thiazide Diuretic,moderate,Reduced prostaglandin-mediated effects,Reduced diuretic and antihypertensive effect,Monitor BP and electrolytes.
+Spironolactone,K-sparing Diuretic,moderate,Reduced renal function + K retention,Hyperkalemia and reduced diuretic effect,Monitor potassium.
+Digoxin,Cardiac Glycoside,moderate,Reduced renal digoxin clearance,Digoxin toxicity,Monitor digoxin levels.
+Cyclosporine,Immunosuppressant,major,Additive nephrotoxicity,Acute kidney injury,Avoid if possible. Monitor renal function closely.
+Tacrolimus,Immunosuppressant,major,Additive nephrotoxicity,Acute kidney injury,Avoid if possible. Monitor renal function closely.
+SSRIs (Fluoxetine),Antidepressant,moderate,Additive effect on platelet function,Increased GI bleeding risk,Consider PPI co-therapy.
+SSRIs (Sertraline),Antidepressant,moderate,Additive effect on platelet function,Increased GI bleeding risk,Consider PPI co-therapy.
+SNRIs (Venlafaxine),Antidepressant,moderate,Additive effect on platelet function,Increased GI bleeding risk,Consider PPI co-therapy.
+Corticosteroids,Anti-inflammatory,moderate,Additive GI toxicity,Increased GI ulceration and bleeding,Use PPI prophylaxis.
+Quinolones (Ciprofloxacin),Antibiotic,moderate,CNS effects,Increased seizure risk,Caution in patients with seizure history.
+Aminoglycosides,Antibiotic,moderate,Additive nephrotoxicity,Acute kidney injury,Monitor renal function.
+Bisphosphonates,Osteoporosis,moderate,Additive GI irritation,Increased GI ulceration,Take bisphosphonate first. Consider alternative analgesic.
+Phenytoin,Anticonvulsant,minor,Protein binding displacement,Transient increase in free phenytoin,Usually not clinically significant.
+Sulfonylureas,Antidiabetic,minor,Protein binding displacement,Hypoglycemia risk,Monitor blood glucose.
+Alcohol,CNS Depressant,moderate,Additive GI toxicity,Increased GI bleeding risk,Avoid concurrent use especially chronic alcohol use.
+Other NSAIDs (Naproxen),NSAID,major,Additive toxicity without added benefit,Increased GI/renal/CV toxicity,Never combine NSAIDs.
+Other NSAIDs (Diclofenac),NSAID,major,Additive toxicity without added benefit,Increased GI/renal/CV toxicity,Never combine NSAIDs.
+Pemetrexed,Chemotherapy,major,Reduced pemetrexed clearance,Pemetrexed toxicity,Stop ibuprofen 2-5 days before pemetrexed.
+Tenofovir,Antiviral,moderate,Additive nephrotoxicity,Acute kidney injury,Monitor renal function.
+Vancomycin,Antibiotic,moderate,Additive nephrotoxicity,Acute kidney injury,Monitor renal function.

@@ -1,0 +1,39 @@
+drug_a_id,drug_a_name,drug_b_name,drug_b_class,severity,mechanism,clinical_effect,recommendation
+CID3672,Ibuprofen,Warfarin,Anticoagulant,major,Platelet inhibition + anticoagulation,Increased bleeding risk (GI and other),Avoid combination. If necessary monitor INR closely and watch for bleeding.
+CID3672,Ibuprofen,Rivaroxaban,Anticoagulant (DOAC),major,Additive bleeding risk,Increased bleeding risk,Avoid combination if possible.
+CID3672,Ibuprofen,Apixaban,Anticoagulant (DOAC),major,Additive bleeding risk,Increased bleeding risk,Avoid combination if possible.
+CID3672,Ibuprofen,Dabigatran,Anticoagulant (DOAC),major,Additive bleeding risk,Increased bleeding risk,Avoid combination if possible.
+CID3672,Ibuprofen,Heparin,Anticoagulant,major,Additive bleeding risk,Increased bleeding risk,Avoid combination.
+CID3672,Ibuprofen,Aspirin (>325mg),NSAID/Antiplatelet,major,Additive GI toxicity + reduced aspirin cardioprotection,GI bleeding and reduced MI protection,Avoid combination. If needed take aspirin first.
+CID3672,Ibuprofen,Aspirin (low-dose),Antiplatelet,moderate,Competitive COX-1 binding,Reduced cardioprotective effect of aspirin,Take aspirin 30min before or 8hr after ibuprofen.
+CID3672,Ibuprofen,Clopidogrel,Antiplatelet,major,Additive bleeding risk,Increased GI bleeding,Avoid if possible. Consider PPI if necessary.
+CID3672,Ibuprofen,Prasugrel,Antiplatelet,major,Additive bleeding risk,Increased bleeding,Avoid combination.
+CID3672,Ibuprofen,Ticagrelor,Antiplatelet,major,Additive bleeding risk,Increased bleeding,Avoid combination.
+CID3672,Ibuprofen,Lithium,Mood Stabilizer,major,Reduced renal lithium clearance,Lithium toxicity,Monitor lithium levels. May need 25-50% dose reduction.
+CID3672,Ibuprofen,Methotrexate,Immunosuppressant,major,Reduced MTX clearance,Methotrexate toxicity (bone marrow suppression),Avoid with high-dose MTX. Monitor closely with low-dose.
+CID3672,Ibuprofen,Lisinopril,ACE Inhibitor,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+CID3672,Ibuprofen,Enalapril,ACE Inhibitor,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+CID3672,Ibuprofen,Ramipril,ACE Inhibitor,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+CID3672,Ibuprofen,Losartan,ARB,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+CID3672,Ibuprofen,Valsartan,ARB,moderate,Reduced prostaglandin-mediated vasodilation,Reduced antihypertensive effect + increased nephrotoxicity,Monitor BP and renal function.
+CID3672,Ibuprofen,Furosemide,Loop Diuretic,moderate,Reduced prostaglandin-mediated renal blood flow,Reduced diuretic effect + increased nephrotoxicity,Monitor fluid status and renal function.
+CID3672,Ibuprofen,Hydrochlorothiazide,Thiazide Diuretic,moderate,Reduced prostaglandin-mediated effects,Reduced diuretic and antihypertensive effect,Monitor BP and electrolytes.
+CID3672,Ibuprofen,Spironolactone,K-sparing Diuretic,moderate,Reduced renal function + K retention,Hyperkalemia and reduced diuretic effect,Monitor potassium.
+CID3672,Ibuprofen,Digoxin,Cardiac Glycoside,moderate,Reduced renal digoxin clearance,Digoxin toxicity,Monitor digoxin levels.
+CID3672,Ibuprofen,Cyclosporine,Immunosuppressant,major,Additive nephrotoxicity,Acute kidney injury,Avoid if possible. Monitor renal function closely.
+CID3672,Ibuprofen,Tacrolimus,Immunosuppressant,major,Additive nephrotoxicity,Acute kidney injury,Avoid if possible. Monitor renal function closely.
+CID3672,Ibuprofen,SSRIs (Fluoxetine),Antidepressant,moderate,Additive effect on platelet function,Increased GI bleeding risk,Consider PPI co-therapy.
+CID3672,Ibuprofen,SSRIs (Sertraline),Antidepressant,moderate,Additive effect on platelet function,Increased GI bleeding risk,Consider PPI co-therapy.
+CID3672,Ibuprofen,SNRIs (Venlafaxine),Antidepressant,moderate,Additive effect on platelet function,Increased GI bleeding risk,Consider PPI co-therapy.
+CID3672,Ibuprofen,Corticosteroids,Anti-inflammatory,moderate,Additive GI toxicity,Increased GI ulceration and bleeding,Use PPI prophylaxis.
+CID3672,Ibuprofen,Quinolones (Ciprofloxacin),Antibiotic,moderate,CNS effects,Increased seizure risk,Caution in patients with seizure history.
+CID3672,Ibuprofen,Aminoglycosides,Antibiotic,moderate,Additive nephrotoxicity,Acute kidney injury,Monitor renal function.
+CID3672,Ibuprofen,Bisphosphonates,Osteoporosis,moderate,Additive GI irritation,Increased GI ulceration,Take bisphosphonate first. Consider alternative analgesic.
+CID3672,Ibuprofen,Phenytoin,Anticonvulsant,minor,Protein binding displacement,Transient increase in free phenytoin,Usually not clinically significant.
+CID3672,Ibuprofen,Sulfonylureas,Antidiabetic,minor,Protein binding displacement,Hypoglycemia risk,Monitor blood glucose.
+CID3672,Ibuprofen,Alcohol,CNS Depressant,moderate,Additive GI toxicity,Increased GI bleeding risk,Avoid concurrent use especially chronic alcohol use.
+CID3672,Ibuprofen,Other NSAIDs (Naproxen),NSAID,major,Additive toxicity without added benefit,Increased GI/renal/CV toxicity,Never combine NSAIDs.
+CID3672,Ibuprofen,Other NSAIDs (Diclofenac),NSAID,major,Additive toxicity without added benefit,Increased GI/renal/CV toxicity,Never combine NSAIDs.
+CID3672,Ibuprofen,Pemetrexed,Chemotherapy,major,Reduced pemetrexed clearance,Pemetrexed toxicity,Stop ibuprofen 2-5 days before pemetrexed.
+CID3672,Ibuprofen,Tenofovir,Antiviral,moderate,Additive nephrotoxicity,Acute kidney injury,Monitor renal function.
+CID3672,Ibuprofen,Vancomycin,Antibiotic,moderate,Additive nephrotoxicity,Acute kidney injury,Monitor renal function.

@@ -1,0 +1,15 @@
+condition,icd10_code,severity,reason
+Hypertrophic Obstructive Cardiomyopathy,I42.1,absolute,Can worsen outflow obstruction
+Tachyarrhythmia,I49.0,absolute,Beta-agonist increases heart rate and arrhythmia risk
+Severe Hyperthyroidism,E05.90,absolute,Additive cardiovascular stimulation
+Salbutamol/Beta-agonist Allergy,T88.6,absolute,Anaphylaxis risk
+Uncontrolled Hypertension,I10,relative,May increase blood pressure
+Coronary Artery Disease,I25.10,relative,Risk of myocardial ischemia with high doses
+Diabetes Mellitus,E11.9,relative,Can cause hyperglycemia and hypokalemia
+Hyperthyroidism,E05.90,relative,Additive sympathomimetic effects
+Seizure Disorder,G40.909,relative,High doses may lower seizure threshold
+Hypokalemia,E87.6,relative,Salbutamol can worsen hypokalemia
+QT Prolongation,I45.81,relative,Risk of torsades with hypokalemia
+Pregnancy,O09.90,caution,Use only if benefits outweigh risks
+Breastfeeding,Z39.1,caution,Likely safe but limited data
+Elderly (>65 years),Z68.43,caution,More sensitive to cardiovascular effects
