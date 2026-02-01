@@ -80,6 +80,16 @@ BUSINESS MODEL POTENTIAL
   B2B2C Partnerships   White-label for health systems and PBMs
   Data Insights    Anonymized, aggregated medication safety trends
 
+TRACTION
+--------------------------------------------------------------------------------
+Early traction validates both clinical interest and distribution potential:
+
+40 Pharmacies engaged for feedback and early partnership discussions
+18 Physicians consulted to validate safety logic + UX clarity
+1 Hospital relationship initiated for clinical validation pathway
+2 Research lab affiliations supporting rigor + future studies
+(NYU / Polytechnique)
+
 GO-TO-MARKET
 --------------------------------------------------------------------------------
   Phase 1: Consumer app targeting self-medicating adults (OTC focus)
