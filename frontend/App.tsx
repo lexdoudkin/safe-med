@@ -613,67 +613,242 @@ const App: React.FC = () => {
     );
   }
 
-  // App Experience (after landing)
+  // App Experience (after landing) - wrapped in phone emulator
   return (
-    <div className="container-app">
-      <Header onBack={handleBack} appState={appState} />
+    <div style={{
+      minHeight: '100vh',
+      background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%)',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '20px',
+      position: 'relative',
+      overflow: 'hidden'
+    }}>
+      {/* Background glow effects */}
+      <div style={{
+        position: 'absolute',
+        top: '20%',
+        left: '10%',
+        width: '400px',
+        height: '400px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(0,122,255,0.15) 0%, transparent 70%)',
+        filter: 'blur(60px)',
+        pointerEvents: 'none'
+      }} />
+      <div style={{
+        position: 'absolute',
+        bottom: '10%',
+        right: '10%',
+        width: '350px',
+        height: '350px',
+        borderRadius: '50%',
+        background: 'radial-gradient(circle, rgba(255,59,48,0.12) 0%, transparent 70%)',
+        filter: 'blur(60px)',
+        pointerEvents: 'none'
+      }} />
 
-      <main className="scroll-container">
-        <div className="content-padding" style={{ paddingTop: '16px', paddingBottom: '32px' }}>
-          {/* PROFILE */}
-          {appState === AppState.PROFILE && (
-            <ProfileForm initialProfile={profile} onSave={handleProfileSave} />
-          )}
+      {/* Title above phone */}
+      <div style={{ marginBottom: '24px', textAlign: 'center', zIndex: 10 }}>
+        <h1 style={{
+          fontSize: '24px',
+          fontWeight: '600',
+          color: '#FFFFFF',
+          margin: '0 0 8px 0',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '10px'
+        }}>
+          <div style={{
+            width: '32px',
+            height: '32px',
+            background: 'linear-gradient(135deg, #FF3B30, #FF9500)',
+            borderRadius: '8px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+          }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          SafeMed
+        </h1>
+        <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', margin: 0 }}>
+          Medication Safety Check
+        </p>
+      </div>
 
-          {/* INPUT */}
-          {appState === AppState.INPUT && (
-            <>
-              {error && (
-                <div style={{
-                  marginBottom: '16px',
-                  padding: '16px',
-                  background: 'rgba(255, 59, 48, 0.1)',
-                  border: '1px solid rgba(255, 59, 48, 0.2)',
-                  borderRadius: '12px',
-                  color: '#FF3B30',
-                  textAlign: 'center',
-                  fontSize: '15px'
-                }}>
-                  {error}
-                </div>
-              )}
-              <DrugInput onAnalyze={handleAnalyze} />
-            </>
-          )}
+      {/* Phone Frame */}
+      <div style={{
+        width: '375px',
+        maxWidth: '100%',
+        height: '750px',
+        maxHeight: 'calc(100vh - 140px)',
+        background: '#1C1C1E',
+        borderRadius: '50px',
+        padding: '12px',
+        boxShadow: '0 50px 100px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.1), inset 0 0 0 1px rgba(255,255,255,0.05)',
+        position: 'relative',
+        zIndex: 10
+      }}>
+        {/* Dynamic Island / Notch */}
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '120px',
+          height: '34px',
+          background: '#000',
+          borderRadius: '20px',
+          zIndex: 20
+        }} />
 
-          {/* ANALYZING */}
-          {appState === AppState.ANALYZING && (
-            <div className="animate-in" style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              paddingTop: '80px',
-              gap: '24px'
-            }}>
-              <div className="spinner" />
-              <div style={{ textAlign: 'center' }}>
-                <h2 style={{ fontSize: '22px', fontWeight: '600', color: '#000000', margin: 0 }}>
-                  Analyzing...
-                </h2>
-                <p style={{ fontSize: '15px', color: '#8E8E93', margin: '8px 0 0 0' }}>
-                  Checking safety for your profile
-                </p>
-              </div>
+        {/* Phone Screen */}
+        <div style={{
+          width: '100%',
+          height: '100%',
+          background: '#F2F2F7',
+          borderRadius: '42px',
+          overflow: 'hidden',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          {/* Status Bar */}
+          <div style={{
+            height: '54px',
+            background: 'rgba(242,242,247,0.9)',
+            backdropFilter: 'blur(20px)',
+            display: 'flex',
+            alignItems: 'flex-end',
+            justifyContent: 'space-between',
+            padding: '0 28px 8px',
+            flexShrink: 0
+          }}>
+            <span style={{ fontSize: '14px', fontWeight: '600', color: '#000' }}>9:41</span>
+            <div style={{ display: 'flex', gap: '4px', alignItems: 'center' }}>
+              <svg width="18" height="12" viewBox="0 0 18 12" fill="#000">
+                <path d="M1 4.5h2v6H1zM5 3h2v7.5H5zM9 1.5h2v9H9zM13 0h2v10.5h-2z" opacity="0.9"/>
+              </svg>
+              <svg width="16" height="12" viewBox="0 0 16 12" fill="#000">
+                <path d="M8 2C5.8 2 3.8 2.7 2.1 4l1.4 1.4C4.8 4.5 6.3 4 8 4s3.2.5 4.5 1.4L14 4c-1.8-1.3-3.9-2-6-2zm0 4c-1.4 0-2.6.5-3.5 1.3L6 8.8c.6-.5 1.3-.8 2-.8s1.4.3 2 .8l1.5-1.5C10.6 6.5 9.4 6 8 6zm0 4c-.6 0-1 .4-1 1s.4 1 1 1 1-.4 1-1-.4-1-1-1z"/>
+              </svg>
+              <svg width="25" height="12" viewBox="0 0 25 12" fill="#000">
+                <rect x="0" y="1" width="22" height="10" rx="2" stroke="#000" strokeWidth="1" fill="none"/>
+                <rect x="2" y="3" width="17" height="6" rx="1" fill="#34C759"/>
+                <path d="M23 4v4a2 2 0 002-2 2 2 0 00-2-2z"/>
+              </svg>
             </div>
-          )}
+          </div>
 
-          {/* RESULTS */}
-          {appState === AppState.RESULTS && result && (
-            <AnalysisResult result={result} onReset={handleReset} />
-          )}
+          {/* App Content */}
+          <div className="container-app" style={{ flex: 1, overflow: 'hidden' }}>
+            <Header onBack={handleBack} appState={appState} />
+
+            <main className="scroll-container">
+              <div className="content-padding" style={{ paddingTop: '16px', paddingBottom: '32px' }}>
+                {/* PROFILE */}
+                {appState === AppState.PROFILE && (
+                  <ProfileForm initialProfile={profile} onSave={handleProfileSave} />
+                )}
+
+                {/* INPUT */}
+                {appState === AppState.INPUT && (
+                  <>
+                    {error && (
+                      <div style={{
+                        marginBottom: '16px',
+                        padding: '16px',
+                        background: 'rgba(255, 59, 48, 0.1)',
+                        border: '1px solid rgba(255, 59, 48, 0.2)',
+                        borderRadius: '12px',
+                        color: '#FF3B30',
+                        textAlign: 'center',
+                        fontSize: '15px'
+                      }}>
+                        {error}
+                      </div>
+                    )}
+                    <DrugInput onAnalyze={handleAnalyze} />
+                  </>
+                )}
+
+                {/* ANALYZING */}
+                {appState === AppState.ANALYZING && (
+                  <div className="animate-in" style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    paddingTop: '80px',
+                    gap: '24px'
+                  }}>
+                    <div className="spinner" />
+                    <div style={{ textAlign: 'center' }}>
+                      <h2 style={{ fontSize: '22px', fontWeight: '600', color: '#000000', margin: 0 }}>
+                        Analyzing...
+                      </h2>
+                      <p style={{ fontSize: '15px', color: '#8E8E93', margin: '8px 0 0 0' }}>
+                        Checking safety for your profile
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* RESULTS */}
+                {appState === AppState.RESULTS && result && (
+                  <AnalysisResult result={result} onReset={handleReset} />
+                )}
+              </div>
+            </main>
+          </div>
+
+          {/* Home Indicator */}
+          <div style={{
+            height: '34px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            <div style={{
+              width: '134px',
+              height: '5px',
+              background: '#000',
+              borderRadius: '3px',
+              opacity: 0.2
+            }} />
+          </div>
         </div>
-      </main>
+      </div>
+
+      {/* Back to landing link */}
+      <button
+        onClick={() => setAppState(AppState.ONBOARDING)}
+        style={{
+          marginTop: '20px',
+          padding: '10px 20px',
+          background: 'rgba(255,255,255,0.1)',
+          border: '1px solid rgba(255,255,255,0.2)',
+          borderRadius: '20px',
+          color: 'rgba(255,255,255,0.7)',
+          fontSize: '14px',
+          cursor: 'pointer',
+          zIndex: 10,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '6px'
+        }}
+      >
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/>
+        </svg>
+        Back to Landing Page
+      </button>
     </div>
   );
 };
