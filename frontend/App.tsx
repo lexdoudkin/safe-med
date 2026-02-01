@@ -62,37 +62,38 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cream text-navy pb-12">
+    <div className="h-screen flex flex-col bg-cream text-navy overflow-hidden">
       <Header onBack={appState !== AppState.ONBOARDING ? handleBack : undefined} appState={appState} />
 
-      <main className="max-w-3xl mx-auto px-4 pt-6">
+      <main className="flex-1 overflow-y-auto">
+        <div className="max-w-3xl mx-auto px-4 py-4">
         {/* ONBOARDING - Warm, inviting landing */}
         {appState === AppState.ONBOARDING && (
-          <div className="min-h-[80vh] flex flex-col items-center justify-center text-center px-2">
+          <div className="h-full flex flex-col items-center justify-center text-center px-2 py-4">
             {/* Decorative blobs */}
             <div className="absolute top-20 left-10 w-64 h-64 bg-coral-light blob opacity-50 blur-3xl -z-10" />
             <div className="absolute bottom-20 right-10 w-80 h-80 bg-sage-light blob-2 opacity-50 blur-3xl -z-10" />
 
             {/* Hero Icon */}
-            <div className="relative mb-8 animate-fade-in-up">
+            <div className="relative mb-6 animate-fade-in-up">
               <div className="relative">
-                <div className="w-32 h-32 bg-gradient-to-br from-coral to-coral-dark rounded-full flex items-center justify-center shadow-warm animate-float">
-                  <HandHeart size={64} weight="fill" className="text-white" />
+                <div className="w-24 h-24 md:w-28 md:h-28 bg-gradient-to-br from-coral to-coral-dark rounded-full flex items-center justify-center shadow-warm animate-float">
+                  <HandHeart size={48} weight="fill" className="text-white" />
                 </div>
-                <div className="absolute -bottom-2 -right-2 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lifted">
-                  <ShieldCheck size={28} weight="fill" className="text-teal" />
+                <div className="absolute -bottom-1 -right-1 w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lifted">
+                  <ShieldCheck size={24} weight="fill" className="text-teal" />
                 </div>
               </div>
             </div>
 
             {/* Title */}
-            <div className="space-y-4 mb-10 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-navy leading-tight">
+            <div className="space-y-3 mb-6 animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-navy leading-tight">
                 Your medicine,
                 <br />
                 <span className="text-coral underline-hand">your safety</span>
               </h1>
-              <p className="text-xl md:text-2xl text-navy/70 max-w-md mx-auto leading-relaxed font-light">
+              <p className="text-lg md:text-xl text-navy/70 max-w-md mx-auto leading-relaxed font-light">
                 We check if medications are safe for
                 <span className="font-semibold text-navy"> your unique body</span>.
               </p>
@@ -101,31 +102,31 @@ const App: React.FC = () => {
             {/* CTA Button */}
             <button
               onClick={startOnboarding}
-              className="btn-primary px-10 py-5 text-white text-xl font-semibold flex items-center gap-3 mb-10 animate-fade-in-up shadow-warm"
+              className="btn-primary px-8 py-4 text-white text-lg font-semibold flex items-center gap-3 mb-6 animate-fade-in-up shadow-warm"
               style={{ animationDelay: '0.2s' }}
             >
               <span>Let's get started</span>
-              <ArrowRight size={24} weight="bold" />
+              <ArrowRight size={22} weight="bold" />
             </button>
 
             {/* Trust badges */}
-            <div className="flex flex-wrap justify-center gap-8 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+            <div className="flex flex-wrap justify-center gap-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
               <div className="flex items-center gap-2 text-navy/50">
-                <Lock size={20} weight="duotone" />
+                <Lock size={18} weight="duotone" />
                 <span className="text-sm font-medium">100% Private</span>
               </div>
               <div className="flex items-center gap-2 text-navy/50">
-                <Sparkle size={20} weight="duotone" />
+                <Sparkle size={18} weight="duotone" />
                 <span className="text-sm font-medium">AI-Powered</span>
               </div>
               <div className="flex items-center gap-2 text-navy/50">
-                <Leaf size={20} weight="duotone" />
+                <Leaf size={18} weight="duotone" />
                 <span className="text-sm font-medium">Science-Based</span>
               </div>
             </div>
 
             {/* Disclaimer */}
-            <p className="text-sm text-navy/40 mt-12 max-w-sm">
+            <p className="text-xs text-navy/40 mt-6 max-w-sm">
               SafeMed provides guidance only. Always consult your doctor before starting any medication.
             </p>
           </div>
@@ -150,17 +151,17 @@ const App: React.FC = () => {
 
         {/* ANALYZING */}
         {appState === AppState.ANALYZING && (
-          <div className="min-h-[70vh] flex flex-col items-center justify-center text-center">
-            <div className="relative mb-10">
-              <div className="w-28 h-28 bg-coral-light rounded-full flex items-center justify-center animate-pulse-glow">
-                <Heartbeat size={56} weight="duotone" className="text-coral animate-pulse" />
+          <div className="h-full flex flex-col items-center justify-center text-center py-4">
+            <div className="relative mb-8">
+              <div className="w-24 h-24 bg-coral-light rounded-full flex items-center justify-center animate-pulse-glow">
+                <Heartbeat size={48} weight="duotone" className="text-coral animate-pulse" />
               </div>
-              <div className="absolute inset-0 w-28 h-28 border-4 border-coral/30 rounded-full animate-ping" />
+              <div className="absolute inset-0 w-24 h-24 border-4 border-coral/30 rounded-full animate-ping" />
             </div>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-navy mb-4">
+            <h2 className="font-display text-2xl md:text-3xl font-bold text-navy mb-3">
               Checking your medicine...
             </h2>
-            <p className="text-lg text-navy/60 max-w-sm">
+            <p className="text-base text-navy/60 max-w-sm">
               Analyzing safety based on your profile
               {profile.conditions.length > 0 && (
                 <span className="block mt-2 text-teal font-medium">
@@ -176,6 +177,7 @@ const App: React.FC = () => {
         {appState === AppState.RESULTS && result && (
           <AnalysisResult result={result} onReset={handleReset} />
         )}
+        </div>
       </main>
     </div>
   );

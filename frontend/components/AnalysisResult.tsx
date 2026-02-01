@@ -7,12 +7,14 @@ import {
   ShieldCheck,
   BookOpen,
   Pill,
-  Heartbeat,
   XCircle,
   CaretRight,
-  HandHeart,
-  Info,
   Stethoscope,
+  SealCheck,
+  SealWarning,
+  Prohibit,
+  ThumbsUp,
+  ThumbsDown,
 } from '@phosphor-icons/react';
 
 interface AnalysisResultProps {
@@ -21,106 +23,100 @@ interface AnalysisResultProps {
 }
 
 const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
-  const getScoreColor = (score: number) => {
-    if (score >= 80) return { bg: 'bg-teal', light: 'bg-teal-light', text: 'text-teal', border: 'border-teal' };
-    if (score >= 50) return { bg: 'bg-gold', light: 'bg-gold-light', text: 'text-gold', border: 'border-gold' };
-    return { bg: 'bg-coral', light: 'bg-coral-light', text: 'text-coral', border: 'border-coral' };
+  const getScoreConfig = (score: number) => {
+    if (score >= 80) return {
+      bg: 'bg-teal',
+      light: 'bg-teal-light',
+      text: 'text-teal',
+      border: 'border-teal',
+      label: 'Safe for you',
+      Icon: SealCheck,
+      ThumbIcon: ThumbsUp
+    };
+    if (score >= 50) return {
+      bg: 'bg-gold',
+      light: 'bg-gold-light',
+      text: 'text-gold',
+      border: 'border-gold',
+      label: 'Use with caution',
+      Icon: SealWarning,
+      ThumbIcon: Warning
+    };
+    return {
+      bg: 'bg-coral',
+      light: 'bg-coral-light',
+      text: 'text-coral',
+      border: 'border-coral',
+      label: 'Not recommended',
+      Icon: Prohibit,
+      ThumbIcon: ThumbsDown
+    };
   };
 
-  const getScoreLabel = (score: number) => {
-    if (score >= 80) return 'Looking good!';
-    if (score >= 50) return 'Some caution needed';
-    return 'Talk to your doctor';
+  const config = getScoreConfig(result.safetyScore);
+  const ScoreIcon = config.Icon;
+
+  const getSeverityConfig = (severity: string) => {
+    switch(severity) {
+      case 'Critical':
+        return { bg: 'bg-coral', light: 'bg-coral-light', text: 'text-coral', Icon: XCircle, iconColor: 'text-coral' };
+      case 'High':
+        return { bg: 'bg-coral/80', light: 'bg-coral-light/70', text: 'text-coral', Icon: Warning, iconColor: 'text-coral' };
+      case 'Medium':
+        return { bg: 'bg-gold', light: 'bg-gold-light', text: 'text-gold', Icon: Warning, iconColor: 'text-gold' };
+      default:
+        return { bg: 'bg-sage', light: 'bg-sage-light', text: 'text-sage', Icon: CheckCircle, iconColor: 'text-sage' };
+    }
   };
-
-  const colors = getScoreColor(result.safetyScore);
-
-  // SVG arc for score
-  const radius = 70;
-  const circumference = 2 * Math.PI * radius;
-  const strokeDashoffset = circumference - (result.safetyScore / 100) * circumference * 0.5;
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6 pb-24 animate-fade-in-up">
-      {/* Score Card */}
-      <div className="card-organic shadow-lifted overflow-hidden">
-        <div className="p-8 md:p-10 text-center bg-gradient-to-b from-white to-cream">
-          {/* Drug Name */}
-          <div className="flex items-center justify-center gap-3 mb-6">
-            <div className={`p-2 ${colors.light} rounded-xl`}>
-              <Pill size={28} weight="duotone" className={colors.text} />
+    <div className="space-y-4 pb-4 animate-fade-in-up">
+      {/* Compact Score Header */}
+      <div className={`card-organic p-4 ${config.light} border ${config.border}`}>
+        <div className="flex items-center gap-4">
+          {/* Score Circle */}
+          <div className={`w-20 h-20 ${config.bg} rounded-full flex flex-col items-center justify-center text-white shadow-lg flex-shrink-0`}>
+            <span className="text-3xl font-bold font-display">{result.safetyScore}</span>
+            <span className="text-xs opacity-80">/ 100</span>
+          </div>
+
+          {/* Info */}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1">
+              <Pill size={20} weight="duotone" className={config.text} />
+              <h2 className="font-display text-xl font-bold text-navy truncate">{result.drugName}</h2>
             </div>
-            <h2 className="font-display text-2xl md:text-3xl font-bold text-navy">{result.drugName}</h2>
-          </div>
-
-          {/* Score Ring */}
-          <div className="relative w-52 h-32 mx-auto mb-6">
-            <svg className="w-full h-full" viewBox="0 0 180 100">
-              {/* Background arc */}
-              <path
-                d="M 10 90 A 70 70 0 0 1 170 90"
-                fill="none"
-                stroke="#F5EDE6"
-                strokeWidth="12"
-                strokeLinecap="round"
-              />
-              {/* Score arc */}
-              <path
-                d="M 10 90 A 70 70 0 0 1 170 90"
-                fill="none"
-                stroke={result.safetyScore >= 80 ? '#1A5F5A' : result.safetyScore >= 50 ? '#D4A853' : '#FF6B5B'}
-                strokeWidth="12"
-                strokeLinecap="round"
-                strokeDasharray={`${(result.safetyScore / 100) * 220} 220`}
-                className="score-ring"
-              />
-            </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-end pb-2">
-              <span className={`text-6xl font-bold font-display ${colors.text}`}>{result.safetyScore}</span>
+            <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-sm font-semibold ${config.light} ${config.text}`}>
+              <ScoreIcon size={18} weight="fill" />
+              {config.label}
             </div>
+            <p className="text-navy/60 text-sm mt-2 line-clamp-2">{result.summary}</p>
           </div>
-
-          {/* Score Label */}
-          <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-lg font-semibold ${colors.light} ${colors.text}`}>
-            {result.safetyScore >= 80 ? <ShieldCheck size={24} weight="fill" /> :
-             result.safetyScore >= 50 ? <Warning size={24} weight="fill" /> :
-             <ShieldWarning size={24} weight="fill" />}
-            {getScoreLabel(result.safetyScore)}
-          </div>
-
-          {/* Summary */}
-          <p className="text-navy/70 text-lg leading-relaxed max-w-md mx-auto mt-6">
-            {result.summary}
-          </p>
         </div>
       </div>
 
-      {/* Recommendation Card */}
-      <div className={`card-organic p-6 border-l-4 ${colors.border} ${colors.light}`}>
-        <div className="flex gap-4">
-          <div className={`p-3 ${colors.bg} rounded-xl self-start`}>
-            {result.safetyScore >= 80 ? <HandHeart size={28} weight="fill" className="text-white" /> :
-             result.safetyScore >= 50 ? <Info size={28} weight="fill" className="text-white" /> :
-             <Stethoscope size={28} weight="fill" className="text-white" />}
-          </div>
+      {/* Recommendation */}
+      <div className={`card-organic p-4 border-l-4 ${config.border} bg-white`}>
+        <div className="flex gap-3">
+          <Stethoscope size={24} weight="duotone" className={config.text} />
           <div>
-            <h3 className="font-display text-xl font-bold text-navy mb-2">Our advice for you</h3>
-            <p className="text-navy/70 text-lg">{result.recommendation}</p>
+            <h3 className="font-semibold text-navy text-sm mb-1">Recommendation</h3>
+            <p className="text-navy/70 text-sm">{result.recommendation}</p>
           </div>
         </div>
       </div>
 
-      {/* Warnings */}
+      {/* Contraindications (if any) */}
       {result.contraindications.length > 0 && (
-        <div className="card-organic p-6 border border-coral/20 bg-coral-light/30">
-          <h3 className="font-display text-xl font-bold text-coral flex items-center gap-3 mb-4">
-            <XCircle size={26} weight="fill" />
-            Important to know
+        <div className="card-organic p-4 bg-coral-light/50 border border-coral/20">
+          <h3 className="font-semibold text-coral flex items-center gap-2 mb-2 text-sm">
+            <Prohibit size={20} weight="fill" />
+            Important Warnings
           </h3>
-          <ul className="space-y-3">
+          <ul className="space-y-2">
             {result.contraindications.map((c, i) => (
-              <li key={i} className="flex items-start gap-3 p-4 bg-white/60 rounded-xl">
-                <Warning size={22} weight="fill" className="text-coral flex-shrink-0 mt-0.5" />
+              <li key={i} className="flex items-start gap-2 text-sm">
+                <XCircle size={16} weight="fill" className="text-coral flex-shrink-0 mt-0.5" />
                 <span className="text-navy/80">{c}</span>
               </li>
             ))}
@@ -128,75 +124,65 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
         </div>
       )}
 
-      {/* Individual Effects */}
-      <div className="space-y-4">
-        <h3 className="font-display text-xl font-bold text-navy flex items-center gap-3 px-1">
-          <Heartbeat size={26} weight="duotone" className="text-coral" />
-          Based on your health profile
+      {/* Risk Factors - Compact List */}
+      <div className="card-organic p-4">
+        <h3 className="font-semibold text-navy flex items-center gap-2 mb-3 text-sm">
+          <ShieldWarning size={20} weight="duotone" className="text-coral" />
+          Based on Your Health Profile
         </h3>
 
-        {result.risks.map((risk, idx) => {
-          const severityColors = {
-            Critical: { bg: 'bg-coral', light: 'bg-coral-light', text: 'text-coral' },
-            High: { bg: 'bg-coral', light: 'bg-coral-light/70', text: 'text-coral' },
-            Medium: { bg: 'bg-gold', light: 'bg-gold-light', text: 'text-gold' },
-            Low: { bg: 'bg-sage', light: 'bg-sage-light', text: 'text-sage' },
-          }[risk.severity] || { bg: 'bg-sage', light: 'bg-sage-light', text: 'text-sage' };
+        <div className="space-y-2">
+          {result.risks.map((risk, idx) => {
+            const sevConfig = getSeverityConfig(risk.severity);
+            const SevIcon = sevConfig.Icon;
 
-          const widthPercent = risk.severity === 'Critical' ? '90%' :
-                              risk.severity === 'High' ? '70%' :
-                              risk.severity === 'Medium' ? '45%' : '20%';
-
-          return (
-            <div key={idx} className="card-organic p-5 shadow-soft hover:shadow-lifted transition-shadow">
-              <div className="flex justify-between items-start mb-3">
-                <h4 className="font-semibold text-lg text-navy">{risk.condition}</h4>
-                <span className={`chip px-3 py-1 text-sm font-bold ${severityColors.light} ${severityColors.text}`}>
-                  {risk.severity}
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3 mb-4">
-                <div className="h-2.5 flex-1 bg-cream-dark rounded-full overflow-hidden">
-                  <div
-                    className={`h-full rounded-full ${severityColors.bg} transition-all`}
-                    style={{ width: widthPercent }}
-                  />
+            return (
+              <details key={idx} className="group">
+                <summary className="flex items-center gap-3 p-3 bg-cream rounded-xl cursor-pointer hover:bg-cream-dark transition-colors list-none">
+                  <SevIcon size={22} weight="fill" className={sevConfig.iconColor} />
+                  <span className="flex-1 font-medium text-navy text-sm">{risk.condition}</span>
+                  <span className={`px-2 py-0.5 rounded-full text-xs font-bold ${sevConfig.light} ${sevConfig.text}`}>
+                    {risk.severity}
+                  </span>
+                  <CaretRight size={16} className="text-navy/40 group-open:rotate-90 transition-transform" />
+                </summary>
+                <div className="mt-2 ml-9 mr-3 p-3 bg-white rounded-lg text-sm text-navy/70 border border-cream-dark">
+                  <div className="flex items-center gap-2 text-xs text-navy/50 mb-1">
+                    <span>Risk: {risk.probability}</span>
+                  </div>
+                  {risk.explanation}
                 </div>
-                <span className="text-sm font-semibold text-navy/50 min-w-[50px] text-right">{risk.probability}</span>
-              </div>
-
-              <p className="text-navy/60 bg-cream p-4 rounded-xl">{risk.explanation}</p>
-            </div>
-          );
-        })}
+              </details>
+            );
+          })}
+        </div>
       </div>
 
-      {/* References */}
-      <details className="card-organic p-5 group">
+      {/* References - Collapsed */}
+      <details className="card-organic p-3 group">
         <summary className="flex items-center justify-between cursor-pointer list-none">
-          <div className="flex items-center gap-3 text-navy/60">
-            <BookOpen size={22} weight="duotone" />
-            <span className="font-medium">Scientific references</span>
+          <div className="flex items-center gap-2 text-navy/50 text-sm">
+            <BookOpen size={18} weight="duotone" />
+            <span className="font-medium">{result.references.length} Scientific References</span>
           </div>
-          <CaretRight size={20} className="text-navy/40 group-open:rotate-90 transition-transform" />
+          <CaretRight size={16} className="text-navy/40 group-open:rotate-90 transition-transform" />
         </summary>
-        <ul className="mt-4 space-y-2 text-sm text-navy/50">
+        <ul className="mt-3 space-y-1 text-xs text-navy/50">
           {result.references.map((ref, i) => (
             <li key={i} className="flex items-start gap-2">
-              <span className="text-navy/30">•</span>
+              <span className="text-navy/30">{i + 1}.</span>
               <span>{ref}</span>
             </li>
           ))}
         </ul>
       </details>
 
-      {/* Check Another */}
+      {/* Check Another Button */}
       <button
         onClick={onReset}
-        className="w-full py-5 bg-navy hover:bg-navy/80 text-white font-semibold text-xl rounded-full shadow-lg transition-all flex items-center justify-center gap-3"
+        className="w-full py-4 bg-navy hover:bg-navy/80 text-white font-semibold text-lg rounded-full shadow-lg transition-all flex items-center justify-center gap-2"
       >
-        <Pill size={26} weight="duotone" />
+        <Pill size={22} weight="duotone" />
         Check another medicine
       </button>
     </div>
