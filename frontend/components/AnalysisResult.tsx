@@ -106,7 +106,7 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
             )}
           </div>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: '17px', fontWeight: '600', color: '#FFFFFF' }}>{verdictText}</div>
+            <div style={{ fontSize: '17px', fontWeight: '600', color: '#000000' }}>{verdictText}</div>
             <div style={{ fontSize: '14px', color: '#8E8E93' }}>
               {isDanger ? 'Contraindicated for your profile' : isCaution ? 'Review warnings before use' : 'Safe for your profile'}
             </div>
@@ -142,7 +142,7 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
                 </svg>
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <div style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }}>{warning}</div>
+                <div style={{ fontSize: '16px', fontWeight: '600', color: '#000000' }}>{warning}</div>
               </div>
             </div>
           ))}
@@ -168,7 +168,7 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
               return (
                 <div key={idx}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
-                    <span style={{ fontSize: '15px', fontWeight: '600', color: '#FFFFFF' }}>{risk.condition}</span>
+                    <span style={{ fontSize: '15px', fontWeight: '600', color: '#000000' }}>{risk.condition}</span>
                     <span style={{ fontSize: '15px', fontWeight: '600', color: color }}>{risk.probability}</span>
                   </div>
                   <div className="progress-bar">
@@ -200,7 +200,7 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
                 </svg>
               </div>
-              <span style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }}>{alt}</span>
+              <span style={{ fontSize: '16px', fontWeight: '600', color: '#000000' }}>{alt}</span>
             </div>
           ))}
         </div>
@@ -216,7 +216,7 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
           </div>
           <span className="section-title">Recommendation</span>
         </div>
-        <p style={{ fontSize: '15px', color: '#EBEBF5', lineHeight: 1.5, margin: 0 }}>
+        <p style={{ fontSize: '15px', color: '#3C3C43', lineHeight: 1.5, margin: 0 }}>
           {result.recommendation}
         </p>
       </div>

@@ -30,7 +30,7 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave }) => 
     <div className="animate-in" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', padding: '8px 0' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#FFFFFF', margin: 0 }}>
+        <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#000000', margin: 0 }}>
           Your Profile
         </h1>
         <p style={{ fontSize: '15px', color: '#8E8E93', margin: '6px 0 0 0' }}>

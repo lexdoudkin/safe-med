@@ -14,10 +14,10 @@ const Header: React.FC<HeaderProps> = ({ onBack, appState }) => {
       position: 'sticky',
       top: 0,
       zIndex: 50,
-      background: 'rgba(0, 0, 0, 0.8)',
+      background: 'rgba(242, 242, 247, 0.9)',
       backdropFilter: 'blur(20px)',
       WebkitBackdropFilter: 'blur(20px)',
-      borderBottom: '1px solid rgba(84, 84, 88, 0.35)'
+      borderBottom: '1px solid rgba(60, 60, 67, 0.12)'
     }}>
       <div style={{
         maxWidth: '428px',
@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ onBack, appState }) => {
         <h1 style={{
           fontSize: '17px',
           fontWeight: '600',
-          color: '#FFFFFF',
+          color: '#000000',
           margin: 0
         }}>
           SafeMed

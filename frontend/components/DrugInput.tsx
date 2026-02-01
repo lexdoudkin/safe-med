@@ -39,7 +39,7 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
     <div className="animate-in" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {/* Header */}
       <div style={{ textAlign: 'center', padding: '8px 0' }}>
-        <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#FFFFFF', margin: 0 }}>
+        <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#000000', margin: 0 }}>
           Check Medication
         </h1>
         <p style={{ fontSize: '15px', color: '#8E8E93', margin: '6px 0 0 0' }}>
@@ -166,7 +166,7 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
               alignItems: 'center',
               gap: '12px',
               padding: '14px 16px',
-              background: '#2C2C2E',
+              background: '#F5F5F7',
               borderRadius: '12px',
               border: 'none',
               cursor: 'pointer',
@@ -188,7 +188,7 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
               </svg>
             </div>
             <div style={{ flex: 1, textAlign: 'left' }}>
-              <div style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }}>Apple Health</div>
+              <div style={{ fontSize: '16px', fontWeight: '600', color: '#000000' }}>Apple Health</div>
               <div style={{ fontSize: '13px', color: '#8E8E93' }}>Import your health data</div>
             </div>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#8E8E93">
@@ -204,7 +204,7 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
               alignItems: 'center',
               gap: '12px',
               padding: '14px 16px',
-              background: '#2C2C2E',
+              background: '#F5F5F7',
               borderRadius: '12px',
               border: 'none',
               cursor: 'pointer',
@@ -226,7 +226,7 @@ const DrugInput: React.FC<DrugInputProps> = ({ onAnalyze }) => {
               </svg>
             </div>
             <div style={{ flex: 1, textAlign: 'left' }}>
-              <div style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }}>Health Connect</div>
+              <div style={{ fontSize: '16px', fontWeight: '600', color: '#000000' }}>Health Connect</div>
               <div style={{ fontSize: '13px', color: '#8E8E93' }}>Sync with Android health apps</div>
             </div>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="#8E8E93">
