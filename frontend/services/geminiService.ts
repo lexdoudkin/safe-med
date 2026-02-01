@@ -45,8 +45,9 @@ export const analyzeDrugSafety = async (
     1. Identify the drug from the user's input (text or image).
     2. Analyze specific risks, side effects, and contraindications FOR THIS SPECIFIC PATIENT based on their profile (especially conditions, age, weight, ethnicity).
     3. Calculate a personalized "Safety Score" (0-100, where 100 is completely safe/benign and 0 is deadly/severe contraindication).
-    4. Provide clear, concise, consumer-friendly explanations with scientific validity.
-    5. Cite general medical references or guidelines where applicable.
+    4. If the safety score is below 50, provide 2-3 safer alternative medications.
+    5. Provide clear, concise, consumer-friendly explanations with scientific validity.
+    6. Cite general medical references or guidelines where applicable.
 
     IMPORTANT: Be thorough but accessible. Patients need to understand their personal risks clearly.
   `;
@@ -76,6 +77,7 @@ export const analyzeDrugSafety = async (
             }
           },
           contraindications: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } },
+          alternatives: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING }, description: "Safe alternative medications if this drug is risky" },
           recommendation: { type: SchemaType.STRING, description: "Actionable advice (e.g., 'Consult doctor', 'Safe to take')" },
           references: { type: SchemaType.ARRAY, items: { type: SchemaType.STRING } }
         },

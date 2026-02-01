@@ -162,12 +162,24 @@ export const mapRiskAssessmentToAnalysisResult = (
       .map(w => `Drug interaction with ${w.interacting_drug}: ${w.effect || w.detail || 'Use caution'}`),
   ];
 
+  // Generate alternatives based on safety score
+  const alternatives: string[] = assessment.alternatives_to_consider || [];
+
+  // Add common alternatives if none provided and drug is risky
+  if (alternatives.length === 0 && safetyScore < 50) {
+    if (assessment.drug_name.toLowerCase().includes('ibuprofen') ||
+        assessment.drug_name.toLowerCase().includes('aspirin')) {
+      alternatives.push('Acetaminophen (Tylenol)', 'Topical creams', 'Heat/ice therapy');
+    }
+  }
+
   return {
     drugName: assessment.drug_name,
     safetyScore,
     summary: generateSummary(assessment),
     risks: risks.slice(0, 10), // Limit to 10 risks
     contraindications,
+    alternatives: alternatives.length > 0 ? alternatives : undefined,
     recommendation: generateRecommendation(assessment),
     references: [
       'SIDER 4.1 - Side Effect Resource',

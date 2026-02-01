@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React from 'react';
 import { AnalysisResult as AnalysisResultType } from '../types';
 
 interface AnalysisResultProps {
@@ -6,161 +6,48 @@ interface AnalysisResultProps {
   onReset: () => void;
 }
 
-// Treemap layout algorithm (squarified)
-interface TreemapNode {
-  name: string;
-  value: number;
-  severity: string;
-  explanation: string;
-  x: number;
-  y: number;
-  width: number;
-  height: number;
-  color: string;
-}
-
-const squarify = (
-  items: { name: string; value: number; severity: string; explanation: string }[],
-  width: number,
-  height: number
-): TreemapNode[] => {
-  if (items.length === 0) return [];
-
-  const total = items.reduce((sum, item) => sum + item.value, 0);
-  const nodes: TreemapNode[] = [];
-  let x = 0, y = 0, remainingWidth = width, remainingHeight = height;
-
-  const getColor = (severity: string) => {
-    switch (severity) {
-      case 'Critical': return '#FF3B30';
-      case 'High': return '#FF9500';
-      case 'Medium': return '#FFCC00';
-      default: return '#34C759';
-    }
-  };
-
-  // Simple row-based layout
-  const sorted = [...items].sort((a, b) => b.value - a.value);
-  let row: typeof sorted = [];
-  let rowTotal = 0;
-  const rowHeight = height / Math.ceil(Math.sqrt(items.length));
-
-  sorted.forEach((item, idx) => {
-    row.push(item);
-    rowTotal += item.value;
-
-    const isLastItem = idx === sorted.length - 1;
-    const rowFull = row.length >= Math.ceil(Math.sqrt(items.length));
-
-    if (rowFull || isLastItem) {
-      let rowX = x;
-      row.forEach(rowItem => {
-        const itemWidth = (rowItem.value / rowTotal) * remainingWidth;
-        nodes.push({
-          ...rowItem,
-          x: rowX,
-          y,
-          width: Math.max(itemWidth - 2, 10),
-          height: Math.max(rowHeight - 2, 10),
-          color: getColor(rowItem.severity),
-        });
-        rowX += itemWidth;
-      });
-      y += rowHeight;
-      row = [];
-      rowTotal = 0;
-    }
-  });
-
-  return nodes;
-};
-
-const Treemap: React.FC<{
-  data: { name: string; value: number; severity: string; explanation: string }[];
-  width: number;
-  height: number;
-  onSelect: (item: TreemapNode | null) => void;
-  selected: TreemapNode | null;
-}> = ({ data, width, height, onSelect, selected }) => {
-  const nodes = useMemo(() => squarify(data, width, height), [data, width, height]);
-
-  return (
-    <svg width={width} height={height} className="rounded-xl overflow-hidden">
-      {nodes.map((node, idx) => (
-        <g key={idx} onClick={() => onSelect(selected?.name === node.name ? null : node)}>
-          <rect
-            x={node.x}
-            y={node.y}
-            width={node.width}
-            height={node.height}
-            fill={node.color}
-            rx={8}
-            className="treemap-cell"
-            opacity={selected && selected.name !== node.name ? 0.4 : 1}
-          />
-          {node.width > 60 && node.height > 30 && (
-            <text
-              x={node.x + node.width / 2}
-              y={node.y + node.height / 2}
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="white"
-              fontSize={Math.min(12, node.width / 8)}
-              fontWeight="600"
-              className="pointer-events-none"
-            >
-              {node.name.length > 15 ? node.name.slice(0, 12) + '...' : node.name}
-            </text>
-          )}
-        </g>
-      ))}
-    </svg>
-  );
-};
-
 const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
-  const [selectedRisk, setSelectedRisk] = useState<TreemapNode | null>(null);
+  const isDanger = result.safetyScore < 40;
+  const isCaution = result.safetyScore >= 40 && result.safetyScore < 70;
+  const isSafe = result.safetyScore >= 70;
 
-  const scoreColor = result.safetyScore >= 70 ? 'text-[#34C759]' :
-                     result.safetyScore >= 40 ? 'text-[#FF9500]' : 'text-[#FF3B30]';
+  const verdictText = isDanger ? 'Do Not Take' : isCaution ? 'Use Caution' : 'Generally Safe';
+  const verdictColor = isDanger ? '#FF3B30' : isCaution ? '#FF9500' : '#34C759';
 
-  const scoreLabel = result.safetyScore >= 70 ? 'Low Risk' :
-                     result.safetyScore >= 40 ? 'Moderate Risk' : 'High Risk';
-
-  const scoreBg = result.safetyScore >= 70 ? 'bg-[#34C759]' :
-                  result.safetyScore >= 40 ? 'bg-[#FF9500]' : 'bg-[#FF3B30]';
-
-  // Prepare treemap data
-  const treemapData = result.risks.map(risk => ({
-    name: risk.condition,
-    value: risk.severity === 'Critical' ? 100 :
-           risk.severity === 'High' ? 70 :
-           risk.severity === 'Medium' ? 40 : 20,
-    severity: risk.severity,
-    explanation: risk.explanation,
-  }));
-
-  const circumference = 2 * Math.PI * 45;
+  const circumference = 2 * Math.PI * 40;
   const strokeDashoffset = circumference - (result.safetyScore / 100) * circumference;
 
+  // Get color for risk percentage
+  const getRiskColor = (probability: string) => {
+    const value = parseFloat(probability);
+    if (value >= 15) return '#FF9500';
+    if (value >= 10) return '#FF9500';
+    if (value >= 5) return '#FFCC00';
+    return '#34C759';
+  };
+
   return (
-    <div className="animate-in space-y-4">
-      {/* Header Card */}
-      <div className="card p-5">
-        <div className="flex items-center gap-4">
+    <div className="animate-in" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+      {/* YOUR RISK ASSESSMENT */}
+      <div className="card">
+        <div className="section-header">
+          <div className="section-icon" style={{ background: 'linear-gradient(135deg, #5856D6, #AF52DE)' }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+              <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h2v10H7V7zm4 4h2v6h-2v-6zm4-2h2v8h-2V9z"/>
+            </svg>
+          </div>
+          <span className="section-title">Your Risk Assessment</span>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           {/* Score Ring */}
-          <div className="relative w-24 h-24 flex-shrink-0">
-            <svg className="w-24 h-24 ring-progress">
+          <div style={{ position: 'relative', width: '88px', height: '88px', flexShrink: 0 }}>
+            <svg width="88" height="88" className="ring-progress">
+              <circle cx="44" cy="44" r="40" fill="none" stroke="#3A3A3C" strokeWidth="6" />
               <circle
-                cx="48" cy="48" r="45"
+                cx="44" cy="44" r="40"
                 fill="none"
-                stroke="#E5E5EA"
-                strokeWidth="6"
-              />
-              <circle
-                cx="48" cy="48" r="45"
-                fill="none"
-                stroke={result.safetyScore >= 70 ? '#34C759' : result.safetyScore >= 40 ? '#FF9500' : '#FF3B30'}
+                stroke={verdictColor}
                 strokeWidth="6"
                 strokeLinecap="round"
                 strokeDasharray={circumference}
@@ -168,86 +55,182 @@ const AnalysisResult: React.FC<AnalysisResultProps> = ({ result, onReset }) => {
                 className="ring-animate"
               />
             </svg>
-            <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <span className={`text-2xl font-bold ${scoreColor}`}>{result.safetyScore}</span>
+            <div style={{
+              position: 'absolute',
+              inset: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}>
+              <span style={{ fontSize: '28px', fontWeight: '700', color: verdictColor }}>{result.safetyScore}</span>
+              <span style={{ fontSize: '11px', color: '#8E8E93' }}>of 100</span>
             </div>
           </div>
 
-          {/* Info */}
-          <div className="flex-1 min-w-0">
-            <h1 className="text-xl font-bold text-black truncate">{result.drugName}</h1>
-            <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-sm font-semibold text-white mt-1 ${scoreBg}`}>
-              {scoreLabel}
-            </div>
-            <p className="text-[#8E8E93] text-sm mt-2 line-clamp-2">{result.summary}</p>
+          {/* Verdict Text */}
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <h2 style={{ fontSize: '24px', fontWeight: '700', color: verdictColor, margin: 0 }}>
+              {verdictText}
+            </h2>
+            <p style={{ fontSize: '14px', color: '#8E8E93', margin: '4px 0 0 0', lineHeight: 1.4 }}>
+              Based on your age, medications, and health history
+            </p>
           </div>
+        </div>
+
+        {/* Verdict Banner */}
+        <div className={`verdict-banner ${isDanger ? 'danger' : isCaution ? 'caution' : 'safe'}`}>
+          <div style={{
+            width: '40px',
+            height: '40px',
+            borderRadius: '10px',
+            background: verdictColor,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexShrink: 0
+          }}>
+            {isDanger ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+              </svg>
+            ) : isCaution ? (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2L1 21h22L12 2zm0 3.99L19.53 19H4.47L12 5.99zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/>
+              </svg>
+            ) : (
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+              </svg>
+            )}
+          </div>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: '17px', fontWeight: '600', color: '#FFFFFF' }}>{verdictText}</div>
+            <div style={{ fontSize: '14px', color: '#8E8E93' }}>
+              {isDanger ? 'Contraindicated for your profile' : isCaution ? 'Review warnings before use' : 'Safe for your profile'}
+            </div>
+          </div>
+        </div>
+
+        {/* Personalized Info */}
+        <div className="personalized-banner">
+          <span style={{ fontSize: '14px' }}>
+            <strong style={{ color: '#FF9500' }}>Personalized for you:</strong>
+            <span style={{ color: '#8E8E93', marginLeft: '6px' }}>{result.summary}</span>
+          </span>
         </div>
       </div>
 
-      {/* Treemap Card */}
-      {treemapData.length > 0 && (
-        <div className="card p-4">
-          <h2 className="text-sm font-semibold text-[#8E8E93] uppercase tracking-wide mb-3">
-            Risk Factors
-          </h2>
-          <Treemap
-            data={treemapData}
-            width={340}
-            height={180}
-            onSelect={setSelectedRisk}
-            selected={selectedRisk}
-          />
-
-          {/* Selected Risk Detail */}
-          {selectedRisk && (
-            <div className="mt-3 p-3 bg-[#F2F2F7] rounded-xl animate-in">
-              <div className="flex items-center justify-between mb-1">
-                <span className="font-semibold text-black">{selectedRisk.name}</span>
-                <span
-                  className="text-xs font-bold px-2 py-0.5 rounded-full text-white"
-                  style={{ backgroundColor: selectedRisk.color }}
-                >
-                  {selectedRisk.severity}
-                </span>
-              </div>
-              <p className="text-sm text-[#3C3C43]">{selectedRisk.explanation}</p>
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* Warnings */}
+      {/* CRITICAL WARNINGS */}
       {result.contraindications.length > 0 && (
-        <div className="card p-4 border-l-4 border-[#FF3B30]">
-          <h2 className="text-sm font-semibold text-[#FF3B30] uppercase tracking-wide mb-2">
-            Warnings
-          </h2>
-          <ul className="space-y-2">
-            {result.contraindications.map((c, i) => (
-              <li key={i} className="flex items-start gap-2 text-sm text-[#3C3C43]">
-                <span className="text-[#FF3B30] mt-0.5">•</span>
-                {c}
-              </li>
-            ))}
-          </ul>
+        <div className="card">
+          <div className="section-header">
+            <div className="section-icon" style={{ background: '#FF3B30' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h2v-2h-2v2zm0-4h2V7h-2v6z"/>
+              </svg>
+            </div>
+            <span className="section-title">Critical Warnings</span>
+          </div>
+
+          {result.contraindications.map((warning, idx) => (
+            <div key={idx} className="list-item">
+              <div className="list-icon" style={{ background: 'rgba(255, 59, 48, 0.15)' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#FF3B30">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8 0-1.85.63-3.55 1.69-4.9L16.9 18.31C15.55 19.37 13.85 20 12 20zm6.31-3.1L7.1 5.69C8.45 4.63 10.15 4 12 4c4.42 0 8 3.58 8 8 0 1.85-.63 3.55-1.69 4.9z"/>
+                </svg>
+              </div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }}>{warning}</div>
+              </div>
+            </div>
+          ))}
         </div>
       )}
 
-      {/* Recommendation */}
-      <div className="card p-4">
-        <h2 className="text-sm font-semibold text-[#8E8E93] uppercase tracking-wide mb-2">
-          Recommendation
-        </h2>
-        <p className="text-[#000000]">{result.recommendation}</p>
+      {/* YOUR SIDE EFFECT RISKS */}
+      {result.risks.length > 0 && (
+        <div className="card">
+          <div className="section-header">
+            <div className="section-icon" style={{ background: 'linear-gradient(135deg, #5AC8FA, #007AFF)' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 10h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z"/>
+              </svg>
+            </div>
+            <span className="section-title">Your Side Effect Risks</span>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {result.risks.map((risk, idx) => {
+              const probability = parseFloat(risk.probability) || 5;
+              const color = getRiskColor(risk.probability);
+              return (
+                <div key={idx}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '6px' }}>
+                    <span style={{ fontSize: '15px', fontWeight: '600', color: '#FFFFFF' }}>{risk.condition}</span>
+                    <span style={{ fontSize: '15px', fontWeight: '600', color: color }}>{risk.probability}</span>
+                  </div>
+                  <div className="progress-bar">
+                    <div className="progress-fill" style={{ width: `${Math.min(probability * 2, 100)}%`, background: color }} />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* ALTERNATIVES TO CONSIDER */}
+      {result.alternatives && result.alternatives.length > 0 && (
+        <div className="card">
+          <div className="section-header">
+            <div className="section-icon" style={{ background: '#34C759' }}>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+                <path d="M9 21c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-1H9v1zm3-19C8.14 2 5 5.14 5 9c0 2.38 1.19 4.47 3 5.74V17c0 .55.45 1 1 1h6c.55 0 1-.45 1-1v-2.26c1.81-1.27 3-3.36 3-5.74 0-3.86-3.14-7-7-7z"/>
+              </svg>
+            </div>
+            <span className="section-title">Alternatives to Consider</span>
+          </div>
+
+          {result.alternatives.map((alt, idx) => (
+            <div key={idx} className="list-item">
+              <div className="list-icon" style={{ background: '#34C759' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                  <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                </svg>
+              </div>
+              <span style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }}>{alt}</span>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* RECOMMENDATION */}
+      <div className="card">
+        <div className="section-header">
+          <div className="section-icon" style={{ background: '#007AFF' }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+            </svg>
+          </div>
+          <span className="section-title">Recommendation</span>
+        </div>
+        <p style={{ fontSize: '15px', color: '#EBEBF5', lineHeight: 1.5, margin: 0 }}>
+          {result.recommendation}
+        </p>
       </div>
 
-      {/* Action */}
-      <button
-        onClick={onReset}
-        className="w-full py-4 bg-[#007AFF] text-white font-semibold rounded-xl active:scale-[0.98] transition-transform"
-      >
-        Check Another
+      {/* CHECK ANOTHER */}
+      <button className="btn-primary" onClick={onReset}>
+        Check Another Medication
       </button>
+
+      {/* DISCLAIMER */}
+      <div className="disclaimer">
+        For informational purposes only.<br />
+        Always consult your healthcare provider.
+      </div>
     </div>
   );
 };

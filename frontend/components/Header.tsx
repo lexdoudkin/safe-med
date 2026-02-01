@@ -10,17 +10,44 @@ const Header: React.FC<HeaderProps> = ({ onBack, appState }) => {
   const showBack = appState !== AppState.ONBOARDING;
 
   return (
-    <header className="sticky top-0 z-50 bg-[#F2F2F7]/80 backdrop-blur-xl">
-      <div className="max-w-lg mx-auto px-4 h-12 flex items-center justify-between">
+    <header style={{
+      position: 'sticky',
+      top: 0,
+      zIndex: 50,
+      background: 'rgba(0, 0, 0, 0.8)',
+      backdropFilter: 'blur(20px)',
+      WebkitBackdropFilter: 'blur(20px)',
+      borderBottom: '1px solid rgba(84, 84, 88, 0.35)'
+    }}>
+      <div style={{
+        maxWidth: '428px',
+        margin: '0 auto',
+        padding: '0 16px',
+        height: '48px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+      }}>
         {/* Back */}
-        <div className="w-16">
+        <div style={{ width: '64px' }}>
           {showBack && onBack && (
             <button
               onClick={onBack}
-              className="text-[#007AFF] font-medium flex items-center gap-1"
+              style={{
+                background: 'none',
+                border: 'none',
+                color: '#007AFF',
+                fontSize: '17px',
+                fontWeight: '400',
+                cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '4px',
+                padding: 0
+              }}
             >
               <svg width="12" height="20" viewBox="0 0 12 20" fill="currentColor">
-                <path d="M10.59 16.59L6.42 12.42a.996.996 0 010-1.41L10.59 6.59 9.17 5.17 3.59 10.75a.996.996 0 000 1.41l5.58 5.59 1.42-1.16z"/>
+                <path d="M11.67 1.77L9.9 0 0 10l9.9 10 1.77-1.77L3.54 10z"/>
               </svg>
               Back
             </button>
@@ -28,10 +55,17 @@ const Header: React.FC<HeaderProps> = ({ onBack, appState }) => {
         </div>
 
         {/* Title */}
-        <h1 className="font-semibold text-[17px] text-black">SafeMed</h1>
+        <h1 style={{
+          fontSize: '17px',
+          fontWeight: '600',
+          color: '#FFFFFF',
+          margin: 0
+        }}>
+          SafeMed
+        </h1>
 
         {/* Spacer */}
-        <div className="w-16" />
+        <div style={{ width: '64px' }} />
       </div>
     </header>
   );

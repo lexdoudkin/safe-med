@@ -34,6 +34,7 @@ export interface AnalysisResult {
   summary: string;
   risks: RiskFactor[];
   contraindications: string[];
+  alternatives?: string[];
   recommendation: string;
   references: string[];
 }

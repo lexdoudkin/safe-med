@@ -6,8 +6,6 @@ interface ProfileFormProps {
   onSave: (profile: UserProfile) => void;
 }
 
-const BLOOD_TYPES = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'] as const;
-
 const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave }) => {
   const [profile, setProfile] = useState<UserProfile>(initialProfile);
 
@@ -29,37 +27,45 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave }) => 
   };
 
   return (
-    <div className="space-y-4 animate-in">
+    <div className="animate-in" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
       {/* Header */}
-      <div className="text-center py-2">
-        <h1 className="text-2xl font-bold text-black">Your Profile</h1>
-        <p className="text-[#8E8E93] text-sm mt-1">Help us personalize your results</p>
+      <div style={{ textAlign: 'center', padding: '8px 0' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: '700', color: '#FFFFFF', margin: 0 }}>
+          Your Profile
+        </h1>
+        <p style={{ fontSize: '15px', color: '#8E8E93', margin: '6px 0 0 0' }}>
+          Help us personalize your results
+        </p>
       </div>
 
       {/* Basic Info Card */}
-      <div className="card p-4">
-        <h2 className="text-sm font-semibold text-[#8E8E93] uppercase tracking-wide mb-3">
-          Basic Info
-        </h2>
-        <div className="grid grid-cols-2 gap-3">
+      <div className="card">
+        <div className="section-header" style={{ marginBottom: '16px' }}>
+          <div className="section-icon" style={{ background: '#007AFF' }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+              <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+            </svg>
+          </div>
+          <span className="section-title">Basic Info</span>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
           <div>
-            <label className="text-xs text-[#8E8E93] mb-1 block">Age</label>
+            <label style={{ fontSize: '13px', color: '#8E8E93', marginBottom: '6px', display: 'block' }}>Age</label>
             <input
               type="number"
               name="age"
               value={profile.age || ''}
               onChange={handleChange}
               placeholder="30"
-              className="w-full"
             />
           </div>
           <div>
-            <label className="text-xs text-[#8E8E93] mb-1 block">Gender</label>
+            <label style={{ fontSize: '13px', color: '#8E8E93', marginBottom: '6px', display: 'block' }}>Gender</label>
             <select
               name="gender"
               value={profile.gender}
               onChange={handleChange}
-              className="w-full"
             >
               <option value="Male">Male</option>
               <option value="Female">Female</option>
@@ -67,36 +73,40 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave }) => 
             </select>
           </div>
           <div>
-            <label className="text-xs text-[#8E8E93] mb-1 block">Height (cm)</label>
+            <label style={{ fontSize: '13px', color: '#8E8E93', marginBottom: '6px', display: 'block' }}>Height (cm)</label>
             <input
               type="number"
               name="height"
               value={profile.height || ''}
               onChange={handleChange}
               placeholder="170"
-              className="w-full"
             />
           </div>
           <div>
-            <label className="text-xs text-[#8E8E93] mb-1 block">Weight (kg)</label>
+            <label style={{ fontSize: '13px', color: '#8E8E93', marginBottom: '6px', display: 'block' }}>Weight (kg)</label>
             <input
               type="number"
               name="weight"
               value={profile.weight || ''}
               onChange={handleChange}
               placeholder="70"
-              className="w-full"
             />
           </div>
         </div>
       </div>
 
       {/* Health Conditions Card */}
-      <div className="card p-4">
-        <h2 className="text-sm font-semibold text-[#8E8E93] uppercase tracking-wide mb-3">
-          Health Conditions
-        </h2>
-        <div className="flex flex-wrap gap-2">
+      <div className="card">
+        <div className="section-header" style={{ marginBottom: '16px' }}>
+          <div className="section-icon" style={{ background: '#FF3B30' }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <span className="section-title">Health Conditions</span>
+        </div>
+
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
           {COMMON_CONDITIONS.map(condition => {
             const selected = profile.conditions.includes(condition);
             return (
@@ -104,11 +114,7 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave }) => 
                 key={condition}
                 type="button"
                 onClick={() => toggleCondition(condition)}
-                className={`px-3 py-2 rounded-full text-sm font-medium transition-all ${
-                  selected
-                    ? 'bg-[#007AFF] text-white'
-                    : 'bg-[#F2F2F7] text-[#3C3C43]'
-                }`}
+                className={`chip ${selected ? 'chip-selected' : ''}`}
               >
                 {condition}
               </button>
@@ -120,14 +126,15 @@ const ProfileForm: React.FC<ProfileFormProps> = ({ initialProfile, onSave }) => 
       {/* Continue Button */}
       <button
         onClick={() => onSave(profile)}
-        className="w-full py-4 bg-[#007AFF] text-white font-semibold rounded-xl active:scale-[0.98] transition-transform"
+        className="btn-primary"
       >
         Continue
       </button>
 
-      <p className="text-center text-xs text-[#8E8E93]">
+      {/* Privacy Note */}
+      <div className="disclaimer">
         Your data stays on your device
-      </p>
+      </div>
     </div>
   );
 };
