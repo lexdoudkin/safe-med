@@ -3,8 +3,9 @@ import Header from './components/Header';
 import ProfileForm from './components/ProfileForm';
 import DrugInput from './components/DrugInput';
 import AnalysisResult from './components/AnalysisResult';
+import TrustedPartners from './components/TrustedPartners';
 import { AppState, UserProfile, AnalysisResult as AnalysisResultType } from './types';
-import { analyzeDrugSafety } from './services/geminiService';
+import { analyzeDrugSafety } from './services/hybridAnalysisService';
 import {
   Heartbeat,
   ShieldCheck,
@@ -12,7 +13,6 @@ import {
   Lock,
   ArrowRight,
   HandHeart,
-  Star,
   Leaf,
 } from '@phosphor-icons/react';
 
@@ -129,6 +129,9 @@ const App: React.FC = () => {
             <p className="text-xs text-navy/40 mt-6 max-w-sm">
               SafeMed provides guidance only. Always consult your doctor before starting any medication.
             </p>
+
+            {/* Trusted Partners & Testimonials */}
+            <TrustedPartners />
           </div>
         )}
 
