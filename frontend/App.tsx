@@ -86,8 +86,94 @@ const App: React.FC = () => {
       <div style={{
         minHeight: '100vh',
         background: '#FFFFFF',
-        overflowX: 'hidden'
+        overflowX: 'hidden',
+        position: 'relative'
       }}>
+        {/* Animated Background */}
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%)',
+          backgroundSize: '400% 400%',
+          animation: 'gradientShift 15s ease infinite',
+          opacity: 0.08,
+          zIndex: 0,
+          pointerEvents: 'none'
+        }} />
+        <style>{`
+          @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+          }
+          @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+          }
+          @keyframes pulse {
+            0%, 100% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
+          }
+        `}</style>
+
+        {/* Floating Orbs */}
+        <div style={{
+          position: 'fixed',
+          top: '10%',
+          left: '5%',
+          width: '300px',
+          height: '300px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,59,48,0.15) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+          animation: 'float 8s ease-in-out infinite',
+          zIndex: 0,
+          pointerEvents: 'none'
+        }} />
+        <div style={{
+          position: 'fixed',
+          top: '60%',
+          right: '10%',
+          width: '250px',
+          height: '250px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(0,122,255,0.15) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+          animation: 'float 10s ease-in-out infinite',
+          animationDelay: '-3s',
+          zIndex: 0,
+          pointerEvents: 'none'
+        }} />
+        <div style={{
+          position: 'fixed',
+          bottom: '20%',
+          left: '15%',
+          width: '200px',
+          height: '200px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(52,199,89,0.15) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+          animation: 'float 12s ease-in-out infinite',
+          animationDelay: '-5s',
+          zIndex: 0,
+          pointerEvents: 'none'
+        }} />
+        <div style={{
+          position: 'fixed',
+          top: '30%',
+          right: '20%',
+          width: '180px',
+          height: '180px',
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(255,149,0,0.12) 0%, transparent 70%)',
+          filter: 'blur(40px)',
+          animation: 'pulse 6s ease-in-out infinite',
+          zIndex: 0,
+          pointerEvents: 'none'
+        }} />
         {/* Navigation */}
         <nav style={{
           position: 'fixed',
@@ -95,9 +181,10 @@ const App: React.FC = () => {
           left: 0,
           right: 0,
           zIndex: 100,
-          background: 'rgba(255, 255, 255, 0.9)',
+          background: 'rgba(255, 255, 255, 0.85)',
           backdropFilter: 'blur(20px)',
-          borderBottom: '1px solid #E5E5EA'
+          WebkitBackdropFilter: 'blur(20px)',
+          borderBottom: '1px solid rgba(0,0,0,0.06)'
         }}>
           <div style={{
             maxWidth: '1200px',
@@ -145,7 +232,9 @@ const App: React.FC = () => {
         <section style={{
           paddingTop: '120px',
           paddingBottom: '80px',
-          background: 'linear-gradient(180deg, #F8F9FA 0%, #FFFFFF 100%)'
+          background: 'linear-gradient(180deg, rgba(248,249,250,0.9) 0%, rgba(255,255,255,0.95) 100%)',
+          position: 'relative',
+          zIndex: 1
         }}>
           <div style={{
             maxWidth: '1200px',
@@ -320,7 +409,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Features Section */}
-        <section style={{ padding: '80px 24px', background: '#FFFFFF' }}>
+        <section style={{ padding: '80px 24px', background: 'rgba(255,255,255,0.95)', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ textAlign: 'center', marginBottom: '60px' }}>
               <h2 style={{ fontSize: '36px', fontWeight: '700', color: '#000', margin: '0 0 16px 0' }}>
@@ -374,7 +463,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Health Integration Section */}
-        <section style={{ padding: '80px 24px', background: '#F8F9FA' }}>
+        <section style={{ padding: '80px 24px', background: 'rgba(248,249,250,0.95)', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
             <h2 style={{ fontSize: '36px', fontWeight: '700', color: '#000', margin: '0 0 16px 0' }}>
               Import Your Health Data
@@ -466,7 +555,7 @@ const App: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg, #007AFF 0%, #5856D6 100%)' }}>
+        <section style={{ padding: '80px 24px', background: 'linear-gradient(135deg, #007AFF 0%, #5856D6 100%)', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
             <h2 style={{ fontSize: '36px', fontWeight: '700', color: '#FFFFFF', margin: '0 0 16px 0' }}>
               Ready to check your medications?
@@ -494,7 +583,7 @@ const App: React.FC = () => {
         </section>
 
         {/* Footer */}
-        <footer style={{ padding: '40px 24px', background: '#F8F9FA', borderTop: '1px solid #E5E5EA' }}>
+        <footer style={{ padding: '40px 24px', background: 'rgba(248,249,250,0.98)', borderTop: '1px solid rgba(0,0,0,0.06)', position: 'relative', zIndex: 1 }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px', marginBottom: '16px' }}>
               <div style={{
