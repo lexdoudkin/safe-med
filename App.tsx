@@ -5,7 +5,14 @@ import DrugInput from './components/DrugInput';
 import AnalysisResult from './components/AnalysisResult';
 import { AppState, UserProfile, AnalysisResult as AnalysisResultType } from './types';
 import { analyzeDrugSafety } from './services/geminiService';
-import { Activity } from 'lucide-react';
+import {
+  Heartbeat,
+  ShieldCheck,
+  Sparkle,
+  Lock,
+  CaretRight,
+} from '@phosphor-icons/react';
+import { MedicalIllustrations } from './components/HealthIcons';
 
 // Default empty profile
 const DEFAULT_PROFILE: UserProfile = {
@@ -63,23 +70,56 @@ const App: React.FC = () => {
       <main className="max-w-3xl mx-auto px-4 pt-8">
         {/* State: Onboarding Landing */}
         {appState === AppState.ONBOARDING && (
-          <div className="flex flex-col items-center justify-center min-h-[70vh] text-center space-y-8 animate-fade-in">
-            <div className="bg-emerald-100 p-6 rounded-full shadow-emerald-200 shadow-xl mb-4">
-              <Activity className="w-16 h-16 text-emerald-600" />
+          <div className="flex flex-col items-center justify-center min-h-[75vh] text-center space-y-8 animate-fade-in px-2">
+            {/* Hero Illustration */}
+            <div className="relative">
+              <div className="bg-gradient-to-br from-emerald-100 to-emerald-50 p-8 rounded-full shadow-xl shadow-emerald-100">
+                <Heartbeat size={80} weight="duotone" className="text-emerald-600" />
+              </div>
+              <div className="absolute -bottom-2 -right-2 bg-white rounded-full p-2 shadow-lg">
+                <ShieldCheck size={36} weight="fill" className="text-emerald-500" />
+              </div>
             </div>
-            <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-              Personalized <span className="text-emerald-600">Medicine</span> Safety
-            </h1>
-            <p className="text-lg text-slate-600 max-w-md mx-auto leading-relaxed">
-              SafeMed uses AI to analyze how medications interact with <span className="font-bold text-slate-800">your unique body</span>, conditions, and biomarkers.
-            </p>
-            <button 
+
+            {/* Title */}
+            <div className="space-y-4">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight">
+                Personalized
+                <span className="text-emerald-600 block md:inline"> Medicine Safety</span>
+              </h1>
+              <p className="text-xl md:text-2xl text-slate-600 max-w-lg mx-auto leading-relaxed">
+                Check if your medications are safe for <span className="font-bold text-slate-800">your unique body</span> and health conditions.
+              </p>
+            </div>
+
+            {/* CTA Button - Extra large for seniors */}
+            <button
               onClick={startOnboarding}
-              className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white text-lg font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+              className="px-10 py-5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xl font-bold rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-emerald-200 transition-all transform hover:-translate-y-1 flex items-center gap-3"
             >
-              Build My Health Profile
+              <span>Get Started</span>
+              <CaretRight size={28} weight="bold" />
             </button>
-            <p className="text-xs text-slate-400 mt-8">Secure • Private • AI-Powered</p>
+
+            {/* Trust indicators */}
+            <div className="flex flex-wrap justify-center gap-6 pt-4">
+              <div className="flex items-center gap-2 text-slate-500">
+                <Lock size={24} weight="duotone" className="text-slate-400" />
+                <span className="text-base">Private & Secure</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-500">
+                <Sparkle size={24} weight="duotone" className="text-slate-400" />
+                <span className="text-base">AI-Powered Analysis</span>
+              </div>
+              <div className="flex items-center gap-2 text-slate-500">
+                <ShieldCheck size={24} weight="duotone" className="text-slate-400" />
+                <span className="text-base">Science-Based</span>
+              </div>
+            </div>
+
+            <p className="text-sm text-slate-400 mt-4 max-w-sm">
+              SafeMed provides general guidance only. Always consult your doctor or pharmacist before starting any medication.
+            </p>
           </div>
         )}
 
@@ -92,8 +132,8 @@ const App: React.FC = () => {
         {appState === AppState.INPUT && (
           <>
             {error && (
-              <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-xl text-center">
-                {error}
+              <div className="mb-6 p-5 bg-red-50 border-2 border-red-200 text-red-700 rounded-2xl text-center text-lg">
+                <strong>Error:</strong> {error}
               </div>
             )}
             <DrugInput onAnalyze={handleAnalyze} />
@@ -102,14 +142,19 @@ const App: React.FC = () => {
 
         {/* State: Analyzing */}
         {appState === AppState.ANALYZING && (
-          <div className="flex flex-col items-center justify-center min-h-[60vh] text-center animate-pulse">
-            <div className="relative w-24 h-24 mb-8">
+          <div className="flex flex-col items-center justify-center min-h-[65vh] text-center animate-pulse px-2">
+            <div className="relative w-32 h-32 mb-10">
               <div className="absolute inset-0 border-4 border-emerald-100 rounded-full"></div>
               <div className="absolute inset-0 border-4 border-emerald-500 rounded-full border-t-transparent animate-spin"></div>
-              <Activity className="absolute inset-0 m-auto text-emerald-500 w-8 h-8" />
+              <Heartbeat className="absolute inset-0 m-auto text-emerald-500 w-12 h-12" weight="duotone" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">Analyzing Interactions...</h2>
-            <p className="text-slate-500">Cross-referencing with your profile: {profile.conditions.join(', ') || 'General health'}</p>
+            <h2 className="text-3xl font-bold text-slate-800 mb-3">Analyzing Your Medicine...</h2>
+            <p className="text-lg text-slate-500 max-w-md">
+              Checking safety based on your profile:
+              <span className="font-semibold text-slate-700 block mt-1">
+                {profile.conditions.length > 0 ? profile.conditions.join(', ') : 'General health'}
+              </span>
+            </p>
           </div>
         )}
 
