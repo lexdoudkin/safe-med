@@ -1,20 +1,42 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# SafeMed
 
-# Run and deploy your AI Studio app
+Personalized medicine safety analysis powered by AI. Check if medications are safe for your unique body and health conditions.
 
-This contains everything you need to run your app locally.
+## Structure
 
-View your app in AI Studio: https://ai.studio/apps/drive/1njFt9BqikUZhtv-CBFn-0xAAQuWbD-bB
+```
+safe-med/
+├── frontend/    # React + Vite app
+└── backend/     # API (coming soon)
+```
 
-## Run Locally
+## Frontend
 
-**Prerequisites:**  Node.js
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
+Runs at http://localhost:3000
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Environment
+
+Create `frontend/.env`:
+```
+VITE_GEMINI_API_KEY=your_gemini_api_key
+```
+
+### Deploy to Cloud Run
+
+```bash
+cd frontend
+gcloud run deploy safemed-frontend \
+  --source . \
+  --build-arg VITE_GEMINI_API_KEY=your_key \
+  --allow-unauthenticated
+```
+
+## Backend
+
+Coming soon.

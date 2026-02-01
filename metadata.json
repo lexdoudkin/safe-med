@@ -1,7 +1,0 @@
-{
-  "name": "SafeMed",
-  "description": "A personalized medication safety analyzer that interprets drug interactions based on individual health profiles using AI.",
-  "requestFramePermissions": [
-    "camera"
-  ]
-}
