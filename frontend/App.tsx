@@ -16,6 +16,28 @@ const DEFAULT_PROFILE: UserProfile = {
   conditions: []
 };
 
+// Mock data from Apple Health
+const APPLE_HEALTH_MOCK: UserProfile = {
+  age: 45,
+  gender: 'Female',
+  weight: 68,
+  height: 165,
+  ethnicity: 'Caucasian',
+  bloodType: 'A+',
+  conditions: ['Hypertension', 'High Cholesterol']
+};
+
+// Mock data from Health Connect (Android)
+const HEALTH_CONNECT_MOCK: UserProfile = {
+  age: 62,
+  gender: 'Male',
+  weight: 82,
+  height: 178,
+  ethnicity: 'Asian',
+  bloodType: 'O+',
+  conditions: ['Diabetes', 'Heart Disease', 'Kidney Disease']
+};
+
 // Icons
 const HeartIcon = () => (
   <svg width="40" height="40" viewBox="0 0 24 24" fill="white">
@@ -60,6 +82,13 @@ const App: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   const startOnboarding = () => setAppState(AppState.PROFILE);
+
+  const handleHealthImport = (source: 'apple' | 'android') => {
+    const mockData = source === 'apple' ? APPLE_HEALTH_MOCK : HEALTH_CONNECT_MOCK;
+    setProfile(mockData);
+    setAppState(AppState.INPUT);
+  };
+
   const handleProfileSave = (data: UserProfile) => {
     setProfile(data);
     setAppState(AppState.INPUT);
@@ -230,6 +259,97 @@ const App: React.FC = () => {
                   <span style={{ fontSize: '14px', fontWeight: '500' }}>Science-Based</span>
                 </div>
               </div>
+            </div>
+
+            {/* Health Import Section */}
+            <div className="animate-fade-up animate-delay-4" style={{
+              width: '100%',
+              maxWidth: '340px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            }}>
+              <p style={{ fontSize: '13px', color: 'var(--text-tertiary)', margin: '0 0 4px 0', textAlign: 'center' }}>
+                Or import your health data
+              </p>
+
+              {/* Apple Health Button */}
+              <button
+                onClick={() => handleHealthImport('apple')}
+                className="glass-card"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '14px 16px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  textAlign: 'left'
+                }}
+              >
+                <div style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, #FF2D55, #FF375F)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  boxShadow: '0 4px 12px rgba(255, 45, 85, 0.3)'
+                }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                  </svg>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }}>Apple Health</div>
+                  <div style={{ fontSize: '13px', color: 'var(--text-tertiary)' }}>Import from iPhone</div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--text-tertiary)">
+                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+              </button>
+
+              {/* Health Connect Button */}
+              <button
+                onClick={() => handleHealthImport('android')}
+                className="glass-card"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '14px 16px',
+                  border: 'none',
+                  cursor: 'pointer',
+                  width: '100%',
+                  textAlign: 'left'
+                }}
+              >
+                <div style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '12px',
+                  background: 'linear-gradient(135deg, #4285F4, #34A853)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexShrink: 0,
+                  boxShadow: '0 4px 12px rgba(66, 133, 244, 0.3)'
+                }}>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                  </svg>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontSize: '16px', fontWeight: '600', color: '#FFFFFF' }}>Health Connect</div>
+                  <div style={{ fontSize: '13px', color: 'var(--text-tertiary)' }}>Import from Android</div>
+                </div>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="var(--text-tertiary)">
+                  <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                </svg>
+              </button>
             </div>
 
             {/* Trusted Partners */}
